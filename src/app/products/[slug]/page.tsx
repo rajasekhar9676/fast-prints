@@ -45,32 +45,32 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
 
       <div className="grid gap-10 lg:grid-cols-[1.15fr_1fr]">
         <section className="space-y-5">
-          <div className="overflow-hidden rounded-3xl border border-ink-100 bg-ink-50 shadow-lg">
+          <div className="img-frame overflow-hidden p-4 md:p-6">
             <Image
               src={product.image}
               alt={product.name}
               width={1200}
               height={720}
-              className="aspect-[4/3] w-full object-cover"
+              className="aspect-[4/3] w-full object-contain object-center"
               priority
             />
           </div>
           {product.gallery?.length ? (
-            <div className="grid grid-cols-4 gap-3 sm:grid-cols-5">
+            <div className="grid grid-cols-3 gap-3 sm:grid-cols-4">
               {product.gallery.map((src, i) => (
-                <div key={src + i} className="overflow-hidden rounded-xl border border-ink-100 bg-white">
-                  <Image src={src} alt="" width={240} height={180} className="aspect-[4/3] w-full object-cover" />
+                <div key={src + i} className="img-frame overflow-hidden p-2">
+                  <Image src={src} alt="" width={240} height={180} className="aspect-[4/3] w-full object-contain object-center" />
                 </div>
               ))}
             </div>
           ) : null}
 
           <div className="space-y-4">
-            <p className="text-xs font-bold uppercase tracking-wider text-brand-700">{categoryTitle(product.category)}</p>
-            <h1 className="font-[family-name:var(--font-display)] text-3xl font-bold leading-tight text-ink-950 md:text-4xl">
+            <p className="text-xs font-bold uppercase tracking-[0.12em] text-brand-600">{categoryTitle(product.category)}</p>
+            <h1 className="font-[family-name:var(--font-display)] text-3xl font-extrabold leading-tight text-ink-950 md:text-4xl">
               {product.name}
             </h1>
-            <p className="text-lg text-ink-700">{product.description}</p>
+            <p className="text-lg leading-relaxed text-ink-600">{product.description}</p>
 
             {product.highlights?.length ? (
               <ul className="grid gap-2 sm:grid-cols-2">

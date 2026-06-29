@@ -35,23 +35,25 @@ const CartContext = createContext<CartContextType | null>(null);
 const STORAGE_KEY = "fast-prints-cart";
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
-  const [cartItems, setCartItems] = useState<CartItem[]>(() => {
-    if (typeof window === "undefined") return [];
-
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return [];
-
-    try {
-      return JSON.parse(raw) as CartItem[];
-    } catch {
-      localStorage.removeItem(STORAGE_KEY);
-      return [];
-    }
-  });
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [isHydrated, setIsHydrated] = useState(false);
 
   useEffect(() => {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) {
+      try {
+        setCartItems(JSON.parse(raw) as CartItem[]);
+      } catch {
+        localStorage.removeItem(STORAGE_KEY);
+      }
+    }
+    setIsHydrated(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isHydrated) return;
     localStorage.setItem(STORAGE_KEY, JSON.stringify(cartItems));
-  }, [cartItems]);
+  }, [cartItems, isHydrated]);
 
   const addToCart = ({
     product,

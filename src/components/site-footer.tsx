@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, MapPin } from "lucide-react";
+import { Globe, Mail, Phone, MapPin } from "lucide-react";
 
 const footerLinks = [
   {
     title: "Shop",
     links: [
       { href: "/products", label: "All products" },
-      { href: "/products?category=business-essentials", label: "Business essentials" },
-      { href: "/products?category=large-format", label: "Large format" },
+      { href: "/products/visiting-cards", label: "Visiting cards" },
+      { href: "/products?category=large-format", label: "Signages" },
       { href: "/cart", label: "Cart" },
     ],
   },
@@ -17,7 +17,7 @@ const footerLinks = [
     links: [
       { href: "/services", label: "All services" },
       { href: "/contact", label: "Contact & map" },
-      { href: "/checkout", label: "Checkout" },
+      { href: "https://www.fastprintsdigital.in", label: "fastprintsdigital.in" },
     ],
   },
 ];
@@ -37,7 +37,7 @@ export function SiteFooter() {
             </span>
           </Link>
           <p className="max-w-sm text-sm leading-relaxed text-white/70">
-            Full-service printing in BTM Layout — digital, offset, wide format, apparel finishing, and design support for teams who need dependable turnaround.
+            Think Printing… Think Us. Digital print, signages, visiting cards, ID cards, calendars, photo print & more from BTM Layout.
           </p>
           <div className="space-y-3 text-sm">
             <p className="flex gap-2 text-white/90">
@@ -45,14 +45,25 @@ export function SiteFooter() {
               <span>
                 Landmark: 15, 20th Main Rd, below Canara Bank,
                 <br />
-                opp. Metro Pillar 154, BTM 2nd Stage, Kuvempu Nagar,
-                <br />
-                BTM Layout, Bengaluru, Karnataka 560076
+                opp. Metro Pillar 154, BTM 2nd Stage, Bengaluru 560076
               </span>
             </p>
             <a href="tel:+919164779922" className="inline-flex items-center gap-2 font-bold text-brand-400 hover:text-brand-300">
               <Phone className="h-4 w-4" aria-hidden />
               +91 91647 79922
+            </a>
+            <a href="mailto:fastprintsbtm@gmail.com" className="flex items-center gap-2 text-white/80 hover:text-white">
+              <Mail className="h-4 w-4 shrink-0 text-brand-400" aria-hidden />
+              fastprintsbtm@gmail.com
+            </a>
+            <a
+              href="https://www.fastprintsdigital.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-white/80 hover:text-white"
+            >
+              <Globe className="h-4 w-4 shrink-0 text-brand-400" aria-hidden />
+              www.fastprintsdigital.in
             </a>
           </div>
         </div>
@@ -78,9 +89,7 @@ export function SiteFooter() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Fast Prints, Bengaluru. All rights reserved.</p>
-          <p className="text-white/40">
-            Product imagery uses high-quality stock photos for demo purposes — replace with your store shots anytime.
-          </p>
+          <p className="text-white/40">Same day delivery on select products · Pickup at BTM 2nd Stage</p>
         </div>
       </div>
     </footer>

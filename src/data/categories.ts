@@ -1,68 +1,61 @@
 import type { ProductCategory } from "@/types/product";
+import { categoryImages } from "@/data/store-images";
 
 export const categories: ProductCategory[] = [
   {
     id: "business-essentials",
     name: "Business Essentials",
-    tagline: "Cards, letterheads & everyday stationery",
-    image:
-      "https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=900&q=80",
+    tagline: "Cards, letterheads & IDs",
+    image: categoryImages["business-essentials"],
     iconColor: "bg-brand-500",
   },
   {
     id: "marketing-materials",
     name: "Marketing Materials",
-    tagline: "Flyers, brochures & campaigns",
-    image:
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=900&q=80",
-    iconColor: "bg-emerald-600",
+    tagline: "Pamphlets, flyers & keychains",
+    image: categoryImages["marketing-materials"],
+    iconColor: "bg-amber-600",
   },
   {
     id: "large-format",
     name: "Large Format",
-    tagline: "Banners, posters & signage",
-    image:
-      "https://images.unsplash.com/photo-1586880244406-556ebe35f282?auto=format&fit=crop&w=900&q=80",
+    tagline: "Signages & wall graphics",
+    image: categoryImages["large-format"],
     iconColor: "bg-violet-600",
   },
   {
     id: "packaging",
     name: "Packaging",
-    tagline: "Boxes, labels & retail-ready packs",
-    image:
-      "https://images.unsplash.com/photo-1611195974226-a6a9be9dd763?auto=format&fit=crop&w=900&q=80",
+    tagline: "Presentation envelopes",
+    image: categoryImages.packaging,
     iconColor: "bg-rose-600",
   },
   {
     id: "apparel",
-    name: "Apparel",
-    tagline: "T-shirts & branded merchandise",
-    image:
-      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80",
+    name: "Apparel & Merch",
+    tagline: "T-shirts & branded items",
+    image: categoryImages.apparel,
     iconColor: "bg-sky-600",
   },
   {
     id: "photo-gifts",
     name: "Photo Gifts",
-    tagline: "Photo prints & personalised gifts",
-    image:
-      "https://images.unsplash.com/photo-1513519245088-0e12902e35ca?auto=format&fit=crop&w=900&q=80",
-    iconColor: "bg-amber-700",
+    tagline: "Photo & passport prints",
+    image: categoryImages["photo-gifts"],
+    iconColor: "bg-orange-600",
   },
   {
     id: "stationery",
     name: "Stationery",
-    tagline: "Books, magazines & binding",
-    image:
-      "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=900&q=80",
+    tagline: "Calendars, receipts & bills",
+    image: categoryImages.stationery,
     iconColor: "bg-teal-600",
   },
   {
     id: "events",
-    name: "Events & Weddings",
-    tagline: "Invitations & special events",
-    image:
-      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80",
+    name: "Events & Invitations",
+    tagline: "Invites & special print",
+    image: categoryImages.events,
     iconColor: "bg-fuchsia-600",
   },
 ];

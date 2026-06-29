@@ -52,18 +52,16 @@ export default function ContactPage() {
               <Mail className="h-6 w-6" aria-hidden />
             </span>
             <div>
-              <h2 className="font-[family-name:var(--font-display)] font-bold text-ink-950">WhatsApp artwork</h2>
+              <h2 className="font-[family-name:var(--font-display)] font-bold text-ink-950">Email</h2>
               <p className="mt-2 text-sm text-ink-600">
-                Share PDFs & photos on{" "}
-                <a
-                  href="https://wa.me/919164779922"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-semibold text-brand-700 hover:underline"
-                >
-                  WhatsApp
-                </a>{" "}
-                before you visit — we&apos;ll confirm bleed and resolution.
+                Send print-ready PDFs to{" "}
+                <a href="mailto:fastprintsbtm@gmail.com" className="font-semibold text-brand-700 hover:underline">
+                  fastprintsbtm@gmail.com
+                </a>
+                {" "}or WhatsApp{" "}
+                <a href="https://wa.me/919164779922" className="font-semibold text-brand-700 hover:underline">
+                  +91 91647 79922
+                </a>
               </p>
             </div>
           </div>

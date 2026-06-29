@@ -17,8 +17,13 @@ export function ProductConfigurator({ product }: { product: Product }) {
   }, [product.basePrice, product.options.quantities, quantity, selectedUnits]);
 
   return (
-    <div className="space-y-5 rounded-2xl border border-ink-100 bg-white p-6 shadow-lg">
-      <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-ink-950">Customize your order</h3>
+    <div className="card-premium space-y-5 p-6 md:p-7">
+      <div>
+        <p className="text-xs font-bold uppercase tracking-[0.12em] text-brand-600">Configure</p>
+        <h3 className="mt-1 font-[family-name:var(--font-display)] text-xl font-extrabold text-ink-950">
+          Customize your order
+        </h3>
+      </div>
 
       <label className="block space-y-2 text-sm">
         <span className="font-semibold text-ink-800">Size / format</span>
@@ -76,10 +81,10 @@ export function ProductConfigurator({ product }: { product: Product }) {
         />
       </label>
 
-      <div className="rounded-xl bg-brand-50 px-4 py-3">
-        <p className="text-xs font-semibold uppercase tracking-wide text-brand-800">Estimated</p>
-        <p className="font-[family-name:var(--font-display)] text-2xl font-bold text-ink-950">{formatINR(estimatedPrice)}</p>
-        <p className="text-xs text-ink-600">Final quote after artwork approval.</p>
+      <div className="rounded-xl bg-gradient-to-br from-brand-50 to-brand-100/50 px-4 py-4 ring-1 ring-brand-200/50">
+        <p className="text-xs font-bold uppercase tracking-wide text-brand-700">Estimated total</p>
+        <p className="font-[family-name:var(--font-display)] text-3xl font-extrabold text-ink-950">{formatINR(estimatedPrice)}</p>
+        <p className="text-xs text-ink-500">Final quote after artwork approval.</p>
       </div>
 
       <button
@@ -87,7 +92,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
         onClick={() =>
           addToCart({ product, quantity, selectedSize, selectedFinish, selectedUnits })
         }
-        className="w-full rounded-xl bg-brand-500 py-3.5 text-sm font-bold text-ink-950 shadow-lg shadow-brand-500/25 transition hover:bg-brand-400"
+        className="btn-primary w-full"
       >
         Add to cart
       </button>
