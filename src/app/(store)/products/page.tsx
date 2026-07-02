@@ -1,18 +1,24 @@
 import { ProductCard } from "@/components/product-card";
 import { SectionHeader } from "@/components/section-header";
-import { categories } from "@/data/categories";
-import { categoryLabel, filterProducts } from "@/lib/filter-products";
+import {
+  categoryLabelFromList,
+  filterProductsList,
+  getCategories,
+  getProducts,
+} from "@/lib/cms/queries";
 import Link from "next/link";
 
 type ProductsPageProps = {
-  searchParams: Promise<{ category?: string; q?: string }>;
+  searchParams: Promise<{ category?: string; q?: string; budget?: string }>;
 };
 
 export default async function ProductsPage({ searchParams }: ProductsPageProps) {
   const params = await searchParams;
-  const filtered = filterProducts(params.category, params.q);
+  const [products, categories] = await Promise.all([getProducts(), getCategories()]);
+  const filtered = filterProductsList(products, categories, params.category, params.q, params.budget);
   const activeCategory = params.category;
   const query = params.q?.trim();
+  const budget = params.budget;
 
   return (
     <div className="space-y-10 pb-10">
@@ -63,14 +69,17 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
         </form>
       </div>
 
-      {(activeCategory || query) && (
+      {(activeCategory || query || budget) && (
         <p className="text-sm text-ink-500">
           Showing{" "}
           <span className="font-bold text-ink-950">
             {filtered.length} result{filtered.length === 1 ? "" : "s"}
           </span>
           {activeCategory ? (
-            <> in <span className="font-bold text-ink-950">{categoryLabel(activeCategory)}</span></>
+            <> in <span className="font-bold text-ink-950">{categoryLabelFromList(categories, activeCategory)}</span></>
+          ) : null}
+          {budget ? (
+            <> in budget range <span className="font-bold text-ink-950">{budget.replace("-", " – ₹")}</span></>
           ) : null}
           {query ? (
             <> for &ldquo;<span className="font-bold text-ink-950">{query}</span>&rdquo;</>
@@ -93,7 +102,11 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
       ) : (
         <section className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {filtered.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard
+              key={product.id}
+              product={product}
+              categoryName={categoryLabelFromList(categories, product.category)}
+            />
           ))}
         </section>
       )}

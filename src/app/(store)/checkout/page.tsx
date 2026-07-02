@@ -13,9 +13,55 @@ const inputClass =
 export default function CheckoutPage() {
   const { cartItems, subtotal, clearCart } = useCart();
   const [placed, setPlaced] = useState(false);
+  const [orderNumber, setOrderNumber] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
-  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setSubmitting(true);
+    setError("");
+
+    const form = new FormData(event.currentTarget);
+    const customer = {
+      name: String(form.get("name") ?? ""),
+      email: String(form.get("email") ?? ""),
+      phone: String(form.get("phone") ?? ""),
+      address: String(form.get("address") ?? ""),
+    };
+    const notes = String(form.get("notes") ?? "");
+
+    const res = await fetch("/api/orders", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        customer,
+        notes: notes || undefined,
+        subtotal,
+        items: cartItems.map((item) => ({
+          product: {
+            id: item.product.id,
+            name: item.product.name,
+            slug: item.product.slug,
+          },
+          quantity: item.quantity,
+          selectedSize: item.selectedSize,
+          selectedFinish: item.selectedFinish,
+          selectedUnits: item.selectedUnits,
+          unitPrice: item.unitPrice,
+        })),
+      }),
+    });
+
+    setSubmitting(false);
+
+    if (!res.ok) {
+      setError("Could not place order. Please call us directly.");
+      return;
+    }
+
+    const data = (await res.json()) as { orderNumber: string };
+    setOrderNumber(data.orderNumber);
     setPlaced(true);
     clearCart();
   };
@@ -30,6 +76,11 @@ export default function CheckoutPage() {
         <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl font-extrabold text-ink-950">
           Order received
         </h1>
+        {orderNumber ? (
+          <p className="mt-3 text-sm font-bold text-ink-700">
+            Order reference: <span className="text-brand-700">{orderNumber}</span>
+          </p>
+        ) : null}
         <p className="mt-4 text-ink-500">
           Our team will verify artwork and contact you on{" "}
           <span className="font-bold text-ink-950">+91 91647 79922</span> to confirm finishing and timeline.
@@ -57,8 +108,13 @@ export default function CheckoutPage() {
               placeholder="Order notes (design links, deadlines, branding instructions)"
               className={`${inputClass} h-28`}
             />
-            <button type="submit" disabled={cartItems.length === 0} className="btn-primary w-full py-4 disabled:opacity-50">
-              Place order
+            {error ? <p className="text-sm font-semibold text-red-600">{error}</p> : null}
+            <button
+              type="submit"
+              disabled={cartItems.length === 0 || submitting}
+              className="btn-primary w-full py-4 disabled:opacity-50"
+            >
+              {submitting ? "Placing order…" : "Place order"}
             </button>
           </form>
         </section>

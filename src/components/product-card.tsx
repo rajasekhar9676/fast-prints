@@ -1,4 +1,3 @@
-import { categories } from "@/data/categories";
 import { formatINR } from "@/lib/currency";
 import type { Product } from "@/types/product";
 import Image from "next/image";
@@ -7,13 +6,10 @@ import { ArrowRight, Star } from "lucide-react";
 
 type ProductCardProps = {
   product: Product;
+  categoryName?: string;
 };
 
-function categoryName(id: string) {
-  return categories.find((c) => c.id === id)?.name ?? id;
-}
-
-export function ProductCard({ product }: ProductCardProps) {
+export function ProductCard({ product, categoryName }: ProductCardProps) {
   return (
     <article className="card-premium group flex h-full flex-col overflow-hidden">
       <Link href={`/products/${product.slug}`} className="relative block aspect-[4/3] overflow-hidden bg-gradient-to-br from-white via-brand-50/20 to-ink-50 p-3">
@@ -41,7 +37,7 @@ export function ProductCard({ product }: ProductCardProps) {
       </Link>
       <div className="flex flex-1 flex-col gap-2.5 p-5">
         <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-brand-600">
-          {categoryName(product.category)}
+          {categoryName ?? product.category}
         </p>
         <Link href={`/products/${product.slug}`}>
           <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold leading-snug text-ink-950 group-hover:text-brand-700">
@@ -59,6 +55,7 @@ export function ProductCard({ product }: ProductCardProps) {
           </p>
         ) : null}
         <div className="flex items-center justify-between gap-3 pt-1">
+          <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-ink-400">Starts at</p>
           <p className="font-[family-name:var(--font-display)] text-xl font-extrabold text-ink-950">
             {formatINR(product.basePrice)}
           </p>

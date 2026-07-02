@@ -4,12 +4,13 @@ import { CategoryNavStrip } from "@/components/category-nav-strip";
 import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "@/context/cart-context";
-import { categories } from "@/data/categories";
-import { Menu, Phone, Search, ShoppingBag, X, Zap } from "lucide-react";
+import { useStoreData } from "@/context/store-data-context";
+import { Menu, Phone, Search, ShoppingBag, X, Zap, Building2 } from "lucide-react";
 import { useMemo, useState } from "react";
 
 export function SiteHeader() {
   const { totalItems } = useCart();
+  const { settings, categories } = useStoreData();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [query, setQuery] = useState("");
 
@@ -23,7 +24,7 @@ export function SiteHeader() {
       {/* Promo strip */}
       <div className="flex items-center justify-center gap-2 bg-gradient-to-r from-brand-400 via-brand-500 to-brand-600 py-2.5 text-center text-xs font-bold text-ink-950 sm:text-sm">
         <Zap className="h-3.5 w-3.5 shrink-0" aria-hidden />
-        Same day delivery in Bengaluru · Pickup at BTM 2nd Stage · +91 91647 79922
+        {settings.promoText}
       </div>
 
       {/* Main bar */}
@@ -60,6 +61,13 @@ export function SiteHeader() {
           </div>
 
           <div className="ml-auto flex items-center gap-2">
+            <Link
+              href="/corporate"
+              className="hidden items-center gap-1.5 rounded-xl border border-brand-300/60 bg-brand-50 px-3 py-2 text-sm font-bold text-ink-900 transition hover:border-brand-400 hover:bg-brand-100 md:inline-flex"
+            >
+              <Building2 className="h-4 w-4 text-brand-700" aria-hidden />
+              Corporate
+            </Link>
             <a
               href="tel:+919164779922"
               className="hidden items-center gap-1.5 rounded-xl px-3 py-2 text-sm font-semibold text-ink-600 transition hover:bg-ink-50 hover:text-ink-950 md:inline-flex"
@@ -115,14 +123,15 @@ export function SiteHeader() {
           </div>
           <nav className="flex flex-col gap-1">
             {[
-              { href: "/products", label: "All products", bold: true },
+              { href: "/corporate", label: "Corporate & bulk", bold: true },
+              { href: "/products", label: "All products" },
               { href: "/services", label: "Services" },
               { href: "/contact", label: "Contact" },
             ].map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`rounded-xl px-4 py-3 ${link.bold ? "font-bold text-ink-950 hover:bg-brand-50" : "font-semibold text-ink-700 hover:bg-ink-50"}`}
+                className={`rounded-xl px-4 py-3 ${link.bold ? "bg-ink-950 font-bold text-white hover:bg-ink-800" : "font-semibold text-ink-700 hover:bg-ink-50"}`}
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}

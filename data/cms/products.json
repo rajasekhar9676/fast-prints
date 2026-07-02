@@ -1,0 +1,662 @@
+[
+  {
+    "id": "p1",
+    "slug": "visiting-cards",
+    "name": "Visiting Cards",
+    "shortDescription": "Standard, classic & square · 300gsm texture boards with round corners.",
+    "description": "Premium visiting cards on 300gsm texture boards with round corner cutting. Standard size 89mm × 51mm. Upload print-ready artwork or brief our design desk.",
+    "basePrice": 499,
+    "turnaround": "24–48 hrs",
+    "image": "/images/visiting-cards.png",
+    "gallery": [
+      "/images/visiting-cards.png"
+    ],
+    "category": "business-essentials",
+    "popular": true,
+    "bestseller": true,
+    "badge": "Best Seller",
+    "rating": 4.9,
+    "reviewCount": 128,
+    "highlights": [
+      "Round corner cutting",
+      "300gsm texture boards",
+      "89mm × 51mm standard"
+    ],
+    "options": {
+      "sizes": [
+        "Standard 89×51mm",
+        "Square 2.5 in"
+      ],
+      "finishes": [
+        "Matte",
+        "Glossy",
+        "Velvet Touch"
+      ],
+      "quantities": [
+        100,
+        250,
+        500,
+        1000
+      ]
+    }
+  },
+  {
+    "id": "p2",
+    "slug": "letterheads",
+    "name": "Letter Heads",
+    "shortDescription": "A4 · 100gsm bond · 1 or 2 colour corporate letterheads.",
+    "description": "Matched corporate letterheads on 100gsm bond paper. A4 size 210mm × 297mm with consistent brand colour across reprints.",
+    "basePrice": 899,
+    "turnaround": "2–3 days",
+    "image": "/images/letterheads-agrya.png",
+    "gallery": [
+      "/images/letterheads-agrya.png",
+      "/images/letterheads-corporate.png"
+    ],
+    "category": "business-essentials",
+    "popular": true,
+    "highlights": [
+      "A4 · 100gsm bond",
+      "1 & 2 colour print",
+      "Brand colour matching"
+    ],
+    "options": {
+      "sizes": [
+        "A4 Letterhead"
+      ],
+      "finishes": [
+        "100gsm Bond",
+        "Laid Texture"
+      ],
+      "quantities": [
+        100,
+        250,
+        500,
+        1000
+      ]
+    }
+  },
+  {
+    "id": "p3",
+    "slug": "envelopes",
+    "name": "Envelopes",
+    "shortDescription": "100gsm sunshine white · multiple sizes with custom print.",
+    "description": "Custom printed envelopes on 100gsm sunshine white paper. Sizes from 6×4 in to 12×18 in for corporate and retail use.",
+    "basePrice": 699,
+    "turnaround": "2–4 days",
+    "image": "/images/envelopes.png",
+    "category": "business-essentials",
+    "highlights": [
+      "100gsm sunshine white",
+      "Multiple standard sizes",
+      "Window & plain options"
+    ],
+    "options": {
+      "sizes": [
+        "6×4\"",
+        "7×4\"",
+        "9.5×4.5\"",
+        "9×6\"",
+        "10×12\"",
+        "12×18\""
+      ],
+      "finishes": [
+        "Sunshine White",
+        "Kraft"
+      ],
+      "quantities": [
+        100,
+        250,
+        500,
+        1000
+      ]
+    }
+  },
+  {
+    "id": "p4",
+    "slug": "multi-color-pamphlets",
+    "name": "Multi Color Pamphlets",
+    "shortDescription": "A5, A4 & A3 · 90–300gsm art paper · vivid campaign colour.",
+    "description": "Full-colour pamphlets and flyers on art paper from 90gsm to 300gsm. Ideal for promotions, menus, and event handouts.",
+    "basePrice": 699,
+    "turnaround": "Same-day (select qty)",
+    "image": "/images/pamphlet-multicolor.png",
+    "gallery": [
+      "/images/pamphlet-multicolor.png",
+      "/images/pamphlet-grocery.png"
+    ],
+    "category": "marketing-materials",
+    "popular": true,
+    "bestseller": true,
+    "badge": "Popular",
+    "rating": 4.8,
+    "reviewCount": 94,
+    "highlights": [
+      "A5 / A4 / A3 sizes",
+      "90–300gsm art paper",
+      "Same-day rush available"
+    ],
+    "options": {
+      "sizes": [
+        "A5",
+        "A4",
+        "A3"
+      ],
+      "finishes": [
+        "90gsm",
+        "130gsm",
+        "170gsm",
+        "220gsm",
+        "300gsm Art"
+      ],
+      "quantities": [
+        250,
+        500,
+        1000,
+        2500
+      ]
+    }
+  },
+  {
+    "id": "p5",
+    "slug": "pamphlet-print",
+    "name": "Pamphlet Print",
+    "shortDescription": "A4 white or colour paper · 1 or 2 colour print options.",
+    "description": "Economical pamphlet printing on A4 white or colour stock. Single or two-colour print for invitations, notices, and local campaigns.",
+    "basePrice": 399,
+    "turnaround": "Same-day pickup",
+    "image": "/images/pamphlet-invitation.png",
+    "gallery": [
+      "/images/pamphlet-invitation.png",
+      "/images/pamphlet-grocery.png"
+    ],
+    "category": "marketing-materials",
+    "highlights": [
+      "A4 white / colour paper",
+      "1 & 2 colour print",
+      "Invitation layouts"
+    ],
+    "options": {
+      "sizes": [
+        "A4 Single-sided",
+        "A4 Duplex"
+      ],
+      "finishes": [
+        "White Paper",
+        "Colour Paper"
+      ],
+      "quantities": [
+        100,
+        250,
+        500,
+        1000
+      ]
+    }
+  },
+  {
+    "id": "p6",
+    "slug": "bulk-multicolor-print",
+    "name": "Multi Color Bulk Print",
+    "shortDescription": "A4 & A3 bulk runs · different pages per sheet.",
+    "description": "High-volume multicolour digital printing for catalogues, manuals, and mixed-page documents. A4 and A3 sizes with consistent registration.",
+    "basePrice": 299,
+    "turnaround": "Same-day pickup",
+    "image": "/images/bulk-multicolor-print.png",
+    "category": "marketing-materials",
+    "popular": true,
+    "highlights": [
+      "A4 & A3 bulk runs",
+      "Mixed page documents",
+      "Consistent colour"
+    ],
+    "options": {
+      "sizes": [
+        "A4",
+        "A3"
+      ],
+      "finishes": [
+        "100 gsm",
+        "120 gsm"
+      ],
+      "quantities": [
+        100,
+        250,
+        500,
+        1000
+      ]
+    }
+  },
+  {
+    "id": "p7",
+    "slug": "wall-signage-printing",
+    "name": "Wall Signage & Murals",
+    "shortDescription": "Large-format indoor wall graphics & brand murals.",
+    "description": "Vivid UV and vinyl wall wraps for retail, cafes, and offices. Full-colour graphics with professional installation guidance.",
+    "basePrice": 4999,
+    "turnaround": "4–7 days",
+    "image": "/images/signage-wall-mural.png",
+    "category": "large-format",
+    "popular": true,
+    "bestseller": true,
+    "rating": 4.9,
+    "reviewCount": 41,
+    "highlights": [
+      "Indoor wall wraps",
+      "Retail & cafe branding",
+      "Custom dimensions"
+    ],
+    "options": {
+      "sizes": [
+        "Per sq ft quote",
+        "Custom wall size"
+      ],
+      "finishes": [
+        "Matt Vinyl",
+        "Gloss Vinyl"
+      ],
+      "quantities": [
+        1,
+        2,
+        5
+      ]
+    }
+  },
+  {
+    "id": "p8",
+    "slug": "digital-signages",
+    "name": "Digital Print & Signages",
+    "shortDescription": "Offset, digital, banners, 3D LED & wide format under one roof.",
+    "description": "Complete signage solutions — digital print, offset, multicolour, banners, 3D LED signage, ID cards, mugs, photo print, and T-shirt print.",
+    "basePrice": 999,
+    "turnaround": "2–5 days",
+    "image": "/images/services-overview.png",
+    "category": "large-format",
+    "highlights": [
+      "Digital & offset",
+      "Banners & 3D LED",
+      "Full-service print shop"
+    ],
+    "options": {
+      "sizes": [
+        "Consult for size"
+      ],
+      "finishes": [
+        "Indoor",
+        "Outdoor"
+      ],
+      "quantities": [
+        1,
+        2,
+        5,
+        10
+      ]
+    }
+  },
+  {
+    "id": "p9",
+    "slug": "photo-print",
+    "name": "Photo Print",
+    "shortDescription": "Sizes from 6\"×4\" up to 12\"×18\" · vivid photo reproduction.",
+    "description": "High-quality photo prints on premium photo paper. Sizes: 6×4, 5×7, 6×8, 8×10, 8×12, and 12×18 inches with accurate colour.",
+    "basePrice": 49,
+    "turnaround": "Same-day",
+    "image": "/images/photo-print.png",
+    "category": "photo-gifts",
+    "bestseller": true,
+    "rating": 4.9,
+    "reviewCount": 203,
+    "badge": "Top Pick",
+    "highlights": [
+      "Multiple standard sizes",
+      "Archival photo paper",
+      "Same-day pickup"
+    ],
+    "options": {
+      "sizes": [
+        "6×4\"",
+        "5×7\"",
+        "6×8\"",
+        "8×10\"",
+        "8×12\"",
+        "12×18\""
+      ],
+      "finishes": [
+        "Gloss",
+        "Matt"
+      ],
+      "quantities": [
+        1,
+        5,
+        10,
+        25
+      ]
+    }
+  },
+  {
+    "id": "p10",
+    "slug": "passport-photo-print",
+    "name": "Passport Photo Print",
+    "shortDescription": "6\"×4\" sheet · 8 passport-size photos per sheet.",
+    "description": "Standard passport photo sheets — 6×4 inch with 8 photos per sheet. Ready for visa, ID, and official applications.",
+    "basePrice": 99,
+    "turnaround": "Same-day",
+    "image": "/images/passport-photos.png",
+    "category": "photo-gifts",
+    "popular": true,
+    "highlights": [
+      "6\"×4\" · 8 photos",
+      "Instant print",
+      "BTM walk-in"
+    ],
+    "options": {
+      "sizes": [
+        "6×4\" · 8 nos"
+      ],
+      "finishes": [
+        "Gloss Photo Paper"
+      ],
+      "quantities": [
+        1,
+        2,
+        5,
+        10
+      ]
+    }
+  },
+  {
+    "id": "p11",
+    "slug": "wall-calendars",
+    "name": "Wall Calendar Printing",
+    "shortDescription": "12\"×18\" · 6 pages · wiro bind with hanging hook.",
+    "description": "Customized wall calendars with your photos. Digital multicolour print, 6 pages, 12×18 in, top wiro bind with hanging — upload your images month-wise.",
+    "basePrice": 2199,
+    "turnaround": "5–8 days",
+    "image": "/images/calendar-wall.png",
+    "category": "stationery",
+    "popular": true,
+    "highlights": [
+      "Custom photo pages",
+      "Wiro bind + hanging",
+      "12\"×18\" format"
+    ],
+    "options": {
+      "sizes": [
+        "12×18\" Wall"
+      ],
+      "finishes": [
+        "Gloss",
+        "Silk"
+      ],
+      "quantities": [
+        25,
+        50,
+        100,
+        250
+      ]
+    }
+  },
+  {
+    "id": "p12",
+    "slug": "desk-calendars",
+    "name": "Table Top Calendar",
+    "shortDescription": "Customized desk calendar · 6 pages multicolour print.",
+    "description": "Table-top tent calendars with your brand or personal photos. Digital multicolour, wiro bound — perfect for corporate gifting.",
+    "basePrice": 1799,
+    "turnaround": "5–7 days",
+    "image": "/images/calendar-tabletop.png",
+    "category": "stationery",
+    "highlights": [
+      "Desk tent format",
+      "Custom photo pages",
+      "Corporate gifting"
+    ],
+    "options": {
+      "sizes": [
+        "7×5 in tent",
+        "8×6 in tent"
+      ],
+      "finishes": [
+        "Gloss",
+        "Silk"
+      ],
+      "quantities": [
+        25,
+        50,
+        100,
+        250
+      ]
+    }
+  },
+  {
+    "id": "p13",
+    "slug": "receipt-books",
+    "name": "Receipt Books",
+    "shortDescription": "A4 · 100gsm white · multicolour numbered receipts.",
+    "description": "Custom receipt books on A4 100gsm white paper with multicolour print. Numbered duplicates for shops, temples, and small businesses.",
+    "basePrice": 899,
+    "turnaround": "3–5 days",
+    "image": "/images/receipt-books.png",
+    "category": "stationery",
+    "highlights": [
+      "A4 · 100gsm white",
+      "Multicolour print",
+      "Numbered duplicates"
+    ],
+    "options": {
+      "sizes": [
+        "A4 Book"
+      ],
+      "finishes": [
+        "Duplicate",
+        "Triplicate"
+      ],
+      "quantities": [
+        10,
+        25,
+        50,
+        100
+      ]
+    }
+  },
+  {
+    "id": "p14",
+    "slug": "invoice-bill-books",
+    "name": "Invoice Bill Books",
+    "shortDescription": "Custom invoice & bill books for retail and services.",
+    "description": "Professional invoice bill books with your business name, GST details, and sequential numbering. Bulk orders with doorstep delivery across India.",
+    "basePrice": 799,
+    "turnaround": "3–5 days",
+    "image": "/images/invoice-books.png",
+    "category": "stationery",
+    "highlights": [
+      "GST-ready layouts",
+      "Sequential numbering",
+      "Bulk pricing"
+    ],
+    "options": {
+      "sizes": [
+        "A5 Book",
+        "A4 Book"
+      ],
+      "finishes": [
+        "Duplicate",
+        "Triplicate"
+      ],
+      "quantities": [
+        10,
+        25,
+        50,
+        100
+      ]
+    }
+  },
+  {
+    "id": "p15",
+    "slug": "id-cards",
+    "name": "ID Cards",
+    "shortDescription": "86mm × 54mm · office, school & membership IDs.",
+    "description": "PVC and laminated ID cards for offices, schools, and clubs. Standard CR80 size 86mm × 54mm with photo, barcode, and lanyard slot options.",
+    "basePrice": 149,
+    "turnaround": "2–4 days",
+    "image": "/images/id-cards.png",
+    "gallery": [
+      "/images/id-cards.png",
+      "/images/id-card-lanyard-set.png"
+    ],
+    "category": "business-essentials",
+    "bestseller": true,
+    "badge": "Popular",
+    "highlights": [
+      "Office & school IDs",
+      "86mm × 54mm standard",
+      "Lanyard combo available"
+    ],
+    "options": {
+      "sizes": [
+        "86×54mm Standard"
+      ],
+      "finishes": [
+        "PVC",
+        "Laminated"
+      ],
+      "quantities": [
+        25,
+        50,
+        100,
+        250
+      ]
+    }
+  },
+  {
+    "id": "p16",
+    "slug": "lanyards",
+    "name": "Lanyard (Tag) Print",
+    "shortDescription": "12mm · 16mm · 20mm multicolour satin lanyards.",
+    "description": "Branded lanyards for office IDs, school IDs, and events. Multicolour satin print in 12mm, 16mm, and 20mm widths with metal hooks.",
+    "basePrice": 89,
+    "turnaround": "3–5 days",
+    "image": "/images/lanyards.png",
+    "category": "business-essentials",
+    "highlights": [
+      "12 / 16 / 20 mm widths",
+      "Multicolour satin",
+      "Metal swivel hooks"
+    ],
+    "options": {
+      "sizes": [
+        "12mm",
+        "16mm",
+        "20mm"
+      ],
+      "finishes": [
+        "Satin Print"
+      ],
+      "quantities": [
+        50,
+        100,
+        250,
+        500
+      ]
+    }
+  },
+  {
+    "id": "p17",
+    "slug": "id-card-lanyard-combo",
+    "name": "ID Card + Lanyard Combo",
+    "shortDescription": "Complete identity kit — printed card with branded lanyard.",
+    "description": "Bundle office or school ID cards with matching lanyards. One order, one proof, ready to issue to your team or students.",
+    "basePrice": 199,
+    "turnaround": "4–6 days",
+    "image": "/images/id-card-lanyard-set.png",
+    "category": "business-essentials",
+    "newLaunch": true,
+    "badge": "Combo",
+    "highlights": [
+      "Card + lanyard bundle",
+      "Bulk corporate pricing",
+      "Design assist"
+    ],
+    "options": {
+      "sizes": [
+        "Standard combo"
+      ],
+      "finishes": [
+        "PVC + Satin Lanyard"
+      ],
+      "quantities": [
+        25,
+        50,
+        100,
+        250
+      ]
+    }
+  },
+  {
+    "id": "p18",
+    "slug": "presentation-envelopes",
+    "name": "Presentation Envelopes",
+    "shortDescription": "7×4\" · 100gsm sunshine white · royal texture options.",
+    "description": "Elegant presentation envelopes for gifts, awards, and invitations. 100gsm sunshine white or royal texture paper with floral or custom print.",
+    "basePrice": 599,
+    "turnaround": "3–5 days",
+    "image": "/images/presentation-envelopes.png",
+    "gallery": [
+      "/images/presentation-envelopes.png",
+      "/images/presentation-envelopes-gift.png"
+    ],
+    "category": "packaging",
+    "highlights": [
+      "7×4\" standard",
+      "Sunshine white / texture",
+      "Gift & award envelopes"
+    ],
+    "options": {
+      "sizes": [
+        "7×4\""
+      ],
+      "finishes": [
+        "Sunshine White",
+        "Royal Texture"
+      ],
+      "quantities": [
+        50,
+        100,
+        250,
+        500
+      ]
+    }
+  },
+  {
+    "id": "p19",
+    "slug": "smart-keychains",
+    "name": "Smart Keychains",
+    "shortDescription": "Personalised & branding keychains · bulk from ₹14/pc.",
+    "description": "Fabric and metal keychains with your logo — personalised, vehicle, and branding styles. Includes envelope print & packing. Delivery across India.",
+    "basePrice": 149,
+    "turnaround": "5–7 days",
+    "image": "/images/smart-keychains.png",
+    "category": "marketing-materials",
+    "newLaunch": true,
+    "badge": "New",
+    "highlights": [
+      "From 100 qty",
+      "Logo packing option",
+      "Pan-India courier"
+    ],
+    "options": {
+      "sizes": [
+        "40mm round",
+        "50mm round"
+      ],
+      "finishes": [
+        "Fabric",
+        "Metal"
+      ],
+      "quantities": [
+        100,
+        500,
+        1000
+      ]
+    }
+  }
+]

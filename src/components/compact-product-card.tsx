@@ -40,15 +40,18 @@ export function CompactProductCard({ product }: CompactProductCardProps) {
           <h3 className="line-clamp-2 min-h-[2.5rem] text-sm font-bold leading-snug text-ink-900 group-hover:text-brand-700">
             {product.name}
           </h3>
-          {product.rating ? (
-            <p className="flex items-center gap-1 text-xs">
-              <Star className="h-3 w-3 fill-brand-500 text-brand-500" aria-hidden />
-              <span className="font-bold text-ink-800">{product.rating}</span>
+          <p className="text-[10px] font-bold uppercase tracking-wide text-ink-400">Starts at</p>
+          <div className="flex items-end justify-between gap-2">
+            <p className="font-[family-name:var(--font-display)] text-lg font-extrabold text-ink-950">
+              {formatINR(product.basePrice)}
             </p>
-          ) : null}
-          <p className="font-[family-name:var(--font-display)] text-lg font-extrabold text-ink-950">
-            {formatINR(product.basePrice)}
-          </p>
+            {product.rating ? (
+              <p className="flex items-center gap-1 text-xs">
+                <Star className="h-3 w-3 fill-brand-500 text-brand-500" aria-hidden />
+                <span className="font-bold text-ink-700">{product.rating}</span>
+              </p>
+            ) : null}
+          </div>
         </div>
       </article>
     </Link>

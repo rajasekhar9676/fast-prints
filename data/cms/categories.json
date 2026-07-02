@@ -1,0 +1,58 @@
+[
+  {
+    "id": "business-essentials",
+    "name": "Business Essentials",
+    "tagline": "Cards, letterheads & IDs",
+    "image": "/images/visiting-cards.png",
+    "iconColor": "bg-brand-500"
+  },
+  {
+    "id": "marketing-materials",
+    "name": "Marketing Materials",
+    "tagline": "Pamphlets, flyers & keychains",
+    "image": "/images/pamphlet-multicolor.png",
+    "iconColor": "bg-amber-600"
+  },
+  {
+    "id": "large-format",
+    "name": "Large Format",
+    "tagline": "Signages & wall graphics",
+    "image": "/images/signage-wall-mural.png",
+    "iconColor": "bg-violet-600"
+  },
+  {
+    "id": "packaging",
+    "name": "Packaging",
+    "tagline": "Presentation envelopes",
+    "image": "/images/presentation-envelopes.png",
+    "iconColor": "bg-rose-600"
+  },
+  {
+    "id": "apparel",
+    "name": "Apparel & Merch",
+    "tagline": "T-shirts & branded items",
+    "image": "/images/services-overview.png",
+    "iconColor": "bg-sky-600"
+  },
+  {
+    "id": "photo-gifts",
+    "name": "Photo Gifts",
+    "tagline": "Photo & passport prints",
+    "image": "/images/photo-print.png",
+    "iconColor": "bg-orange-600"
+  },
+  {
+    "id": "stationery",
+    "name": "Stationery",
+    "tagline": "Calendars, receipts & bills",
+    "image": "/images/receipt-books.png",
+    "iconColor": "bg-teal-600"
+  },
+  {
+    "id": "events",
+    "name": "Events & Invitations",
+    "tagline": "Invites & special print",
+    "image": "/images/pamphlet-invitation.png",
+    "iconColor": "bg-fuchsia-600"
+  }
+]

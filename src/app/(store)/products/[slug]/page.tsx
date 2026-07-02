@@ -1,6 +1,5 @@
 import { ProductConfigurator } from "@/components/product-configurator";
-import { categories } from "@/data/categories";
-import { products } from "@/data/products";
+import { categoryLabelFromList, getCategories, getProductBySlug } from "@/lib/cms/queries";
 import { formatINR } from "@/lib/currency";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,17 +12,15 @@ type ProductDetailPageProps = {
   }>;
 };
 
-function categoryTitle(id: string) {
-  return categories.find((c) => c.id === id)?.name ?? id;
-}
-
 export default async function ProductDetailPage({ params }: ProductDetailPageProps) {
   const { slug } = await params;
-  const product = products.find((item) => item.slug === slug);
+  const [product, categories] = await Promise.all([getProductBySlug(slug), getCategories()]);
 
   if (!product) {
     notFound();
   }
+
+  const categoryTitle = categoryLabelFromList(categories, product.category);
 
   return (
     <div className="space-y-10 pb-8">
@@ -37,7 +34,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
         </Link>
         <ChevronRight className="h-4 w-4 text-ink-400" aria-hidden />
         <Link href={`/products?category=${product.category}`} className="hover:text-ink-950">
-          {categoryTitle(product.category)}
+          {categoryTitle}
         </Link>
         <ChevronRight className="h-4 w-4 text-ink-400" aria-hidden />
         <span className="font-medium text-ink-950">{product.name}</span>
@@ -66,7 +63,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
           ) : null}
 
           <div className="space-y-4">
-            <p className="text-xs font-bold uppercase tracking-[0.12em] text-brand-600">{categoryTitle(product.category)}</p>
+            <p className="text-xs font-bold uppercase tracking-[0.12em] text-brand-600">{categoryTitle}</p>
             <h1 className="font-[family-name:var(--font-display)] text-3xl font-extrabold leading-tight text-ink-950 md:text-4xl">
               {product.name}
             </h1>
