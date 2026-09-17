@@ -1,0 +1,122 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+// PostgreSQL — local pgAdmin database: fastprints
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(uuid())
+  name         String
+  email        String   @unique
+  phone        String
+  address      String
+  passwordHash String
+  createdAt    DateTime @default(now())
+  orders       Order[]
+}
+
+model Category {
+  id        String @id
+  name      String
+  tagline   String
+  image     String
+  iconColor String
+}
+
+model Product {
+  id               String  @id
+  slug             String  @unique
+  name             String
+  shortDescription String
+  description      String
+  basePrice        Float
+  turnaround       String
+  image            String
+  gallery          Json?
+  category         String
+  popular          Boolean @default(false)
+  bestseller       Boolean @default(false)
+  newLaunch        Boolean @default(false)
+  badge            String?
+  rating           Float?
+  reviewCount      Int?
+  highlights       Json?
+  options          Json
+}
+
+model Service {
+  id          String @id
+  name        String
+  description String
+  category    String
+  icon        String
+}
+
+model Order {
+  id                String      @id @default(uuid())
+  orderNumber       String      @unique
+  createdAt         DateTime    @default(now())
+  status            String
+  paymentStatus     String      @default("pending")
+  userId            String?
+  user              User?       @relation(fields: [userId], references: [id], onDelete: SetNull)
+  razorpayOrderId   String?
+  razorpayPaymentId String?
+  paidAt            DateTime?
+  customerName      String
+  customerEmail     String
+  customerPhone     String
+  customerAddress   String
+  notes             String?
+  subtotal          Float
+  items             OrderItem[]
+}
+
+model OrderItem {
+  id             String @id @default(uuid())
+  orderId        String
+  order          Order  @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId      String
+  productName    String
+  productSlug    String
+  quantity       Int
+  selectedSize   String
+  selectedFinish String
+  selectedUnits  Int
+  unitPrice      Float
+  lineTotal      Float
+}
+
+model SiteSettings {
+  id           String @id @default("default")
+  businessName String
+  phone        String
+  email        String
+  whatsapp     String
+  website      String
+  promoText    String
+  addressLines Json
+  mapEmbedUrl  String
+  parkingNote  String
+}
+
+model CmsDocument {
+  id      String @id
+  content Json
+}
+
+model CorporateInquiry {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  name      String
+  phone     String
+  email     String
+  company   String?
+  product   String
+  quantity  String
+  notes     String?
+}

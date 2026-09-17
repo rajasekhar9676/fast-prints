@@ -1,39 +1,41 @@
 import Image from "next/image";
 import Link from "next/link";
-import { shopByNeeds } from "@/data/shop-needs";
-import { SectionHeader } from "@/components/section-header";
+import type { ShopNeedItem } from "@/types/cms-content";
 
-export function ShopByNeedRail() {
+export function ShopByNeedRail({ needs }: { needs: ShopNeedItem[] }) {
+  if (!needs.length) return null;
+
   return (
     <section>
-      <SectionHeader
-        eyebrow="Find your fit"
-        title="Who are you printing for?"
-        subtitle="Choose a scenario — we surface the right products for your business or occasion"
-        seeAllHref="/products"
-      />
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 lg:gap-4">
-        {shopByNeeds.map((need) => (
+      <div className="mb-4 flex items-end justify-between">
+        <div>
+          <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-brand-700">For your business</p>
+          <h2 className="mt-1 font-[family-name:var(--font-display)] text-xl font-extrabold text-ink-950">Shop by need</h2>
+        </div>
+        <Link href="/products" className="text-sm font-bold text-ink-500 hover:text-ink-950">
+          Browse all
+        </Link>
+      </div>
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+        {needs.slice(0, 4).map((need) => (
           <Link
             key={need.id}
             href={need.href}
-            className="group overflow-hidden rounded-2xl border border-ink-100 bg-white shadow-sm transition hover:-translate-y-1 hover:border-brand-200 hover:shadow-lg"
+            className="group relative aspect-[4/5] overflow-hidden rounded-[1.4rem] bg-[#1c1914] shadow-sm"
           >
-            <div className="relative aspect-[5/4] overflow-hidden bg-gradient-to-b from-brand-50/40 to-white">
-              <Image
-                src={need.image}
-                alt={need.title}
-                fill
-                className="object-contain object-center p-4 transition duration-500 group-hover:scale-105"
-                sizes="(max-width: 640px) 50vw, 25vw"
-              />
-            </div>
-            <div className="border-t border-ink-50 px-4 py-3.5">
-              <p className="text-sm font-extrabold text-ink-950 group-hover:text-brand-700">{need.title}</p>
-              <p className="mt-0.5 text-xs font-semibold text-brand-600 opacity-0 transition group-hover:opacity-100">
-                Explore →
-              </p>
-            </div>
+            <Image
+              src={need.image}
+              alt=""
+              fill
+              className="object-contain p-5 transition duration-500 group-hover:scale-105"
+              sizes="(max-width: 768px) 50vw, 25vw"
+            />
+            <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/35 to-transparent px-4 pb-4 pt-16">
+              <span className="block text-base font-extrabold text-white">{need.title}</span>
+              <span className="mt-1 block text-xs font-semibold text-brand-300 opacity-0 transition group-hover:opacity-100">
+                Shop now →
+              </span>
+            </span>
           </Link>
         ))}
       </div>

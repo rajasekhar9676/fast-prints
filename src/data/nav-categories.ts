@@ -5,9 +5,8 @@ export type NavCategory = {
 };
 
 export const navCategories: NavCategory[] = [
-  { label: "Corporate & Bulk", href: "/corporate", highlight: true },
-  { label: "All Products", href: "/products" },
-  { label: "Same Day Delivery", href: "/products?q=same-day" },
+  { label: "All Products", href: "/products", highlight: true },
+  { label: "Same Day", href: "/products?q=same-day" },
   { label: "Visiting Cards", href: "/products?category=business-essentials" },
   { label: "Apparel", href: "/products?category=apparel" },
   { label: "Photo Gifts", href: "/products?category=photo-gifts" },
@@ -16,4 +15,5 @@ export const navCategories: NavCategory[] = [
   { label: "Standees & Signage", href: "/products?category=large-format" },
   { label: "Marketing", href: "/products?category=marketing-materials" },
   { label: "Events", href: "/products?category=events" },
+  { label: "Corporate", href: "/corporate" },
 ];

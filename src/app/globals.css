@@ -36,10 +36,7 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--color-surface);
-  background-image:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(245, 180, 22, 0.12), transparent),
-    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(245, 180, 22, 0.06), transparent);
+  background-color: #ffffff;
 }
 
 /* ── Buttons ── */

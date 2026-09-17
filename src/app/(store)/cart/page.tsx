@@ -2,11 +2,14 @@
 
 import { SectionHeader } from "@/components/section-header";
 import { useCart } from "@/context/cart-context";
+import { useRequireCustomerLogin } from "@/context/customer-auth-context";
 import { formatINR } from "@/lib/currency";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function CartPage() {
   const { cartItems, removeFromCart, subtotal } = useCart();
+  const { gate, loading } = useRequireCustomerLogin();
 
   return (
     <div className="space-y-10 pb-10">
@@ -29,7 +32,17 @@ export default function CartPage() {
           {cartItems.map((item) => (
             <article key={item.id} className="card-premium p-6">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                <div className="space-y-2">
+                <div className="flex gap-4">
+                  <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl border border-ink-100 bg-white">
+                    <Image
+                      src={item.product.image}
+                      alt={item.product.name}
+                      fill
+                      className="object-contain p-1.5"
+                      sizes="80px"
+                    />
+                  </div>
+                  <div className="space-y-2">
                   <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-ink-950">
                     {item.product.name}
                   </h2>
@@ -37,6 +50,7 @@ export default function CartPage() {
                     Size: {item.selectedSize} · Finish: {item.selectedFinish} · Units: {item.selectedUnits}
                   </p>
                   <p className="text-sm font-semibold text-ink-700">Lines: {item.quantity}</p>
+                  </div>
                 </div>
                 <div className="flex flex-col gap-3 sm:items-end">
                   <p className="font-[family-name:var(--font-display)] text-2xl font-extrabold text-ink-950">
@@ -57,9 +71,14 @@ export default function CartPage() {
             <p className="font-[family-name:var(--font-display)] text-2xl font-extrabold text-white">
               Subtotal: <span className="text-brand-400">{formatINR(subtotal)}</span>
             </p>
-            <Link href="/checkout" className="btn-primary inline-flex justify-center px-8 py-3.5">
-              Proceed to checkout
-            </Link>
+            <button
+              type="button"
+              disabled={loading}
+              onClick={() => gate("/checkout", () => { window.location.href = "/checkout"; })}
+              className="btn-primary inline-flex justify-center px-8 py-3.5 disabled:opacity-60"
+            >
+              {loading ? "Loading…" : "Proceed to checkout"}
+            </button>
           </div>
         </section>
       )}

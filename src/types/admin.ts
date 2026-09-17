@@ -1,6 +1,9 @@
 import type { Product, ProductCategory, Service } from "@/types/product";
 
+export type PaymentStatus = "pending" | "paid" | "failed";
+
 export type OrderStatus =
+  | "pending_payment"
   | "pending"
   | "confirmed"
   | "in_production"
@@ -25,6 +28,11 @@ export type Order = {
   orderNumber: string;
   createdAt: string;
   status: OrderStatus;
+  paymentStatus: PaymentStatus;
+  userId?: string;
+  razorpayOrderId?: string;
+  razorpayPaymentId?: string;
+  paidAt?: string;
   customer: {
     name: string;
     email: string;

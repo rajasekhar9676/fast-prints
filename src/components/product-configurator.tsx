@@ -1,12 +1,14 @@
 "use client";
 
 import { useCart } from "@/context/cart-context";
+import { useRequireCustomerLogin } from "@/context/customer-auth-context";
 import { formatINR } from "@/lib/currency";
 import type { Product } from "@/types/product";
 import { useMemo, useState } from "react";
 
 export function ProductConfigurator({ product }: { product: Product }) {
   const { addToCart } = useCart();
+  const { gate, loading } = useRequireCustomerLogin();
   const [selectedSize, setSelectedSize] = useState(product.options.sizes[0]);
   const [selectedFinish, setSelectedFinish] = useState(product.options.finishes[0]);
   const [selectedUnits, setSelectedUnits] = useState(product.options.quantities[0]);
@@ -17,13 +19,8 @@ export function ProductConfigurator({ product }: { product: Product }) {
   }, [product.basePrice, product.options.quantities, quantity, selectedUnits]);
 
   return (
-    <div className="card-premium space-y-5 p-6 md:p-7">
-      <div>
-        <p className="text-xs font-bold uppercase tracking-[0.12em] text-brand-600">Configure</p>
-        <h3 className="mt-1 font-[family-name:var(--font-display)] text-xl font-extrabold text-ink-950">
-          Customize your order
-        </h3>
-      </div>
+    <div className="space-y-4 rounded-2xl border border-ink-100 p-4 md:p-5">
+      <h3 className="text-sm font-extrabold text-ink-950">Choose options</h3>
 
       <label className="block space-y-2 text-sm">
         <span className="font-semibold text-ink-800">Size / format</span>
@@ -90,11 +87,14 @@ export function ProductConfigurator({ product }: { product: Product }) {
       <button
         type="button"
         onClick={() =>
-          addToCart({ product, quantity, selectedSize, selectedFinish, selectedUnits })
+          gate(`/products/${product.slug}`, () =>
+            addToCart({ product, quantity, selectedSize, selectedFinish, selectedUnits }),
+          )
         }
-        className="btn-primary w-full"
+        disabled={loading}
+        className="btn-primary w-full disabled:opacity-60"
       >
-        Add to cart
+        {loading ? "Loading…" : "Add to cart"}
       </button>
     </div>
   );

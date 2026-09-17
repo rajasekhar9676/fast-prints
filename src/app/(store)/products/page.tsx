@@ -1,5 +1,4 @@
 import { ProductCard } from "@/components/product-card";
-import { SectionHeader } from "@/components/section-header";
 import {
   categoryLabelFromList,
   filterProductsList,
@@ -21,14 +20,13 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
   const budget = params.budget;
 
   return (
-    <div className="space-y-10 pb-10">
-      <SectionHeader
-        eyebrow="Catalogue"
-        title="Shop print products"
-        subtitle="Configure size, finish, and quantity — starting prices for planning. Final quotes confirmed after artwork review."
-      />
+    <div className="space-y-6 pb-8">
+      <div className="flex items-end justify-between gap-4">
+        <h1 className="text-2xl font-extrabold text-ink-950">All products</h1>
+        <p className="text-sm text-ink-500">{filtered.length} items</p>
+      </div>
 
-      <div className="panel-light flex flex-col gap-4 p-5 md:p-6 lg:flex-row lg:items-center lg:justify-between">
+      <div className="panel-light flex flex-col gap-3 p-3 md:flex-row md:items-center md:justify-between">
         <div className="scrollbar-thin flex flex-wrap gap-2 overflow-x-auto">
           <Link
             href="/products"
@@ -100,7 +98,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
           </Link>
         </div>
       ) : (
-        <section className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+        <section className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
           {filtered.map((product) => (
             <ProductCard
               key={product.id}

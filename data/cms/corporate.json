@@ -1,0 +1,64 @@
+{
+  "heroEyebrow": "Corporate & bulk",
+  "heroTitle": "One partner for office print & brand collateral",
+  "heroBody": "Visiting cards, ID kits, letterheads, pamphlets, and signage — tailored to your quantity. Pricing is shared after you request a quote.",
+  "heroImage": "/images/id-card-lanyard-set.png",
+  "features": [
+    {
+      "id": "quote",
+      "title": "Bulk quote & MOQ",
+      "body": "Share quantity and specs — we respond with volume pricing, proofs, and a clear timeline. No checkout pressure."
+    },
+    {
+      "id": "brand",
+      "title": "Brand consistency",
+      "body": "Matched colours across visiting cards, letterheads, envelopes, and campaign print for one brand look."
+    },
+    {
+      "id": "artwork",
+      "title": "Artwork support",
+      "body": "Upload print-ready files or brief our desk. We review bleed, resolution, and colour before production."
+    },
+    {
+      "id": "id",
+      "title": "ID & onboarding kits",
+      "body": "Employee ID cards, lanyards, and welcome packs — ideal for HR teams and new joiner batches."
+    },
+    {
+      "id": "campaign",
+      "title": "Campaign print",
+      "body": "Pamphlets, standees, and event collateral with flexible quantities for marketing and field teams."
+    },
+    {
+      "id": "support",
+      "title": "Dedicated follow-up",
+      "body": "A named contact from our BTM team — phone, WhatsApp, and email until delivery is confirmed."
+    }
+  ],
+  "solutions": [
+    {
+      "id": "hr",
+      "title": "HR & admin",
+      "body": "ID kits, letterheads, and onboarding stationery for growing teams.",
+      "icon": "Users"
+    },
+    {
+      "id": "marketing",
+      "title": "Marketing",
+      "body": "Pamphlets, signage, and launch print with volume-friendly pricing.",
+      "icon": "BarChart3"
+    },
+    {
+      "id": "offices",
+      "title": "Offices & retail",
+      "body": "Consistent brand touchpoints across branches and store fronts.",
+      "icon": "Building2"
+    },
+    {
+      "id": "events",
+      "title": "Events & gifting",
+      "body": "Custom envelopes, calendars, and branded collateral for milestones.",
+      "icon": "Gift"
+    }
+  ]
+}

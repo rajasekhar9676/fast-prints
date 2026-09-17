@@ -48,11 +48,11 @@ export function CorporateBulkForm() {
   return (
     <form id="bulk-quote" onSubmit={onSubmit} className="panel-light space-y-4 p-6 md:p-8">
       <div>
-        <p className="text-xs font-bold uppercase tracking-[0.12em] text-brand-600">Bulk quote</p>
+        <p className="text-xs font-bold uppercase tracking-[0.12em] text-brand-600">Request demo / quote</p>
         <h2 className="mt-1 font-[family-name:var(--font-display)] text-2xl font-extrabold text-ink-950">
-          Tell us what you need
+          Tell us what your team needs
         </h2>
-        <p className="mt-2 text-sm text-ink-500">Share details — we&apos;ll reach out with pricing and samples.</p>
+        <p className="mt-2 text-sm text-ink-500">Share details — we&apos;ll reach out with volume pricing and samples. No payment required.</p>
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">
@@ -70,7 +70,7 @@ export function CorporateBulkForm() {
       ) : null}
 
       <button type="submit" disabled={status === "loading"} className="btn-primary w-full py-3.5 disabled:opacity-60">
-        {status === "loading" ? "Sending…" : "Yes, I'm interested"}
+        {status === "loading" ? "Sending…" : "Request demo / quote"}
       </button>
     </form>
   );

@@ -5,9 +5,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   Box,
+  Building2,
   ClipboardList,
+  Home,
   LayoutDashboard,
   LogOut,
+  MessageSquareQuote,
   Package,
   Settings,
   Wrench,
@@ -19,6 +22,9 @@ const nav = [
   { href: "/admin/products", label: "Products", icon: Package },
   { href: "/admin/categories", label: "Categories", icon: Box },
   { href: "/admin/services", label: "Services", icon: Wrench },
+  { href: "/admin/homepage", label: "Homepage", icon: Home },
+  { href: "/admin/testimonials", label: "Testimonials", icon: MessageSquareQuote },
+  { href: "/admin/corporate", label: "Corporate", icon: Building2 },
   { href: "/admin/settings", label: "Site settings", icon: Settings },
 ];
 

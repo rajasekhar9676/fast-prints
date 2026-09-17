@@ -1,35 +1,9 @@
 import Link from "next/link";
 import { SectionHeader } from "@/components/section-header";
+import type { BudgetRangeItem } from "@/types/cms-content";
 import { IndianRupee } from "lucide-react";
 
-const budgetRanges = [
-  {
-    label: "Under ₹500",
-    range: "0-499",
-    sub: "Photo prints, keychains & more",
-    tone: "from-emerald-50 to-teal-50 border-emerald-100",
-  },
-  {
-    label: "₹500 – ₹999",
-    range: "500-999",
-    sub: "Visiting cards, pamphlets",
-    tone: "from-brand-50 to-amber-50 border-brand-200",
-  },
-  {
-    label: "₹1,000 – ₹2,499",
-    range: "1000-2499",
-    sub: "Letterheads, calendars, IDs",
-    tone: "from-sky-50 to-blue-50 border-sky-100",
-  },
-  {
-    label: "₹2,500+",
-    range: "2500-999999",
-    sub: "Signage, bulk & corporate",
-    tone: "from-violet-50 to-purple-50 border-violet-100",
-  },
-];
-
-export function ShopByBudget() {
+export function ShopByBudget({ ranges }: { ranges: BudgetRangeItem[] }) {
   return (
     <section>
       <SectionHeader
@@ -40,9 +14,9 @@ export function ShopByBudget() {
         seeAllLabel="Full catalogue"
       />
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
-        {budgetRanges.map((item) => (
+        {ranges.map((item) => (
           <Link
-            key={item.range}
+            key={item.id}
             href={`/products?budget=${item.range}`}
             className={`group rounded-2xl border bg-gradient-to-br p-4 transition hover:-translate-y-0.5 hover:shadow-lg md:p-5 ${item.tone}`}
           >

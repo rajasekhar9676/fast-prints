@@ -46,7 +46,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-surface font-sans text-ink-900">
+      <body className="flex min-h-full flex-col bg-white font-sans text-ink-900">
         <CartProvider>{children}</CartProvider>
       </body>
     </html>

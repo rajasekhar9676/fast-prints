@@ -36,10 +36,15 @@ yarn-error.log*
 
 # CMS data (orders contain customer info)
 /data/cms/orders.json
+/data/cms/users.json
 /data/cms/corporate-inquiries.json
 
 # vercel
 .vercel
+
+# database
+/prisma/dev.db
+/prisma/dev.db-journal
 
 # typescript
 *.tsbuildinfo

@@ -2,53 +2,43 @@ import { formatINR } from "@/lib/currency";
 import type { Product } from "@/types/product";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Star } from "lucide-react";
+import { Star } from "lucide-react";
 
-type CompactProductCardProps = {
-  product: Product;
-};
-
-export function CompactProductCard({ product }: CompactProductCardProps) {
+export function CompactProductCard({ product }: { product: Product }) {
   return (
-    <Link href={`/products/${product.slug}`} className="group flex w-[172px] shrink-0 flex-col sm:w-[196px]">
-      <article className="card-premium overflow-hidden">
-        <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-white via-brand-50/30 to-ink-50 p-3">
-          <div className="relative h-full w-full overflow-hidden rounded-xl bg-white shadow-inner">
-            <Image
-              src={product.image}
-              alt={product.name}
-              fill
-              className="object-contain object-center p-1.5 transition duration-500 group-hover:scale-[1.03]"
-              sizes="196px"
-            />
-          </div>
-          {product.badge ? (
-            <span className="absolute left-3 top-3 rounded-lg bg-ink-950 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-brand-400">
+    <Link href={`/products/${product.slug}`} className="group w-[168px] shrink-0 sm:w-[210px]">
+      <article className="overflow-hidden rounded-2xl border border-ink-100 bg-white shadow-sm transition duration-300 group-hover:-translate-y-1 group-hover:shadow-lg">
+        <div className="relative aspect-[4/5] bg-[radial-gradient(circle_at_50%_35%,#fff_0%,#fff7e6_55%,#f6f4ef_100%)]">
+          <Image
+            src={product.image}
+            alt={product.name}
+            fill
+            className="object-contain p-4 transition duration-500 group-hover:scale-105"
+            sizes="210px"
+          />
+          {product.newLaunch ? (
+            <span className="absolute left-3 top-3 rounded-full bg-emerald-600 px-2 py-0.5 text-[10px] font-bold uppercase text-white">
+              New
+            </span>
+          ) : product.badge ? (
+            <span className="absolute left-3 top-3 rounded-full bg-ink-950 px-2 py-0.5 text-[10px] font-bold uppercase text-brand-300">
               {product.badge}
             </span>
           ) : null}
-          {product.newLaunch ? (
-            <span className="absolute right-3 top-3 rounded-lg bg-emerald-500 px-2 py-0.5 text-[10px] font-bold uppercase text-white">
-              New
-            </span>
-          ) : null}
-          <span className="absolute bottom-3 right-3 flex h-8 w-8 items-center justify-center rounded-full bg-brand-500 text-ink-950 opacity-0 shadow-lg transition group-hover:opacity-100">
-            <ArrowRight className="h-4 w-4" aria-hidden />
-          </span>
         </div>
-        <div className="space-y-1.5 px-4 pb-4 pt-3">
-          <h3 className="line-clamp-2 min-h-[2.5rem] text-sm font-bold leading-snug text-ink-900 group-hover:text-brand-700">
+        <div className="space-y-1.5 px-3.5 py-3.5">
+          <h3 className="line-clamp-2 min-h-[2.5rem] text-sm font-semibold leading-snug text-ink-900">
             {product.name}
           </h3>
-          <p className="text-[10px] font-bold uppercase tracking-wide text-ink-400">Starts at</p>
-          <div className="flex items-end justify-between gap-2">
-            <p className="font-[family-name:var(--font-display)] text-lg font-extrabold text-ink-950">
+          <div className="flex items-center justify-between gap-2">
+            <p className="text-sm font-extrabold text-ink-950">
+              <span className="mr-1 text-[11px] font-semibold text-ink-400">From</span>
               {formatINR(product.basePrice)}
             </p>
             {product.rating ? (
-              <p className="flex items-center gap-1 text-xs">
+              <p className="flex items-center gap-0.5 text-xs font-semibold text-ink-600">
                 <Star className="h-3 w-3 fill-brand-500 text-brand-500" aria-hidden />
-                <span className="font-bold text-ink-700">{product.rating}</span>
+                {product.rating}
               </p>
             ) : null}
           </div>

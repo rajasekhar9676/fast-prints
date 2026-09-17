@@ -1,0 +1,113 @@
+export type Testimonial = {
+  id: string;
+  name: string;
+  role: string;
+  company?: string;
+  location: string;
+  rating: number;
+  text: string;
+  product?: string;
+  featured?: boolean;
+};
+
+export const testimonialStats = {
+  averageRating: 4.9,
+  totalReviews: "500+",
+  repeatCustomers: "85%",
+  yearsServing: "15+",
+} as const;
+
+export const testimonials: Testimonial[] = [
+  {
+    id: "priya-marketing",
+    name: "Priya S.",
+    role: "Marketing Manager",
+    company: "Tech startup, Koramangala",
+    location: "Bengaluru",
+    rating: 5,
+    product: "Pamphlets & standees",
+    featured: true,
+    text: "Our launch flyers and standees were ready faster than the venue setup. Colour matched the PDF proof — no surprises at pickup from BTM.",
+  },
+  {
+    id: "arjun-founder",
+    name: "Arjun M.",
+    role: "Founder",
+    company: "SaaS company",
+    location: "BTM Layout",
+    rating: 5,
+    product: "Visiting cards & apparel",
+    featured: true,
+    text: "Cards and team tees in one place. Fast Prints handled sizing and artwork checks so we could focus on demos. Same-day pickup saved us.",
+  },
+  {
+    id: "neha-wedding",
+    name: "Neha R.",
+    role: "Bride-to-be",
+    location: "Jayanagar",
+    rating: 5,
+    product: "Invitation folio",
+    featured: true,
+    text: "Invitation folio with premium finish — guests keep asking where we printed. The team called to confirm paper stock before running the job.",
+  },
+  {
+    id: "ramesh-retail",
+    name: "Ramesh K.",
+    role: "Store Owner",
+    company: "Grocery retail, BTM",
+    location: "BTM 2nd Stage",
+    rating: 5,
+    product: "Pamphlets & banners",
+    text: "Weekly offer pamphlets and shop banners at fair bulk rates. Delivery across Bengaluru when we cannot pick up — very reliable.",
+  },
+  {
+    id: "anita-hr",
+    name: "Anita V.",
+    role: "HR Executive",
+    company: "Corporate office",
+    location: "Electronic City",
+    rating: 5,
+    product: "ID cards & lanyards",
+    text: "200 employee ID kits with lanyards — artwork review, proof on WhatsApp, and delivery on the promised date. Exactly what admin teams need.",
+  },
+  {
+    id: "karthik-cafe",
+    name: "Karthik D.",
+    role: "Cafe Owner",
+    location: "HSR Layout",
+    rating: 5,
+    product: "Menu cards & signage",
+    text: "Menu redesign and counter signage done in two days. Walked in near Metro Pillar 154 — easy to find, friendly team.",
+  },
+  {
+    id: "divya-school",
+    name: "Divya P.",
+    role: "School Coordinator",
+    location: "Bannerghatta Rd",
+    rating: 5,
+    product: "Certificates & ID cards",
+    text: "Annual day certificates and student ID batches every year. Consistent quality and patient with our last-minute changes.",
+  },
+  {
+    id: "suresh-realestate",
+    name: "Suresh N.",
+    role: "Property Consultant",
+    location: "Bengaluru",
+    rating: 4,
+    product: "Visiting cards & brochures",
+    text: "Premium visiting cards and project brochures for client meetings. Good stock options and honest turnaround estimates.",
+  },
+  {
+    id: "meena-boutique",
+    name: "Meena L.",
+    role: "Boutique Owner",
+    location: "JP Nagar",
+    rating: 5,
+    product: "Tags & packaging",
+    text: "Branded tags and gift envelopes for our festive collection. Small quantity was not a problem — they treated it professionally.",
+  },
+];
+
+export function getFeaturedTestimonials() {
+  return testimonials.filter((t) => t.featured);
+}

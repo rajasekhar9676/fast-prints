@@ -32,4 +32,8 @@ export const cmsFiles = {
   services: "services.json",
   orders: "orders.json",
   settings: "settings.json",
+  homepage: "homepage.json",
+  testimonials: "testimonials.json",
+  corporate: "corporate.json",
+  users: "users.json",
 } as const;

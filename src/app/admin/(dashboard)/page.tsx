@@ -29,6 +29,27 @@ export default async function AdminDashboardPage() {
       </div>
 
       <section className="panel-light p-6">
+        <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-ink-950">Edit storefront content</h2>
+        <p className="mt-1 text-sm text-ink-500">Manage homepage sections, reviews, and corporate copy without code.</p>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { href: "/admin/homepage", label: "Homepage" },
+            { href: "/admin/testimonials", label: "Testimonials" },
+            { href: "/admin/corporate", label: "Corporate" },
+            { href: "/admin/settings", label: "Site settings" },
+          ].map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="rounded-xl border border-ink-100 bg-white px-4 py-3 text-sm font-bold text-ink-800 transition hover:border-brand-300 hover:bg-brand-50"
+            >
+              {link.label} →
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="panel-light p-6">
         <div className="mb-4 flex items-center justify-between gap-3">
           <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-ink-950">Recent orders</h2>
           <Link href="/admin/orders" className="text-sm font-bold text-brand-700 hover:underline">

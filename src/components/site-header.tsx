@@ -4,12 +4,13 @@ import { CategoryNavStrip } from "@/components/category-nav-strip";
 import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "@/context/cart-context";
+import { useCustomerAuth } from "@/context/customer-auth-context";
 import { useStoreData } from "@/context/store-data-context";
-import { Menu, Phone, Search, ShoppingBag, X, Zap, Building2 } from "lucide-react";
+import { Menu, Search, ShoppingBag, User, X, Zap } from "lucide-react";
 import { useMemo, useState } from "react";
-
 export function SiteHeader() {
   const { totalItems } = useCart();
+  const { user, loading: authLoading } = useCustomerAuth();
   const { settings, categories } = useStoreData();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [query, setQuery] = useState("");
@@ -22,8 +23,8 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50">
       {/* Promo strip */}
-      <div className="flex items-center justify-center gap-2 bg-gradient-to-r from-brand-400 via-brand-500 to-brand-600 py-2.5 text-center text-xs font-bold text-ink-950 sm:text-sm">
-        <Zap className="h-3.5 w-3.5 shrink-0" aria-hidden />
+      <div className="flex items-center justify-center gap-2 bg-[#16120c] py-2 text-center text-xs font-semibold text-white sm:text-sm">
+        <Zap className="h-3.5 w-3.5 shrink-0 text-brand-400" aria-hidden />
         {settings.promoText}
       </div>
 
@@ -60,32 +61,28 @@ export function SiteHeader() {
             </div>
           </div>
 
-          <div className="ml-auto flex items-center gap-2">
-            <Link
-              href="/corporate"
-              className="hidden items-center gap-1.5 rounded-xl border border-brand-300/60 bg-brand-50 px-3 py-2 text-sm font-bold text-ink-900 transition hover:border-brand-400 hover:bg-brand-100 md:inline-flex"
-            >
-              <Building2 className="h-4 w-4 text-brand-700" aria-hidden />
-              Corporate
-            </Link>
-            <a
-              href="tel:+919164779922"
-              className="hidden items-center gap-1.5 rounded-xl px-3 py-2 text-sm font-semibold text-ink-600 transition hover:bg-ink-50 hover:text-ink-950 md:inline-flex"
-            >
-              <Phone className="h-4 w-4 text-brand-600" aria-hidden />
-              Call us
-            </a>
-            <Link
-              href="/contact"
-              className="hidden rounded-xl px-3 py-2 text-sm font-semibold text-ink-600 transition hover:bg-ink-50 md:inline-flex"
-            >
-              Store
-            </Link>
+          <div className="ml-auto flex items-center gap-1">
+            {!authLoading && user ? (
+              <Link
+                href="/account"
+                className="hidden items-center gap-1.5 rounded-xl px-3 py-2 text-sm font-semibold text-ink-600 transition hover:bg-ink-50 md:inline-flex"
+              >
+                <User className="h-4 w-4 text-brand-600" aria-hidden />
+                Account
+              </Link>
+            ) : !authLoading ? (
+              <Link
+                href="/login"
+                className="hidden rounded-xl px-3 py-2 text-sm font-semibold text-ink-600 transition hover:bg-ink-50 md:inline-flex"
+              >
+                Sign in
+              </Link>
+            ) : null}
             <Link
               href="/cart"
-              className="relative inline-flex items-center gap-2 rounded-2xl bg-ink-950 px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-ink-950/25 transition hover:bg-ink-800"
+              className="relative inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-bold text-ink-900 transition hover:bg-ink-50"
             >
-              <ShoppingBag className="h-4 w-4" aria-hidden />
+              <ShoppingBag className="h-5 w-5" aria-hidden />
               <span className="hidden sm:inline">Cart</span>
               {totalItems > 0 ? (
                 <span className="absolute -right-1.5 -top-1.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-brand-500 px-1 text-[10px] font-bold text-ink-950 ring-2 ring-white">
@@ -126,7 +123,9 @@ export function SiteHeader() {
               { href: "/corporate", label: "Corporate & bulk", bold: true },
               { href: "/products", label: "All products" },
               { href: "/services", label: "Services" },
+              { href: "/testimonials", label: "Reviews" },
               { href: "/contact", label: "Contact" },
+              ...(user ? [{ href: "/account", label: "My account" }] : [{ href: "/login", label: "Sign in" }]),
             ].map((link) => (
               <Link
                 key={link.href}

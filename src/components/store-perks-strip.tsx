@@ -1,51 +1,31 @@
-import { ShieldCheck, Sparkles, Truck, Zap } from "lucide-react";
+import { Clock3, MapPin, Palette, ShieldCheck } from "lucide-react";
+import type { PerkItem } from "@/types/cms-content";
+import type { LucideIcon } from "lucide-react";
 
-const perks = [
-  {
-    icon: Zap,
-    label: "Same-day pickup",
-    sub: "On select products",
-    gradient: "from-amber-400 to-brand-500",
-  },
-  {
-    icon: Truck,
-    label: "BTM walk-in store",
-    sub: "Opp. Metro Pillar 154",
-    gradient: "from-sky-400 to-blue-500",
-  },
-  {
-    icon: Sparkles,
-    label: "Design support",
-    sub: "Artwork & proofs",
-    gradient: "from-violet-400 to-purple-500",
-  },
-  {
-    icon: ShieldCheck,
-    label: "Colour accurate",
-    sub: "Brand-matched print",
-    gradient: "from-emerald-400 to-teal-500",
-  },
-];
+const icons: LucideIcon[] = [Clock3, MapPin, Palette, ShieldCheck];
 
-export function StorePerksStrip() {
+export function StorePerksStrip({ perks }: { perks: PerkItem[] }) {
+  if (!perks.length) return null;
+
   return (
-    <section className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
-      {perks.map(({ icon: Icon, label, sub, gradient }) => (
-        <div
-          key={label}
-          className="card-premium group flex items-center gap-3.5 px-4 py-4"
-        >
-          <span
-            className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${gradient} text-white shadow-md transition group-hover:scale-105`}
+    <section className="grid grid-cols-2 overflow-hidden rounded-2xl border border-ink-100 bg-white shadow-sm md:grid-cols-4">
+      {perks.slice(0, 4).map((perk, index) => {
+        const Icon = icons[index % icons.length];
+        return (
+          <div
+            key={perk.id}
+            className="flex items-center gap-3 border-ink-100 px-4 py-3.5 odd:border-r md:border-r md:last:border-r-0"
           >
-            <Icon className="h-5 w-5" strokeWidth={2.5} aria-hidden />
-          </span>
-          <div className="min-w-0">
-            <p className="text-sm font-bold text-ink-900">{label}</p>
-            <p className="truncate text-xs text-ink-500">{sub}</p>
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-700">
+              <Icon className="h-4 w-4" aria-hidden />
+            </span>
+            <div className="min-w-0">
+              <p className="truncate text-sm font-extrabold text-ink-950">{perk.label}</p>
+              <p className="truncate text-xs text-ink-500">{perk.sub}</p>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </section>
   );
 }

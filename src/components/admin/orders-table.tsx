@@ -5,7 +5,21 @@ import { formatINR } from "@/lib/currency";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-const statuses: OrderStatus[] = ["pending", "confirmed", "in_production", "ready", "delivered", "cancelled"];
+const statuses: OrderStatus[] = [
+  "pending_payment",
+  "pending",
+  "confirmed",
+  "in_production",
+  "ready",
+  "delivered",
+  "cancelled",
+];
+
+function paymentBadge(status: Order["paymentStatus"]) {
+  if (status === "paid") return "bg-emerald-100 text-emerald-800";
+  if (status === "failed") return "bg-red-100 text-red-800";
+  return "bg-amber-100 text-amber-800";
+}
 
 export function OrdersTable({ orders }: { orders: Order[] }) {
   const router = useRouter();
@@ -35,7 +49,10 @@ export function OrdersTable({ orders }: { orders: Order[] }) {
               <p className="font-[family-name:var(--font-display)] text-lg font-extrabold text-ink-950">{order.orderNumber}</p>
               <p className="text-sm text-ink-500">{new Date(order.createdAt).toLocaleString("en-IN")}</p>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className={`rounded-full px-2.5 py-1 text-xs font-bold uppercase tracking-wide ${paymentBadge(order.paymentStatus ?? "pending")}`}>
+                {order.paymentStatus ?? "pending"}
+              </span>
               <label className="text-sm font-semibold text-ink-600">Status</label>
               <select
                 className="rounded-xl border border-ink-200 bg-white px-3 py-2 text-sm font-semibold"
@@ -45,7 +62,7 @@ export function OrdersTable({ orders }: { orders: Order[] }) {
               >
                 {statuses.map((status) => (
                   <option key={status} value={status}>
-                    {status.replace("_", " ")}
+                    {status.replaceAll("_", " ")}
                   </option>
                 ))}
               </select>
@@ -55,6 +72,9 @@ export function OrdersTable({ orders }: { orders: Order[] }) {
           <div className="grid gap-4 md:grid-cols-2">
             <div className="text-sm text-ink-700">
               <p className="font-bold text-ink-950">{order.customer.name}</p>
+              {order.userId ? (
+                <p className="text-xs font-semibold text-brand-700">Registered customer</p>
+              ) : null}
               <p>{order.customer.phone}</p>
               <p>{order.customer.email}</p>
               <p className="mt-2 whitespace-pre-line">{order.customer.address}</p>
