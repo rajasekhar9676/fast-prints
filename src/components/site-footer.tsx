@@ -11,100 +11,130 @@ export function SiteFooter() {
 
   const footerLinks = [
     {
-      title: "Shop",
+      title: "Quick Shop",
       links: [
-        { href: "/products", label: "All products" },
-        { href: "/products/visiting-cards", label: "Visiting cards" },
-        { href: "/products?category=large-format", label: "Signages" },
-        { href: "/cart", label: "Cart" },
+        { href: "/products", label: "All Print Products" },
+        { href: "/rate-card", label: "Official Rate Card" },
+        { href: "/products/visiting-cards", label: "Visiting Cards" },
+        { href: "/products/13x19-digital-print", label: "13x19 Digital Sheets" },
+        { href: "/products/banners-vinyl-stickers", label: "Flex & Vinyl Banners" },
+        { href: "/cart", label: "Shopping Cart" },
       ],
     },
     {
-      title: "Company",
+      title: "Popular Services",
       links: [
-        { href: "/services", label: "All services" },
-        { href: "/testimonials", label: "Customer reviews" },
-        { href: "/contact", label: "Contact & map" },
-        { href: websiteHref(settings.website), label: settings.website.replace(/^https?:\/\//, "") },
+        { href: "/products/single-color-bill-books", label: "Bill Books & Receipts" },
+        { href: "/products/id-cards-lanyards", label: "ID Cards & Lanyards" },
+        { href: "/products/seals-stamps", label: "Self-Ink Stamps" },
+        { href: "/products/photo-print-with-frame", label: "Photo Frames" },
+        { href: "/services", label: "All Printing Services" },
+        { href: "/contact", label: "Contact & Store Location" },
       ],
     },
   ];
 
   return (
-    <footer className="mt-auto border-t border-ink-200 bg-ink-950 text-white">
-      <div className="mx-auto grid max-w-7xl gap-12 px-4 py-14 md:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr]">
-        <div className="space-y-5">
-          <Link href="/" className="inline-flex items-center gap-3">
-            <span className="relative h-14 w-14 overflow-hidden rounded-full border-2 border-brand-500 bg-black">
-              <Image src="/logo.png" alt="" fill className="object-cover p-1.5" sizes="56px" />
-            </span>
-            <span>
-              <span className="font-[family-name:var(--font-display)] text-xl font-extrabold tracking-tight">
-                {settings.businessName.split(" ")[0]?.toUpperCase() ?? "FAST"} PRINTS
+    <footer className="mt-auto border-t border-ink-800 bg-[#0d0a08] text-white">
+      <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          {/* Column 1: Brand & Contact Info */}
+          <div className="space-y-4 lg:col-span-1">
+            <Link href="/" className="inline-flex items-center gap-3">
+              <span className="relative h-12 w-12 overflow-hidden rounded-full border-2 border-brand-500 bg-black shrink-0">
+                <Image src="/logo.png" alt="Fast Prints" fill className="object-cover p-1" sizes="48px" />
               </span>
-              <span className="mt-0.5 block text-xs font-semibold uppercase tracking-[0.25em] text-brand-400">
-                Bengaluru
-              </span>
-            </span>
-          </Link>
-          <p className="max-w-sm text-sm leading-relaxed text-white/70">
-            Think Printing… Think Us. Digital print, signages, visiting cards, ID cards, calendars, photo print & more
-            from BTM Layout.
-          </p>
-          <div className="space-y-3 text-sm">
-            <p className="flex gap-2 text-white/90">
-              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-400" aria-hidden />
-              <span>
-                {settings.addressLines.map((line, i) => (
-                  <span key={line}>
-                    {line}
-                    {i < settings.addressLines.length - 1 ? <br /> : null}
-                  </span>
-                ))}
-              </span>
+              <div>
+                <span className="font-[family-name:var(--font-display)] text-xl font-black tracking-tight text-white block leading-none">
+                  {settings.businessName.split(" ")[0]?.toUpperCase() ?? "FAST"} PRINTS
+                </span>
+                <span className="mt-1 block text-[10px] font-extrabold uppercase tracking-[0.2em] text-brand-400">
+                  BTM 2nd Stage, Bengaluru
+                </span>
+              </div>
+            </Link>
+            
+            <p className="text-xs leading-relaxed text-white/70">
+              Think Printing… Think Us. Premium digital printing, Visiting Cards, Flex Banners, Bill Books & Corporate ID Tags.
             </p>
-            <a href={telHref(settings.phone)} className="inline-flex items-center gap-2 font-bold text-brand-400 hover:text-brand-300">
-              <Phone className="h-4 w-4" aria-hidden />
-              {settings.phone}
-            </a>
-            <a href={`mailto:${settings.email}`} className="flex items-center gap-2 text-white/80 hover:text-white">
-              <Mail className="h-4 w-4 shrink-0 text-brand-400" aria-hidden />
-              {settings.email}
-            </a>
-            <a
-              href={websiteHref(settings.website)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-white/80 hover:text-white"
-            >
-              <Globe className="h-4 w-4 shrink-0 text-brand-400" aria-hidden />
-              {settings.website.replace(/^https?:\/\//, "")}
-            </a>
+
+            <div className="space-y-2.5 text-xs text-white/80 pt-1">
+              <p className="flex items-start gap-2.5">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-400" aria-hidden />
+                <span>
+                  {settings.addressLines.map((line, i) => (
+                    <span key={line} className="block">
+                      {line}
+                    </span>
+                  ))}
+                </span>
+              </p>
+              <p className="flex items-center gap-2.5">
+                <Phone className="h-4 w-4 shrink-0 text-brand-400" aria-hidden />
+                <a href={telHref(settings.phone)} className="font-bold text-brand-300 hover:underline">
+                  {settings.phone}
+                </a>
+              </p>
+              <p className="flex items-center gap-2.5">
+                <Mail className="h-4 w-4 shrink-0 text-brand-400" aria-hidden />
+                <a href={`mailto:${settings.email}`} className="hover:text-white">
+                  {settings.email}
+                </a>
+              </p>
+            </div>
+          </div>
+
+          {/* Column 2 & 3: Navigation Links */}
+          {footerLinks.map((col) => (
+            <div key={col.title} className="space-y-3">
+              <h3 className="font-[family-name:var(--font-display)] text-xs font-extrabold uppercase tracking-wider text-brand-400 border-b border-white/10 pb-2">
+                {col.title}
+              </h3>
+              <ul className="space-y-2 text-xs">
+                {col.links.map((l) => (
+                  <li key={l.href}>
+                    <Link href={l.href} className="text-white/70 hover:text-brand-300 transition-colors">
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
+          {/* Column 4: Store Hours & Same-Day Pickup Notice */}
+          <div className="space-y-3">
+            <h3 className="font-[family-name:var(--font-display)] text-xs font-extrabold uppercase tracking-wider text-brand-400 border-b border-white/10 pb-2">
+              Store Timings & Pickup
+            </h3>
+
+            <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 p-3.5 space-y-2 text-xs">
+              <div className="flex items-center gap-1.5 font-bold text-amber-300">
+                <span className="text-base">⚡</span>
+                <span>Same-Day Pickup Notice</span>
+              </div>
+              <p className="text-amber-100/90 leading-relaxed text-[11px]">
+                For <strong>Same-Day Store Pickup</strong> or express doorstep delivery, please place your order <strong>before 2:00 PM</strong>.
+              </p>
+            </div>
+
+            <div className="text-xs space-y-1 text-white/70 pt-1">
+              <p className="font-bold text-white">Mon – Sat: <span className="text-brand-300">9:30 AM – 9:00 PM</span></p>
+              <p className="text-[11px] text-white/50">BTM 2nd Stage, Outer Ring Road, Bengaluru</p>
+            </div>
           </div>
         </div>
-
-        {footerLinks.map((col) => (
-          <div key={col.title}>
-            <h3 className="font-[family-name:var(--font-display)] text-sm font-bold uppercase tracking-wider text-brand-400">
-              {col.title}
-            </h3>
-            <ul className="mt-4 space-y-2">
-              {col.links.map((l) => (
-                <li key={l.href}>
-                  <Link href={l.href} className="text-sm text-white/75 hover:text-white">
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
       </div>
 
-      <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
+      {/* Bottom Sub-Footer */}
+      <div className="border-t border-white/10 bg-black/60 py-5">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-5 text-xs text-white/50 sm:px-8 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} {settings.businessName}. All rights reserved.</p>
-          <p className="text-white/40">Same day delivery on select products · Pickup at BTM 2nd Stage</p>
+          <div className="flex flex-wrap items-center gap-4 text-[11px] text-white/60">
+            <span>GST Billed (18% Input Tax)</span>
+            <span>•</span>
+            <span>Express Courier / Dunzo Available</span>
+          </div>
         </div>
       </div>
     </footer>

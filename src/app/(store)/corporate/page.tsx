@@ -132,7 +132,7 @@ export default async function CorporatePage() {
           subtitle="Browse capabilities — request a quote for volume pricing (prices not shown online)"
           seeAllHref="/products?category=business-essentials"
         />
-        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {corporateProducts.map((product) => (
             <CorporateProductCard
               key={product.id}

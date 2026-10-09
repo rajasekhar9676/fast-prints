@@ -10,7 +10,7 @@
     },
     {
       "id": "photo-print",
-      "href": "/products/photo-print",
+      "href": "/products/photo-print-with-frame",
       "label": "Photo Prints",
       "sub": "6\"×4\" to 12\"×18\" · Same-day pickup",
       "cta": "Print photos",
@@ -18,7 +18,7 @@
     },
     {
       "id": "signage",
-      "href": "/products/wall-signage-printing",
+      "href": "/products/banners-vinyl-stickers",
       "label": "Signages & Wall Graphics",
       "sub": "Indoor & outdoor branding",
       "cta": "Get a quote",
@@ -127,49 +127,49 @@
     {
       "id": "education",
       "title": "Education & Campus",
-      "href": "/products?category=stationery",
+      "href": "/category/stationery",
       "image": "/images/receipt-books.png"
     },
     {
       "id": "startup",
       "title": "Startup Branding",
-      "href": "/products?category=business-essentials",
+      "href": "/category/business-essentials",
       "image": "/images/visiting-cards.png"
     },
     {
       "id": "events",
       "title": "Events & Promotions",
-      "href": "/products?category=large-format",
+      "href": "/category/large-format",
       "image": "/images/signage-wall-mural.png"
     },
     {
       "id": "retail",
       "title": "Retail & Packaging",
-      "href": "/products?category=packaging",
+      "href": "/category/packaging",
       "image": "/images/presentation-envelopes.png"
     },
     {
       "id": "cafe",
       "title": "Cafe & Restaurant",
-      "href": "/products?category=marketing-materials",
+      "href": "/category/marketing-materials",
       "image": "/images/pamphlet-grocery.png"
     },
     {
       "id": "boutique",
       "title": "Boutique & Fashion",
-      "href": "/products?category=packaging",
+      "href": "/category/packaging",
       "image": "/images/presentation-envelopes-gift.png"
     },
     {
       "id": "wedding",
       "title": "Weddings",
-      "href": "/products?category=events",
+      "href": "/category/marketing-materials",
       "image": "/images/pamphlet-invitation.png"
     },
     {
       "id": "corporate",
       "title": "Corporate ID Kits",
-      "href": "/products/id-card-lanyard-combo",
+      "href": "/products/id-cards-lanyards",
       "image": "/images/id-card-lanyard-set.png"
     }
   ],

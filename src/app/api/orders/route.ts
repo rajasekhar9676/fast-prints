@@ -1,6 +1,7 @@
 import { getCustomerIdFromSession } from "@/lib/auth/customer";
 import { addOrder, getUserById, updateUser } from "@/lib/cms/queries";
 import { buildPendingOrder } from "@/lib/orders/helpers";
+import { sendOrderNotifications } from "@/lib/notifications/order-notifications";
 import { createRazorpayOrder, getRazorpayKeyId } from "@/lib/razorpay";
 import type { CreateOrderPayload } from "@/types/admin";
 import { NextResponse } from "next/server";
@@ -42,15 +43,46 @@ export async function POST(request: Request) {
 
   const order = buildPendingOrder(body, userId);
 
+  /* =========================================================================
+   * PAYMENT SECTION COMMENTED OUT FOR TESTING EMAIL & WHATSAPP SERVICES
+   * =========================================================================
+   * Razorpay payment gateway is bypassed so orders complete immediately.
+   * This triggers Resend emails & generates WhatsApp message links.
+   * ========================================================================= */
+  const bypassPayment = true;
+
+  if (bypassPayment) {
+    order.paymentStatus = "paid";
+    order.status = "confirmed";
+    order.paidAt = new Date().toISOString();
+    await addOrder(order);
+
+    // Trigger Email & WhatsApp Notifications Immediately!
+    console.log(`[TEST MODE] Sending notifications for order ${order.orderNumber}...`);
+    const notifications = await sendOrderNotifications(order);
+    console.log(`[TEST MODE] Customer Email Sent:`, notifications.customerEmail);
+    console.log(`[TEST MODE] Owner Email Sent:`, notifications.ownerEmail);
+
+    return NextResponse.json({
+      ok: true,
+      directOrder: true,
+      orderId: order.id,
+      orderNumber: order.orderNumber,
+      customerChatUrl: notifications.customerChatUrl,
+      notificationsSent: {
+        customerEmail: notifications.customerEmail,
+        ownerEmail: notifications.ownerEmail,
+      },
+    });
+  }
+
+  /* 
+  // --- RAZORPAY PAYMENT SECTION COMMENTED OUT FOR TESTING ---
   try {
+    const keyId = getRazorpayKeyId();
     const razorpayOrder = await createRazorpayOrder(order.subtotal, order.orderNumber);
     order.razorpayOrderId = razorpayOrder.id;
     await addOrder(order);
-
-    const keyId = getRazorpayKeyId();
-    if (!keyId) {
-      return NextResponse.json({ error: "Payment gateway is not configured" }, { status: 503 });
-    }
 
     return NextResponse.json({
       ok: true,
@@ -67,4 +99,5 @@ export async function POST(request: Request) {
     const message = error instanceof Error ? error.message : "Could not start payment";
     return NextResponse.json({ error: message }, { status: 500 });
   }
+  */
 }

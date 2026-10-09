@@ -120,7 +120,8 @@ export function SiteHeader() {
           </div>
           <nav className="flex flex-col gap-1">
             {[
-              { href: "/corporate", label: "Corporate & bulk", bold: true },
+              { href: "/rate-card", label: "Official Rate Card & Price List", bold: true },
+              { href: "/corporate", label: "Corporate & bulk" },
               { href: "/products", label: "All products" },
               { href: "/services", label: "Services" },
               { href: "/testimonials", label: "Reviews" },
@@ -140,7 +141,7 @@ export function SiteHeader() {
             {categories.map((c) => (
               <Link
                 key={c.id}
-                href={`/products?category=${c.id}`}
+                href={`/category/${c.id}`}
                 className="rounded-xl px-4 py-2.5 text-sm text-ink-700 hover:bg-ink-50"
                 onClick={() => setMobileOpen(false)}
               >

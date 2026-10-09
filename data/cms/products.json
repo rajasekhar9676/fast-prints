@@ -2,10 +2,10 @@
   {
     "id": "p1",
     "slug": "visiting-cards",
-    "name": "Visiting Cards",
-    "shortDescription": "Standard, classic & square · 300gsm texture boards with round corners.",
-    "description": "Premium visiting cards on 300gsm texture boards with round corner cutting. Standard size 89mm × 51mm. Upload print-ready artwork or brief our design desk.",
-    "basePrice": 499,
+    "name": "Visiting Cards (300GSM Board)",
+    "shortDescription": "300gsm board · plain or glossy/matt lamination · 100 to 1000 cards.",
+    "description": "Official rate list visiting cards printed on 300GSM premium board. Available single-sided (S/S) or double-sided (D/S) with optional Glossy or Matt lamination. Standard size 89mm × 51mm.",
+    "basePrice": 200,
     "turnaround": "24–48 hrs",
     "image": "/images/visiting-cards.png",
     "gallery": [
@@ -14,13 +14,13 @@
     "category": "business-essentials",
     "popular": true,
     "bestseller": true,
-    "badge": "Best Seller",
+    "badge": "Rate Card Featured",
     "rating": 4.9,
-    "reviewCount": 128,
+    "reviewCount": 142,
     "highlights": [
-      "Round corner cutting",
-      "300gsm texture boards",
-      "89mm × 51mm standard"
+      "300GSM Board (Plain / Glossy / Matt Lamination)",
+      "Single Sided (S/S) & Double Sided (D/S) rates",
+      "Bulk quantity discounts down to ₹1.00/unit"
     ],
     "options": {
       "sizes": [
@@ -28,14 +28,20 @@
         "Square 2.5 in"
       ],
       "finishes": [
-        "Matte",
-        "Glossy",
-        "Velvet Touch"
+        "300GSM Board Plain (S/S)",
+        "300GSM Board Plain (D/S)",
+        "300GSM Board + Glossy / Matt Lamination"
       ],
       "quantities": [
         100,
-        250,
+        200,
+        300,
+        400,
         500,
+        600,
+        700,
+        800,
+        900,
         1000
       ]
     }
@@ -43,11 +49,11 @@
   {
     "id": "p2",
     "slug": "letterheads",
-    "name": "Letter Heads",
-    "shortDescription": "A4 · 100gsm bond · 1 or 2 colour corporate letterheads.",
-    "description": "Matched corporate letterheads on 100gsm bond paper. A4 size 210mm × 297mm with consistent brand colour across reprints.",
-    "basePrice": 899,
-    "turnaround": "2–3 days",
+    "name": "Letter Heads (100GSM Bond)",
+    "shortDescription": "A4 size · 100gsm bond paper · digital or offset multicolor print.",
+    "description": "Corporate letterheads on 100GSM Bond Paper in A4 size. Digital print for smaller runs (100–500) and multicolor offset print for bulk 1000+ runs with 3-day turnaround.",
+    "basePrice": 850,
+    "turnaround": "Same-day (Digital) / 3 Days (Offset)",
     "image": "/images/letterheads-agrya.png",
     "gallery": [
       "/images/letterheads-agrya.png",
@@ -56,21 +62,20 @@
     "category": "business-essentials",
     "popular": true,
     "highlights": [
-      "A4 · 100gsm bond",
-      "1 & 2 colour print",
-      "Brand colour matching"
+      "A4 size · 100GSM Bond",
+      "Digital (100/500 qty) & Offset (1000 qty)",
+      "GST 18% billed"
     ],
     "options": {
       "sizes": [
-        "A4 Letterhead"
+        "A4 Letterhead (210×297mm)"
       ],
       "finishes": [
-        "100gsm Bond",
-        "Laid Texture"
+        "Digital Print (100GSM Bond)",
+        "Multicolor Offset Print (1000 qty)"
       ],
       "quantities": [
         100,
-        250,
         500,
         1000
       ]
@@ -79,34 +84,28 @@
   {
     "id": "p3",
     "slug": "envelopes",
-    "name": "Envelopes",
-    "shortDescription": "100gsm sunshine white · multiple sizes with custom print.",
-    "description": "Custom printed envelopes on 100gsm sunshine white paper. Sizes from 6×4 in to 12×18 in for corporate and retail use.",
-    "basePrice": 699,
-    "turnaround": "2–4 days",
+    "name": "Envelopes (9.5 x 4.5 inch)",
+    "shortDescription": "9.5\" × 4.5\" · 100gsm paper · digital & offset print.",
+    "description": "Standard commercial envelopes (9.5 x 4.5 inch) on 100GSM sunshine paper. Available in Digital Print (100, 500, 1000) and Multicolor Offset Print (1000 qty).",
+    "basePrice": 1200,
+    "turnaround": "24–48 hrs",
     "image": "/images/envelopes.png",
     "category": "business-essentials",
     "highlights": [
-      "100gsm sunshine white",
-      "Multiple standard sizes",
-      "Window & plain options"
+      "9.5\" × 4.5\" standard commercial",
+      "100GSM sunshine paper",
+      "Digital & Offset printing"
     ],
     "options": {
       "sizes": [
-        "6×4\"",
-        "7×4\"",
-        "9.5×4.5\"",
-        "9×6\"",
-        "10×12\"",
-        "12×18\""
+        "9.5\" × 4.5\" Commercial"
       ],
       "finishes": [
-        "Sunshine White",
-        "Kraft"
+        "Digital Print 100GSM",
+        "Multicolor Offset Print 100GSM"
       ],
       "quantities": [
         100,
-        250,
         500,
         1000
       ]
@@ -114,175 +113,194 @@
   },
   {
     "id": "p4",
-    "slug": "multi-color-pamphlets",
-    "name": "Multi Color Pamphlets",
-    "shortDescription": "A5, A4 & A3 · 90–300gsm art paper · vivid campaign colour.",
-    "description": "Full-colour pamphlets and flyers on art paper from 90gsm to 300gsm. Ideal for promotions, menus, and event handouts.",
-    "basePrice": 699,
-    "turnaround": "Same-day (select qty)",
-    "image": "/images/pamphlet-multicolor.png",
+    "slug": "13x19-digital-print",
+    "name": "13 x 19 Size Digital Prints",
+    "shortDescription": "13\"×19\" sheet · 300gsm, 350gsm, texture board & non-tearable sheet.",
+    "description": "High-resolution 13 x 19 inch (330mm x 483mm) digital sheet printing. Available in 300GSM Board, 350GSM Board, Texture Board, and Non-Tearable Sheet for S/S and D/S printing.",
+    "basePrice": 50,
+    "turnaround": "Same-day",
+    "image": "/images/bulk-multicolor.png",
     "gallery": [
-      "/images/pamphlet-multicolor.png",
-      "/images/pamphlet-grocery.png"
+      "/images/bulk-multicolor.png",
+      "/images/pamphlet-multicolor.png"
     ],
     "category": "marketing-materials",
     "popular": true,
     "bestseller": true,
-    "badge": "Popular",
-    "rating": 4.8,
-    "reviewCount": 94,
+    "badge": "Digital Sheet",
+    "rating": 4.9,
+    "reviewCount": 88,
     "highlights": [
-      "A5 / A4 / A3 sizes",
-      "90–300gsm art paper",
-      "Same-day rush available"
+      "13 × 19 inch (330×483mm)",
+      "300GSM, 350GSM, Texture & Non-Tearable stock",
+      "Single-sided (S/S) & Double-sided (D/S)"
     ],
     "options": {
       "sizes": [
-        "A5",
-        "A4",
-        "A3"
+        "13 × 19 inch Sheet"
       ],
       "finishes": [
-        "90gsm",
-        "130gsm",
-        "170gsm",
-        "220gsm",
-        "300gsm Art"
+        "300GSM Board (S/S)",
+        "300GSM Board (D/S)",
+        "350GSM Board (S/S)",
+        "350GSM Board (D/S)",
+        "Texture Board (S/S & D/S)",
+        "Non-Tearable (N.Terable) Sheet"
       ],
       "quantities": [
-        250,
-        500,
-        1000,
-        2500
+        1,
+        2,
+        5,
+        10,
+        20,
+        21,
+        50,
+        100
       ]
     }
   },
   {
     "id": "p5",
-    "slug": "pamphlet-print",
-    "name": "Pamphlet Print",
-    "shortDescription": "A4 white or colour paper · 1 or 2 colour print options.",
-    "description": "Economical pamphlet printing on A4 white or colour stock. Single or two-colour print for invitations, notices, and local campaigns.",
-    "basePrice": 399,
-    "turnaround": "Same-day pickup",
-    "image": "/images/pamphlet-invitation.png",
-    "gallery": [
-      "/images/pamphlet-invitation.png",
-      "/images/pamphlet-grocery.png"
-    ],
+    "slug": "13x19-sticker-sheets",
+    "name": "Stickers & Die-Cut Labels (13x19)",
+    shortDescription: "13\"×19\" sticker sheet · normal, non-tearable, round & half-cut.",
+    description: "Digital sticker printing on 13 x 19 inch sheets. Includes normal sticker sheets, non-tearable sticker sheets, round sticker cutting (min 10 sheets), and half-cut rectangle/square stickers.",
+    basePrice": 50,
+    turnaround": "Same-day",
+    image": "/images/smart-keychains.png",
     "category": "marketing-materials",
+    "bestseller": true,
+    "badge": "Sticker Sheet",
     "highlights": [
-      "A4 white / colour paper",
-      "1 & 2 colour print",
-      "Invitation layouts"
+      "13 × 19 inch Sticker Sheet",
+      "Normal & Non-Tearable (Waterproof) Sticker",
+      "Round sticker die-cut & half-cut options"
     ],
     "options": {
       "sizes": [
-        "A4 Single-sided",
-        "A4 Duplex"
+        "13 × 19 Sheet",
+        "Custom Die-cut"
       ],
       "finishes": [
-        "White Paper",
-        "Colour Paper"
+        "Normal Digital Sticker Sheet",
+        "Non-Tearable Sticker Sheet",
+        "Round Sticker Cutting (Min 10 Sheets)",
+        "Half Cut Sticker (Rectangle / Square)"
       ],
       "quantities": [
-        100,
-        250,
-        500,
-        1000
+        1,
+        2,
+        5,
+        10,
+        20,
+        21,
+        50,
+        100
       ]
     }
   },
   {
     "id": "p6",
-    "slug": "bulk-multicolor-print",
-    "name": "Multi Color Bulk Print",
-    "shortDescription": "A4 & A3 bulk runs · different pages per sheet.",
-    "description": "High-volume multicolour digital printing for catalogues, manuals, and mixed-page documents. A4 and A3 sizes with consistent registration.",
-    "basePrice": 299,
-    "turnaround": "Same-day pickup",
-    "image": "/images/bulk-multicolor-print.png",
+    "slug": "offset-multicolor-print",
+    "name": "Offset Multicolor Printing (3-Day)",
+    shortDescription: "Bulk letterheads, envelopes, A5 & A4 pamphlets on 90gsm art paper.",
+    description: "High-volume commercial offset printing with 3 working days lead time. Includes 1000 A4 Letterheads, 1000 Envelopes, 2000 A5 Pamphlets (D/S), and 1000 A4 Pamphlets (D/S).",
+    basePrice: 3500,
+    turnaround: "3 Working Days",
+    image": "/images/pamphlet-multicolor.png",
     "category": "marketing-materials",
     "popular": true,
     "highlights": [
-      "A4 & A3 bulk runs",
-      "Mixed page documents",
-      "Consistent colour"
+      "3 Working Days lead time",
+      "90GSM Art Paper D/S for Pamphlets",
+      "Unbeatable bulk prices"
     ],
     "options": {
       "sizes": [
-        "A4",
-        "A3"
+        "A5 Size",
+        "A4 Size",
+        "9.5 x 4.5 Envelope"
       ],
       "finishes": [
-        "100 gsm",
-        "120 gsm"
+        "A4 Letterhead (1000 Qty @ ₹3.5/unit)",
+        "Envelope 9.5x4.5 (1000 Qty @ ₹5.5/unit)",
+        "A5 Pamphlet 90GSM Art D/S (2000 Qty - ₹3500 Lot)",
+        "A4 Pamphlet 90GSM Art D/S (1000 Qty - ₹3500 Lot)"
       ],
       "quantities": [
-        100,
-        250,
-        500,
-        1000
+        1000,
+        2000
       ]
     }
   },
   {
     "id": "p7",
-    "slug": "wall-signage-printing",
-    "name": "Wall Signage & Murals",
-    "shortDescription": "Large-format indoor wall graphics & brand murals.",
-    "description": "Vivid UV and vinyl wall wraps for retail, cafes, and offices. Full-colour graphics with professional installation guidance.",
-    "basePrice": 4999,
-    "turnaround": "4–7 days",
-    "image": "/images/signage-wall-mural.png",
-    "category": "large-format",
-    "popular": true,
+    "slug": "single-color-bill-books",
+    "name": "Bill Book (Offset Single Color)",
+    shortDescription: "1+1 White + Pink duplicate set · A5, A4, 1/5th, 1/6th, 1/16th sizes.",
+    description: "Single color offset printed bill books with 1+1 (White + Pink duplicate paper) pages. Available in 1/16th, 1/6th, 1/5th, A5, and A4 sizes with sequential numbering.",
+    basePrice: 1440,
+    turnaround: "3–5 days",
+    image": "/images/receipt-books.png",
+    "gallery": [
+      "/images/receipt-books.png",
+      "/images/invoice-books.png"
+    ],
+    "category": "stationery",
     "bestseller": true,
-    "rating": 4.9,
-    "reviewCount": 41,
+    "badge": "Official Books",
     "highlights": [
-      "Indoor wall wraps",
-      "Retail & cafe branding",
-      "Custom dimensions"
+      "1+1 (White + Pink Paper) Duplicate",
+      "A5, A4, 1/5th, 1/6th, 1/16th Sizes",
+      "Sequential numbering included"
     ],
     "options": {
       "sizes": [
-        "Per sq ft quote",
-        "Custom wall size"
+        "1/16th Size (12 Books)",
+        "1/6th Size (10 Books)",
+        "1/5th Size (10 Books)",
+        "A5 Size (10 Books)",
+        "A4 Size (10 Books)"
       ],
       "finishes": [
-        "Matt Vinyl",
-        "Gloss Vinyl"
+        "Single Color Offset (White + Pink Set)"
       ],
       "quantities": [
-        1,
-        2,
-        5
+        10,
+        12,
+        20,
+        50
       ]
     }
   },
   {
     "id": "p8",
-    "slug": "digital-signages",
-    "name": "Digital Print & Signages",
-    "shortDescription": "Offset, digital, banners, 3D LED & wide format under one roof.",
-    "description": "Complete signage solutions — digital print, offset, multicolour, banners, 3D LED signage, ID cards, mugs, photo print, and T-shirt print.",
-    "basePrice": 999,
-    "turnaround": "2–5 days",
-    "image": "/images/services-overview.png",
-    "category": "large-format",
+    "slug": "seals-stamps",
+    "name": "Seals & Rubber Stamps",
+    shortDescription: "Rubber stamps, address seals & self-inking stamps (small to large).",
+    description: "Custom rubber stamps and self-inking seals for business registration, address stamping, and official authorization. Quick turnaround at BTM 2nd Stage office.",
+    basePrice: 200,
+    turnaround: "Same-day / 24 hrs",
+    image": "/images/id-cards.png",
+    "category": "business-essentials",
     "highlights": [
-      "Digital & offset",
-      "Banners & 3D LED",
-      "Full-service print shop"
+      "Rubber Round Seals (₹200)",
+      "Address Seals (₹250)",
+      "Self Ink Seals (₹450 / ₹650 / ₹750)"
     ],
     "options": {
       "sizes": [
-        "Consult for size"
+        "Standard Round",
+        "Rectangular Address",
+        "Self Ink Compact",
+        "Self Ink Heavy Duty"
       ],
       "finishes": [
-        "Indoor",
-        "Outdoor"
+        "Rubber Stamp - Round Seal (₹200)",
+        "For / Address Seal (₹250)",
+        "Self Ink Seal - Small (₹450)",
+        "Self Ink Seal - Medium (₹650)",
+        "Self Ink Seal - Large (₹750)"
       ],
       "quantities": [
         1,
@@ -294,66 +312,143 @@
   },
   {
     "id": "p9",
-    "slug": "photo-print",
-    "name": "Photo Print",
-    "shortDescription": "Sizes from 6\"×4\" up to 12\"×18\" · vivid photo reproduction.",
-    "description": "High-quality photo prints on premium photo paper. Sizes: 6×4, 5×7, 6×8, 8×10, 8×12, and 12×18 inches with accurate colour.",
-    "basePrice": 49,
-    "turnaround": "Same-day",
-    "image": "/images/photo-print.png",
-    "category": "photo-gifts",
+    "slug": "id-cards-lanyards",
+    "name": "ID Cards & Lanyards (Tags)",
+    shortDescription: "PVC ID cards, white holders, and 10mm, 16mm & 20mm multicolor lanyards.",
+    description: "Complete employee identity gear: PVC double-sided multicolor ID cards (₹100), PVC holders (₹10), and custom printed lanyards in 10mm, 16mm, and 20mm widths with quantity discount breaks down to ₹18/pc.",
+    basePrice: 100,
+    turnaround: "2–4 days",
+    image": "/images/id-cards.png",
+    "gallery": [
+      "/images/id-cards.png",
+      "/images/lanyards.png",
+      "/images/id-card-lanyard-set.png"
+    ],
+    "category": "business-essentials",
+    "popular": true,
     "bestseller": true,
-    "rating": 4.9,
-    "reviewCount": 203,
-    "badge": "Top Pick",
+    "badge": "Popular Set",
     "highlights": [
-      "Multiple standard sizes",
-      "Archival photo paper",
-      "Same-day pickup"
+      "PVC D/S Multicolor ID Card (₹100)",
+      "10mm, 16mm & 20mm Multicolor Printed Lanyards",
+      "Quantity discounts for 50, 100, 500, 1000 units"
     ],
     "options": {
       "sizes": [
-        "6×4\"",
-        "5×7\"",
-        "6×8\"",
-        "8×10\"",
-        "8×12\"",
-        "12×18\""
+        "CR80 Standard PVC Card",
+        "10mm Lanyard Tag",
+        "16mm Lanyard Tag",
+        "20mm Lanyard Tag"
       ],
       "finishes": [
-        "Gloss",
-        "Matt"
+        "PVC ID Card D/S Print",
+        "White PVC Card Holder",
+        "20mm Multicolor Satin Lanyard",
+        "16mm Multicolor Satin Lanyard",
+        "10mm Multicolor Satin Lanyard"
       ],
       "quantities": [
         1,
-        5,
-        10,
-        25
+        50,
+        100,
+        500,
+        1000
       ]
     }
   },
   {
     "id": "p10",
-    "slug": "passport-photo-print",
-    "name": "Passport Photo Print",
-    "shortDescription": "6\"×4\" sheet · 8 passport-size photos per sheet.",
-    "description": "Standard passport photo sheets — 6×4 inch with 8 photos per sheet. Ready for visa, ID, and official applications.",
-    "basePrice": 99,
-    "turnaround": "Same-day",
-    "image": "/images/passport-photos.png",
+    "slug": "ceramic-magic-mugs",
+    "name": "Ceramic Mugs & Magic Mugs",
+    shortDescription: "11oz ceramic mug & heat-sensitive magic mug with full-color sublimation.",
+    description: "Custom printed 11oz ceramic mugs and heat-activated magic mugs. Great for corporate giveaways, team onboarding, and personal photo gifts.",
+    basePrice: 300,
+    turnaround: "Same-day / 24 hrs",
+    image": "/images/smart-keychains.png",
     "category": "photo-gifts",
-    "popular": true,
+    "bestseller": true,
     "highlights": [
-      "6\"×4\" · 8 photos",
-      "Instant print",
-      "BTM walk-in"
+      "11oz Ceramic Mug (₹300 | 50+ @ ₹200)",
+      "11oz Magic Heat Sensitive Mug (₹550 | 10+ @ ₹350)",
+      "Full-color glossy sublimation print"
     ],
     "options": {
       "sizes": [
-        "6×4\" · 8 nos"
+        "11 oz Standard Mug"
       ],
       "finishes": [
-        "Gloss Photo Paper"
+        "11oz White Ceramic Mug (Standard)",
+        "11oz Heat-Sensitive Magic Mug (Black to White photo reveal)"
+      ],
+      "quantities": [
+        1,
+        10,
+        50,
+        100
+      ]
+    }
+  },
+  {
+    "id": "p11",
+    "slug": "button-badges",
+    "name": "Button Badges (Pin Badges)",
+    shortDescription: "44mm, 55mm & 70mm pin badges for campaigns, events & branding.",
+    description: "Vivid pin button badges in 44mm, 55mm, and 70mm diameters. Durable metal back with safety pin — ideal for marketing campaigns, elections, and school events.",
+    basePrice: 360,
+    turnaround: "24–48 hrs",
+    image": "/images/smart-keychains.png",
+    "category": "marketing-materials",
+    "highlights": [
+      "44mm, 55mm & 70mm sizes available",
+      "Quantity tiers: 15–30, 100, 500, 1000 pcs",
+      "Vivid glossy laminated finish"
+    ],
+    "options": {
+      "sizes": [
+        "44mm Pin Badge",
+        "55mm Pin Badge",
+        "70mm Pin Badge"
+      ],
+      "finishes": [
+        "Gloss Laminated Surface"
+      ],
+      "quantities": [
+        15,
+        24,
+        30,
+        100,
+        500,
+        1000
+      ]
+    }
+  },
+  {
+    "id": "p12",
+    "slug": "photo-print-with-frame",
+    "name": "Photo Print with Frame",
+    shortDescription: "4x6 up to 20x30 inch framed photo prints with 1-inch beeding frame.",
+    description: "High quality photo printing mounted inside a sleek 1-inch beeding frame. Sizes range from desktop 4x6 inch to large wall 20x30 inch display frames.",
+    basePrice: 250,
+    turnaround: "24–48 hrs",
+    image": "/images/photo-print.png",
+    "category": "photo-gifts",
+    "bestseller": true,
+    "highlights": [
+      "1-inch Beeding frame included",
+      "Sizes: 4x6, 5x7, 6x8, 10x8, 12x18, 20x30 inch",
+      "Archival photo paper printing"
+    ],
+    "options": {
+      "sizes": [
+        "4 × 6\"",
+        "5 × 7\"",
+        "6 × 8\"",
+        "10 × 8\"",
+        "12 × 18\"",
+        "20 × 30\""
+      ],
+      "finishes": [
+        "Sleek 1-Inch Beeding Frame"
       ],
       "quantities": [
         1,
@@ -364,127 +459,68 @@
     }
   },
   {
-    "id": "p11",
-    "slug": "wall-calendars",
-    "name": "Wall Calendar Printing",
-    "shortDescription": "12\"×18\" · 6 pages · wiro bind with hanging hook.",
-    "description": "Customized wall calendars with your photos. Digital multicolour print, 6 pages, 12×18 in, top wiro bind with hanging — upload your images month-wise.",
-    "basePrice": 2199,
-    "turnaround": "5–8 days",
-    "image": "/images/calendar-wall.png",
-    "category": "stationery",
-    "popular": true,
-    "highlights": [
-      "Custom photo pages",
-      "Wiro bind + hanging",
-      "12\"×18\" format"
-    ],
-    "options": {
-      "sizes": [
-        "12×18\" Wall"
-      ],
-      "finishes": [
-        "Gloss",
-        "Silk"
-      ],
-      "quantities": [
-        25,
-        50,
-        100,
-        250
-      ]
-    }
-  },
-  {
-    "id": "p12",
-    "slug": "desk-calendars",
-    "name": "Table Top Calendar",
-    "shortDescription": "Customized desk calendar · 6 pages multicolour print.",
-    "description": "Table-top tent calendars with your brand or personal photos. Digital multicolour, wiro bound — perfect for corporate gifting.",
-    "basePrice": 1799,
-    "turnaround": "5–7 days",
-    "image": "/images/calendar-tabletop.png",
-    "category": "stationery",
-    "highlights": [
-      "Desk tent format",
-      "Custom photo pages",
-      "Corporate gifting"
-    ],
-    "options": {
-      "sizes": [
-        "7×5 in tent",
-        "8×6 in tent"
-      ],
-      "finishes": [
-        "Gloss",
-        "Silk"
-      ],
-      "quantities": [
-        25,
-        50,
-        100,
-        250
-      ]
-    }
-  },
-  {
     "id": "p13",
-    "slug": "receipt-books",
-    "name": "Receipt Books",
-    "shortDescription": "A4 · 100gsm white · multicolour numbered receipts.",
-    "description": "Custom receipt books on A4 100gsm white paper with multicolour print. Numbered duplicates for shops, temples, and small businesses.",
-    "basePrice": 899,
-    "turnaround": "3–5 days",
-    "image": "/images/receipt-books.png",
+    "slug": "document-lamination",
+    "name": "Lamination (A5, A4, A3)",
+    shortDescription: "Thermal pouch lamination for certificates, IDs, and menus.",
+    description: "Heavy-duty thermal pouch lamination for A5, A4, and A3 documents. Bulk discounts down to ₹12/pc for A5, ₹14/pc for A4, and ₹35/pc for A3.",
+    basePrice: 50,
+    turnaround: "Instant / Same-day",
+    image": "/images/services-overview.png",
     "category": "stationery",
     "highlights": [
-      "A4 · 100gsm white",
-      "Multicolour print",
-      "Numbered duplicates"
+      "A5, A4 & A3 standard document sizes",
+      "Crystal clear waterproof pouch lamination",
+      "Quantity discounts for 10, 100, 500, 1000 units"
     ],
     "options": {
       "sizes": [
-        "A4 Book"
+        "A5 Size",
+        "A4 Size",
+        "A3 Size"
       ],
       "finishes": [
-        "Duplicate",
-        "Triplicate"
+        "Gloss Thermal Pouch Lamination"
       ],
       "quantities": [
+        1,
         10,
-        25,
-        50,
-        100
+        100,
+        500,
+        1000
       ]
     }
   },
   {
     "id": "p14",
-    "slug": "invoice-bill-books",
-    "name": "Invoice Bill Books",
-    "shortDescription": "Custom invoice & bill books for retail and services.",
-    "description": "Professional invoice bill books with your business name, GST details, and sequential numbering. Bulk orders with doorstep delivery across India.",
-    "basePrice": 799,
-    "turnaround": "3–5 days",
-    "image": "/images/invoice-books.png",
-    "category": "stationery",
+    "slug": "banners-vinyl-stickers",
+    "name": "Banners & Vinyl Stickers (Per Sq. Ft.)",
+    shortDescription: "Normal flex, Star flex banner & laminated vinyl stickers.",
+    description: "Wide format outdoor printing charged by square feet. Normal Flex Banner (₹20–₹50/sqft), Star Flex Banner (₹40–₹60/sqft), and Vinyl Sticker with Lamination (₹110–₹130/sqft).",
+    basePrice: 500,
+    turnaround: "Same-day / 24 hrs",
+    image": "/images/signage-wall-mural.png",
+    "category": "large-format",
+    "popular": true,
+    "bestseller": true,
     "highlights": [
-      "GST-ready layouts",
-      "Sequential numbering",
-      "Bulk pricing"
+      "Normal Flex Banner (from ₹20/sqft)",
+      "Star Flex Banner (from ₹40/sqft)",
+      "Laminated Vinyl Sticker (from ₹110/sqft)"
     ],
     "options": {
       "sizes": [
-        "A5 Book",
-        "A4 Book"
+        "10 sq ft",
+        "50 sq ft",
+        "100 sq ft"
       ],
       "finishes": [
-        "Duplicate",
-        "Triplicate"
+        "Normal Flex Banner",
+        "Star Flex Banner",
+        "Vinyl Sticker with Lamination"
       ],
       "quantities": [
         10,
-        25,
         50,
         100
       ]
@@ -492,170 +528,43 @@
   },
   {
     "id": "p15",
-    "slug": "id-cards",
-    "name": "ID Cards",
-    "shortDescription": "86mm × 54mm · office, school & membership IDs.",
-    "description": "PVC and laminated ID cards for offices, schools, and clubs. Standard CR80 size 86mm × 54mm with photo, barcode, and lanyard slot options.",
-    "basePrice": 149,
-    "turnaround": "2–4 days",
-    "image": "/images/id-cards.png",
+    "slug": "custom-signages-led-boards",
+    "name": "Custom Signage & LED Boards (Quotation)",
+    shortDescription: "Frame banners, 2D/3D LED boards, standees, acrylic boards, canopies & umbrellas.",
+    description: "Custom signage & outdoor display products provided via custom quotation: Banner with frame, Backlit lighting board, 3D LED board, 2D LED board, Rollup standee with Star flex, Acrylic office name board, Promotional Canopy, Promo table, and Branded Outdoor Umbrella.",
+    basePrice: 1500,
+    turnaround: "3–7 days",
+    image": "/images/signage-wall-mural.png",
     "gallery": [
-      "/images/id-cards.png",
-      "/images/id-card-lanyard-set.png"
+      "/images/signage-wall-mural.png",
+      "/images/services-overview.png"
     ],
-    "category": "business-essentials",
-    "bestseller": true,
-    "badge": "Popular",
+    "category": "large-format",
+    "badge": "Quote Based",
     "highlights": [
-      "Office & school IDs",
-      "86mm × 54mm standard",
-      "Lanyard combo available"
+      "Custom dimensions & site measurements",
+      "3D LED, Backlit & Standee options",
+      "BTM 2nd Stage team installation guidance"
     ],
     "options": {
       "sizes": [
-        "86×54mm Standard"
+        "Custom Site Measurement"
       ],
       "finishes": [
-        "PVC",
-        "Laminated"
+        "Banner with Frame",
+        "Backlight Lighting Board",
+        "3D LED Board",
+        "2D LED Board",
+        "Rollup Standee with Star Flex Banner",
+        "Acrylic Office Name Board",
+        "Canopy Tent",
+        "Promo Table",
+        "Outdoor Umbrella"
       ],
       "quantities": [
-        25,
-        50,
-        100,
-        250
-      ]
-    }
-  },
-  {
-    "id": "p16",
-    "slug": "lanyards",
-    "name": "Lanyard (Tag) Print",
-    "shortDescription": "12mm · 16mm · 20mm multicolour satin lanyards.",
-    "description": "Branded lanyards for office IDs, school IDs, and events. Multicolour satin print in 12mm, 16mm, and 20mm widths with metal hooks.",
-    "basePrice": 89,
-    "turnaround": "3–5 days",
-    "image": "/images/lanyards.png",
-    "category": "business-essentials",
-    "highlights": [
-      "12 / 16 / 20 mm widths",
-      "Multicolour satin",
-      "Metal swivel hooks"
-    ],
-    "options": {
-      "sizes": [
-        "12mm",
-        "16mm",
-        "20mm"
-      ],
-      "finishes": [
-        "Satin Print"
-      ],
-      "quantities": [
-        50,
-        100,
-        250,
-        500
-      ]
-    }
-  },
-  {
-    "id": "p17",
-    "slug": "id-card-lanyard-combo",
-    "name": "ID Card + Lanyard Combo",
-    "shortDescription": "Complete identity kit — printed card with branded lanyard.",
-    "description": "Bundle office or school ID cards with matching lanyards. One order, one proof, ready to issue to your team or students.",
-    "basePrice": 199,
-    "turnaround": "4–6 days",
-    "image": "/images/id-card-lanyard-set.png",
-    "category": "business-essentials",
-    "newLaunch": true,
-    "badge": "Combo",
-    "highlights": [
-      "Card + lanyard bundle",
-      "Bulk corporate pricing",
-      "Design assist"
-    ],
-    "options": {
-      "sizes": [
-        "Standard combo"
-      ],
-      "finishes": [
-        "PVC + Satin Lanyard"
-      ],
-      "quantities": [
-        25,
-        50,
-        100,
-        250
-      ]
-    }
-  },
-  {
-    "id": "p18",
-    "slug": "presentation-envelopes",
-    "name": "Presentation Envelopes",
-    "shortDescription": "7×4\" · 100gsm sunshine white · royal texture options.",
-    "description": "Elegant presentation envelopes for gifts, awards, and invitations. 100gsm sunshine white or royal texture paper with floral or custom print.",
-    "basePrice": 599,
-    "turnaround": "3–5 days",
-    "image": "/images/presentation-envelopes.png",
-    "gallery": [
-      "/images/presentation-envelopes.png",
-      "/images/presentation-envelopes-gift.png"
-    ],
-    "category": "packaging",
-    "highlights": [
-      "7×4\" standard",
-      "Sunshine white / texture",
-      "Gift & award envelopes"
-    ],
-    "options": {
-      "sizes": [
-        "7×4\""
-      ],
-      "finishes": [
-        "Sunshine White",
-        "Royal Texture"
-      ],
-      "quantities": [
-        50,
-        100,
-        250,
-        500
-      ]
-    }
-  },
-  {
-    "id": "p19",
-    "slug": "smart-keychains",
-    "name": "Smart Keychains",
-    "shortDescription": "Personalised & branding keychains · bulk from ₹14/pc.",
-    "description": "Fabric and metal keychains with your logo — personalised, vehicle, and branding styles. Includes envelope print & packing. Delivery across India.",
-    "basePrice": 149,
-    "turnaround": "5–7 days",
-    "image": "/images/smart-keychains.png",
-    "category": "marketing-materials",
-    "newLaunch": true,
-    "badge": "New",
-    "highlights": [
-      "From 100 qty",
-      "Logo packing option",
-      "Pan-India courier"
-    ],
-    "options": {
-      "sizes": [
-        "40mm round",
-        "50mm round"
-      ],
-      "finishes": [
-        "Fabric",
-        "Metal"
-      ],
-      "quantities": [
-        100,
-        500,
-        1000
+        1,
+        2,
+        5
       ]
     }
   }

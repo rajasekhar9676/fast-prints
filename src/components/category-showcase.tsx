@@ -28,7 +28,7 @@ export function CategoryShowcase() {
         {categories.map((cat) => (
           <Link
             key={cat.id}
-            href={`/products?category=${cat.id}`}
+            href={`/category/${cat.id}`}
             className="group relative overflow-hidden rounded-2xl border border-ink-100 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-xl"
           >
             <div className="relative h-36 overflow-hidden">

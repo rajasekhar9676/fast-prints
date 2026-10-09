@@ -60,8 +60,13 @@ async function readJsonFile<T>(name: string): Promise<T | null> {
 }
 
 export async function seedDatabaseIfEmpty(): Promise<void> {
-  const productCount = await prisma.product.count();
-  if (productCount > 0) return;
+  if (!process.env.DATABASE_URL) return;
+  try {
+    const productCount = await prisma.product.count();
+    if (productCount > 0) return;
+  } catch {
+    return;
+  }
 
   const [
     jsonProducts,

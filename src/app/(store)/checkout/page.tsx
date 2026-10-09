@@ -93,7 +93,19 @@ export default function CheckoutPage() {
       return;
     }
 
-    const payment = (await res.json()) as PaymentStartResponse;
+    const data = await res.json();
+
+    // Direct Order Mode (Payment bypassed for testing / direct pickup / non-Razorpay)
+    if (data.directOrder) {
+      setOrderNumber(data.orderNumber);
+      if (data.customerChatUrl) setWhatsappUrl(data.customerChatUrl);
+      setPlaced(true);
+      clearCart();
+      setSubmitting(false);
+      return;
+    }
+
+    const payment = data as PaymentStartResponse;
     const scriptLoaded = await loadRazorpayScript();
 
     if (!scriptLoaded || !window.Razorpay) {
@@ -168,31 +180,35 @@ export default function CheckoutPage() {
         </div>
         <p className="text-xs font-bold uppercase tracking-[0.12em] text-brand-600">Thank you</p>
         <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl font-extrabold text-ink-950">
-          Payment received
+          Order Placed Successfully!
         </h1>
         {orderNumber ? (
           <p className="mt-3 text-sm font-bold text-ink-700">
-            Order reference: <span className="text-brand-700">{orderNumber}</span>
+            Order Reference: <span className="text-brand-700">{orderNumber}</span>
           </p>
         ) : null}
-        <p className="mt-4 text-ink-500">
-          Confirmation email has been sent. Our team will verify artwork and contact you on{" "}
-          <span className="font-bold text-ink-950">+91 91647 79922</span> to confirm finishing and timeline.
+
+        <p className="mt-4 text-sm text-ink-600">
+          Our print team will review your order artwork and contact you on{" "}
+          <span className="font-bold text-ink-950">+91 91647 79922</span> to confirm finishing options and delivery timeline.
         </p>
+        
         {whatsappUrl ? (
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary mt-8 inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1da851]"
+            className="btn-primary mt-6 inline-flex w-full items-center justify-center gap-2 bg-[#25D366] text-white hover:bg-[#1da851]"
           >
             <MessageCircle className="h-5 w-5" aria-hidden />
-            Confirm on WhatsApp
+            Confirm Order on WhatsApp
           </a>
         ) : null}
-        <Link href="/products" className="btn-primary mt-4 inline-flex">
-          Continue shopping
-        </Link>
+        <div className="mt-4">
+          <Link href="/products" className="btn-secondary inline-flex text-xs">
+            Continue Shopping
+          </Link>
+        </div>
       </section>
     );
   }
@@ -208,7 +224,7 @@ export default function CheckoutPage() {
             <input
               required
               name="email"
-              placeholder="Email"
+              placeholder="Email address"
               type="email"
               defaultValue={user?.email ?? ""}
               readOnly={!!user}
@@ -233,10 +249,10 @@ export default function CheckoutPage() {
               disabled={cartItems.length === 0 || submitting}
               className="btn-primary w-full py-4 disabled:opacity-50"
             >
-              {submitting ? "Opening payment…" : `Pay ${formatINR(subtotal)}`}
+              {submitting ? "Placing Order…" : `Place Order (${formatINR(subtotal)})`}
             </button>
             <p className="text-center text-xs text-ink-500">
-              Secure payment via Razorpay · UPI, cards, net banking
+              Fast processing · Pay on delivery or direct bank transfer
             </p>
           </form>
         </section>

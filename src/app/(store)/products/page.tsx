@@ -26,8 +26,8 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
         <p className="text-sm text-ink-500">{filtered.length} items</p>
       </div>
 
-      <div className="panel-light flex flex-col gap-3 p-3 md:flex-row md:items-center md:justify-between">
-        <div className="scrollbar-thin flex flex-wrap gap-2 overflow-x-auto">
+      <div className="panel-light p-3 md:p-4">
+        <div className="no-scrollbar flex flex-wrap gap-2 overflow-x-auto">
           <Link
             href="/products"
             className={`shrink-0 rounded-full px-4 py-2 text-sm font-bold transition ${
@@ -41,7 +41,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
           {categories.map((c) => (
             <Link
               key={c.id}
-              href={`/products?category=${c.id}`}
+              href={`/category/${c.id}`}
               className={`shrink-0 rounded-full px-4 py-2 text-sm font-bold transition ${
                 activeCategory === c.id
                   ? "bg-brand-500 text-ink-950 shadow-md shadow-brand-500/20"
@@ -52,19 +52,6 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
             </Link>
           ))}
         </div>
-
-        <form action="/products" method="get" className="flex w-full max-w-md gap-2 lg:w-auto">
-          {activeCategory ? <input type="hidden" name="category" value={activeCategory} /> : null}
-          <input
-            name="q"
-            defaultValue={query ?? ""}
-            placeholder="Search catalogue…"
-            className="min-w-0 flex-1 rounded-2xl border border-ink-200 bg-white px-4 py-2.5 text-sm shadow-inner focus:border-brand-400 focus:outline-none focus:ring-4 focus:ring-brand-500/15"
-          />
-          <button type="submit" className="btn-primary shrink-0 px-5 py-2.5 text-sm">
-            Search
-          </button>
-        </form>
       </div>
 
       {(activeCategory || query || budget) && (

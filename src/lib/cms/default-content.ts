@@ -17,7 +17,7 @@ export const defaultHomepageContent: HomepageContent = {
     },
     {
       id: "photo-print",
-      href: "/products/photo-print",
+      href: "/products/photo-print-with-frame",
       label: "Photo Prints",
       sub: '6"×4" to 12"×18" · Same-day pickup',
       cta: "Print photos",
@@ -25,7 +25,7 @@ export const defaultHomepageContent: HomepageContent = {
     },
     {
       id: "signage",
-      href: "/products/wall-signage-printing",
+      href: "/products/banners-vinyl-stickers",
       label: "Signages & Wall Graphics",
       sub: "Indoor & outdoor branding",
       cta: "Get a quote",
@@ -122,7 +122,7 @@ export const defaultHomepageContent: HomepageContent = {
     { id: "cafe", title: "Cafe & Restaurant", href: "/products?category=marketing-materials", image: storeImages.pamphletGrocery },
     { id: "boutique", title: "Boutique & Fashion", href: "/products?category=packaging", image: storeImages.presentationEnvelopesGift },
     { id: "wedding", title: "Weddings", href: "/products?category=events", image: storeImages.pamphletInvitation },
-    { id: "corporate", title: "Corporate ID Kits", href: "/products/id-card-lanyard-combo", image: storeImages.idCardLanyardSet },
+    { id: "corporate", title: "Corporate ID Kits", href: "/products/id-cards-lanyards", image: storeImages.idCardLanyardSet },
   ],
   budgetRanges: [
     {
