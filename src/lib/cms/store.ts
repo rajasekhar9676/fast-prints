@@ -22,8 +22,12 @@ export async function readCmsJson<T>(name: string): Promise<T | null> {
 }
 
 export async function writeCmsJson<T>(name: string, data: T): Promise<void> {
-  await ensureDir();
-  await fs.writeFile(filePath(name), JSON.stringify(data, null, 2), "utf-8");
+  try {
+    await ensureDir();
+    await fs.writeFile(filePath(name), JSON.stringify(data, null, 2), "utf-8");
+  } catch (err) {
+    console.warn(`[CMS STORE] Could not write ${name} to filesystem (serverless read-only mode):`, err);
+  }
 }
 
 export const cmsFiles = {

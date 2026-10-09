@@ -110,6 +110,8 @@ export async function getSettings(): Promise<SiteSettings> {
   return json ?? defaultSettings;
 }
 
+const memoryOrdersCache: Order[] = [];
+
 export async function getOrders(): Promise<Order[]> {
   if (process.env.DATABASE_URL) {
     try {
@@ -124,7 +126,15 @@ export async function getOrders(): Promise<Order[]> {
     }
   }
   const json = await readCmsJson<Order[]>(cmsFiles.orders);
-  return json ?? [];
+  const fileOrders = json ?? [];
+
+  const combined = [...memoryOrdersCache];
+  for (const o of fileOrders) {
+    if (!combined.some((m) => m.id === o.id)) {
+      combined.push(o);
+    }
+  }
+  return combined;
 }
 
 export async function saveProducts(products: Product[]): Promise<void> {
@@ -320,8 +330,9 @@ export async function saveOrders(orders: Order[]): Promise<void> {
 }
 
 export async function addOrder(order: Order): Promise<void> {
+  memoryOrdersCache.unshift(order);
   const existing = (await getOrders()) || [];
-  await writeCmsJson(cmsFiles.orders, [order, ...existing]);
+  await writeCmsJson(cmsFiles.orders, existing);
   if (!process.env.DATABASE_URL) return;
   try {
     await prisma.order.create({ data: orderToDb(order) });
@@ -348,6 +359,8 @@ export async function updateOrder(id: string, patch: Partial<Order>): Promise<Or
   return updated;
 }
 
+const memoryUsersCache: CustomerUser[] = [];
+
 export async function getUsers(): Promise<CustomerUser[]> {
   if (process.env.DATABASE_URL) {
     try {
@@ -357,7 +370,16 @@ export async function getUsers(): Promise<CustomerUser[]> {
     } catch {}
   }
   const json = await readCmsJson<CustomerUser[]>(cmsFiles.users);
-  return json ?? [];
+  const fileUsers = json ?? [];
+  
+  // Combine file users with memory cache for serverless environments
+  const combined = [...memoryUsersCache];
+  for (const u of fileUsers) {
+    if (!combined.some((m) => m.id === u.id)) {
+      combined.push(u);
+    }
+  }
+  return combined;
 }
 
 export async function getUserById(id: string): Promise<CustomerUser | undefined> {
@@ -371,8 +393,9 @@ export async function getUserByEmail(email: string): Promise<CustomerUser | unde
 }
 
 export async function createUser(user: CustomerUser): Promise<void> {
+  memoryUsersCache.unshift(user);
   const all = await getUsers();
-  await writeCmsJson(cmsFiles.users, [user, ...all]);
+  await writeCmsJson(cmsFiles.users, all);
   if (!process.env.DATABASE_URL) return;
   try {
     await prisma.user.create({
