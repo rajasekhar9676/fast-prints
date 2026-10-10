@@ -30,10 +30,14 @@ import {
 } from "./default-content";
 import { defaultSettings, ensureDbSeeded } from "./seed";
 
+function hasDb() {
+  return !!(process.env.DATABASE_URL || process.env.POSTGRES_PRISMA_URL || process.env.POSTGRES_URL);
+}
+
 const orderInclude = { items: true } as const;
 
 export async function getProducts(): Promise<Product[]> {
-  if (process.env.DATABASE_URL) {
+  if (hasDb()) {
     try {
       await ensureDbSeeded();
       const rows = await prisma.product.findMany({ orderBy: { name: "asc" } });
@@ -113,7 +117,7 @@ export async function getSettings(): Promise<SiteSettings> {
 const memoryOrdersCache: Order[] = [];
 
 export async function getOrders(): Promise<Order[]> {
-  if (process.env.DATABASE_URL) {
+  if (hasDb()) {
     try {
       await ensureDbSeeded();
       const rows = await prisma.order.findMany({
@@ -333,7 +337,7 @@ export async function addOrder(order: Order): Promise<void> {
   memoryOrdersCache.unshift(order);
   const existing = (await getOrders()) || [];
   await writeCmsJson(cmsFiles.orders, existing);
-  if (!process.env.DATABASE_URL) return;
+  if (!hasDb()) return;
   try {
     await prisma.order.create({ data: orderToDb(order) });
   } catch {}
