@@ -39,7 +39,7 @@ export default async function CorporatePage() {
   );
 
   return (
-    <div className="space-y-14 pb-14">
+    <div className="mx-auto max-w-7xl px-4 py-5 md:px-6 md:py-7 space-y-14 pb-14">
       <section className="relative overflow-hidden rounded-[1.75rem] bg-ink-950 text-white">
         <div className="hero-dot-grid pointer-events-none absolute inset-0 opacity-20" aria-hidden />
         <div className="pointer-events-none absolute -right-20 top-0 h-80 w-80 rounded-full bg-brand-500/10 blur-3xl" aria-hidden />

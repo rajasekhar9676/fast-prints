@@ -40,8 +40,8 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen bg-surface lg:grid lg:grid-cols-[260px_1fr]">
       <aside className="border-b border-ink-100 bg-white lg:sticky lg:top-0 lg:h-screen lg:border-b-0 lg:border-r">
         <div className="flex items-center gap-3 border-b border-ink-100 px-5 py-5">
-          <span className="relative block h-10 w-10 overflow-hidden rounded-full border-2 border-brand-500 bg-ink-950">
-            <Image src="/logo.png" alt="Fast Prints" fill className="object-cover p-0.5" sizes="40px" />
+          <span className="relative block h-10 w-10 overflow-hidden rounded-full border-2 border-brand-500 bg-white p-0.5 shadow-sm">
+            <Image src="/logo-icon.png" alt="Fast Prints" fill className="object-contain p-0.5" sizes="40px" />
           </span>
           <div>
             <p className="font-[family-name:var(--font-display)] text-sm font-extrabold text-ink-950">Admin Panel</p>

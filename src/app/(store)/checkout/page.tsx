@@ -82,6 +82,8 @@ export default function CheckoutPage() {
           selectedFinish: item.selectedFinish,
           selectedUnits: item.selectedUnits,
           unitPrice: item.unitPrice,
+          designFileName: item.designFileName,
+          designFileUrl: item.designFileUrl,
         })),
       }),
     });
@@ -214,7 +216,7 @@ export default function CheckoutPage() {
   }
 
   return (
-    <div className="space-y-10 pb-10">
+    <div className="mx-auto max-w-7xl px-4 py-5 md:px-6 md:py-7 space-y-10 pb-10">
       <SectionHeader eyebrow="Checkout" title="Delivery details" />
 
       <div className="grid gap-8 lg:grid-cols-[1fr_380px]">
@@ -273,9 +275,19 @@ export default function CheckoutPage() {
                       sizes="48px"
                     />
                   </div>
-                  <p className="text-white/80">
-                    {item.product.name} × {item.quantity}
-                  </p>
+                  <div className="min-w-0">
+                    <p className="text-white/90 font-medium">
+                      {item.product.name} × {item.quantity}
+                    </p>
+                    <p className="text-xs text-white/60">
+                      {item.selectedSize} · {item.selectedUnits} units
+                    </p>
+                    {item.designFileName ? (
+                      <p className="mt-0.5 text-xs text-brand-300 truncate">
+                        🎨 Artwork: {item.designFileName}
+                      </p>
+                    ) : null}
+                  </div>
                 </div>
                 <p className="shrink-0 font-bold text-brand-300">{formatINR(item.unitPrice * item.quantity)}</p>
               </div>

@@ -20,7 +20,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
   const budget = params.budget;
 
   return (
-    <div className="space-y-6 pb-8">
+    <div className="mx-auto max-w-7xl px-4 py-5 md:px-6 md:py-7 space-y-6 pb-8">
       <div className="flex items-end justify-between gap-4">
         <h1 className="text-2xl font-extrabold text-ink-950">All products</h1>
         <p className="text-sm text-ink-500">{filtered.length} items</p>

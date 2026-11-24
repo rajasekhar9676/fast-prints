@@ -16,7 +16,7 @@ export default async function TestimonialsPage() {
   const [content, settings] = await Promise.all([getTestimonialsContent(), getSettings()]);
 
   return (
-    <div className="space-y-14 pb-14">
+    <div className="mx-auto max-w-7xl px-4 py-5 md:px-6 md:py-7 space-y-14 pb-14">
       <section className="relative overflow-hidden rounded-[1.75rem] bg-ink-950 px-6 py-12 text-white md:px-10 md:py-16">
         <div className="hero-dot-grid pointer-events-none absolute inset-0 opacity-20" aria-hidden />
         <div className="relative mx-auto max-w-3xl text-center">

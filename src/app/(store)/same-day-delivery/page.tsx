@@ -18,7 +18,7 @@ export default async function SameDayDeliveryPage() {
   );
 
   return (
-    <div className="space-y-6 pb-12">
+    <div className="mx-auto max-w-7xl px-4 py-5 md:px-6 md:py-7 space-y-6 pb-12">
       {/* Express Hero Banner */}
       <div className="relative overflow-hidden rounded-[1.8rem] bg-gradient-to-br from-[#1a1208] via-[#241a0b] to-[#140e06] p-6 sm:p-8 text-white shadow-lg border border-amber-500/30">
         <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-amber-500/25 blur-3xl" aria-hidden />

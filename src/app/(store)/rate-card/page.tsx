@@ -56,7 +56,7 @@ export default function RateCardPage() {
   };
 
   return (
-    <div className="space-y-8 pb-12 pt-2">
+    <div className="mx-auto max-w-7xl px-4 py-5 md:px-6 md:py-7 space-y-8 pb-12 pt-2">
       {/* Page Header */}
       <div className="rounded-3xl bg-gradient-to-br from-ink-950 via-ink-900 to-ink-950 p-6 md:p-10 text-white shadow-xl">
         <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">

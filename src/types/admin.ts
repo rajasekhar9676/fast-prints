@@ -21,6 +21,8 @@ export type OrderItem = {
   selectedUnits: number;
   unitPrice: number;
   lineTotal: number;
+  designFileName?: string;
+  designFileUrl?: string;
 };
 
 export type Order = {
@@ -74,6 +76,8 @@ export type CreateOrderPayload = {
     selectedFinish: string;
     selectedUnits: number;
     unitPrice: number;
+    designFileName?: string;
+    designFileUrl?: string;
   }>;
   subtotal: number;
 };

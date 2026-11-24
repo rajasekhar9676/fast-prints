@@ -29,39 +29,41 @@ export default async function Home() {
     .slice(0, 10);
 
   return (
-    <div className="space-y-6 pb-12 md:space-y-8 overflow-x-hidden">
-      {/* Hero Section */}
-      <EcommerceHeroBanners banners={homepage.heroBanners} />
+    <div className="w-full space-y-8 pb-14 overflow-x-hidden">
+      {/* Full-width HomeTown.in style hero banner with AI imagery & zero rounded corners */}
+      <EcommerceHeroBanners />
 
-      {/* Store Perks Strip */}
-      <StorePerksStrip perks={homepage.perks} />
+      {/* Contained Storefront Sections */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 space-y-8">
+        {/* Store Perks Strip */}
+        <StorePerksStrip perks={homepage.perks} />
 
-      {/* Official Rate Card Banner */}
-      <div className="relative overflow-hidden rounded-[1.8rem] bg-gradient-to-r from-[#14110c] via-[#1f1a14] to-[#14110c] p-6 text-white shadow-lg ring-1 ring-brand-500/30">
-        <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-brand-500/20 blur-3xl" aria-hidden />
+        {/* Official Rate Card Banner */}
+      <div className="relative overflow-hidden rounded-[1.8rem] border border-amber-200/80 bg-gradient-to-r from-amber-50/70 via-white to-amber-50/40 p-6 sm:p-7 text-ink-950 shadow-sm ring-1 ring-black/[0.03]">
+        <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-amber-400/15 blur-3xl" aria-hidden />
         
         <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2">
             <div className="flex items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-500/20 px-3 py-0.5 text-[11px] font-extrabold uppercase tracking-wider text-brand-300 ring-1 ring-brand-400/40">
-                <Zap className="h-3 w-3 text-brand-400" />
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-500/15 px-3 py-0.5 text-[11px] font-extrabold uppercase tracking-wider text-amber-900 ring-1 ring-amber-500/30">
+                <Zap className="h-3 w-3 text-amber-600 fill-amber-600" />
                 Official Price List
               </span>
-              <span className="hidden sm:inline text-xs text-white/50">• BTM 2nd Stage Store</span>
+              <span className="hidden sm:inline text-xs text-ink-500 font-medium">• BTM 2nd Stage Store</span>
             </div>
             
-            <h3 className="font-[family-name:var(--font-display)] text-xl sm:text-2xl font-extrabold text-white">
+            <h3 className="font-[family-name:var(--font-display)] text-xl sm:text-2xl font-extrabold text-ink-950">
               Looking for complete itemized printing rates?
             </h3>
             
-            <p className="text-xs sm:text-sm text-white/75 max-w-2xl leading-relaxed">
-              Visiting Cards, 13x19 Digital Sheets, Offset Print, Bill Books, Stamps, ID Cards, Lanyards, Mugs & Signages — view upfront pricing.
+            <p className="text-xs sm:text-sm text-ink-600 max-w-2xl leading-relaxed">
+              Visiting Cards, 13x19 Digital Sheets, Offset Print, Bill Books, Stamps, ID Cards, Lanyards, Mugs &amp; Signages — view upfront pricing.
             </p>
           </div>
 
           <Link
             href="/rate-card"
-            className="btn-primary shrink-0 self-start md:self-center px-6 py-3 text-xs sm:text-sm font-extrabold group shadow-lg shadow-brand-500/20"
+            className="btn-primary shrink-0 self-start md:self-center px-6 py-3.5 text-xs sm:text-sm font-extrabold group shadow-lg shadow-brand-500/25"
           >
             View Rate Card
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden />
@@ -121,26 +123,26 @@ export default async function Home() {
       />
 
       {/* Corporate & Bulk Orders CTA */}
-      <div className="relative overflow-hidden rounded-[1.8rem] bg-gradient-to-r from-[#14120f] via-[#1d1811] to-[#14120f] p-7 text-white shadow-xl border border-brand-500/20">
-        <div className="pointer-events-none absolute -left-20 -bottom-20 h-64 w-64 rounded-full bg-brand-500/15 blur-3xl" aria-hidden />
+      <div className="relative overflow-hidden rounded-[1.8rem] border border-amber-200/80 bg-gradient-to-r from-amber-50/80 via-white to-amber-50/50 p-7 text-ink-950 shadow-sm ring-1 ring-black/[0.03]">
+        <div className="pointer-events-none absolute -left-20 -bottom-20 h-64 w-64 rounded-full bg-amber-400/15 blur-3xl" aria-hidden />
 
         <div className="relative flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <div className="space-y-3 max-w-xl">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-500/20 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wider text-brand-300 ring-1 ring-brand-400/30">
-              <ShieldCheck className="h-3.5 w-3.5 text-brand-400" />
-              Corporate & Business Printing
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-500/15 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wider text-amber-900 ring-1 ring-amber-400/30">
+              <ShieldCheck className="h-3.5 w-3.5 text-brand-600" />
+              Corporate &amp; Business Printing
             </span>
-            <h3 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+            <h3 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-extrabold text-ink-950 leading-tight">
               Bulk orders or corporate team packages?
             </h3>
-            <p className="text-xs sm:text-sm text-white/70 leading-relaxed">
-              Visiting cards, employee onboarding kits, customized apparel, and event signage. Custom quotes & GST invoices guaranteed.
+            <p className="text-xs sm:text-sm text-ink-600 leading-relaxed">
+              Visiting cards, employee onboarding kits, customized apparel, and event signage. Custom quotes &amp; GST invoices guaranteed.
             </p>
             
-            <div className="flex flex-wrap gap-4 pt-1 text-xs text-brand-200 font-semibold">
-              <span className="flex items-center gap-1"><CheckCircle2 className="h-3.5 w-3.5 text-brand-400" /> GST Billing</span>
-              <span className="flex items-center gap-1"><CheckCircle2 className="h-3.5 w-3.5 text-brand-400" /> Custom Proofing</span>
-              <span className="flex items-center gap-1"><CheckCircle2 className="h-3.5 w-3.5 text-brand-400" /> Volume Discounts</span>
+            <div className="flex flex-wrap gap-4 pt-1 text-xs text-ink-700 font-semibold">
+              <span className="flex items-center gap-1"><CheckCircle2 className="h-3.5 w-3.5 text-brand-600" /> GST Billing</span>
+              <span className="flex items-center gap-1"><CheckCircle2 className="h-3.5 w-3.5 text-brand-600" /> Custom Proofing</span>
+              <span className="flex items-center gap-1"><CheckCircle2 className="h-3.5 w-3.5 text-brand-600" /> Volume Discounts</span>
             </div>
           </div>
 
@@ -152,6 +154,7 @@ export default async function Home() {
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden />
           </Link>
         </div>
+      </div>
       </div>
     </div>
   );

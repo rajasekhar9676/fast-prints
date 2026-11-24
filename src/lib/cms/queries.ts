@@ -58,12 +58,23 @@ const PRODUCT_SLUG_ALIASES: Record<string, string> = {
   "id-card-lanyard-combo": "id-cards-lanyards",
   "labels-packaging": "13x19-sticker-sheets",
   "sticker-sheets": "13x19-sticker-sheets",
+  "stickers": "13x19-sticker-sheets",
+  "stickers-labels": "13x19-sticker-sheets",
   "digital-print": "13x19-digital-print",
   "bill-books": "single-color-bill-books",
   "mugs": "ceramic-magic-mugs",
+  "magic-mugs": "ceramic-magic-mugs",
   "badges": "button-badges",
   "banners": "banners-vinyl-stickers",
   "stamps": "seals-stamps",
+  "rubber-stamps": "seals-stamps",
+  "lamination": "document-lamination",
+  "calendars": "custom-2027-desk-calendars",
+  "desk-calendars": "custom-2027-desk-calendars",
+  "diaries": "corporate-diaries-executive-planners",
+  "corporate-diaries": "corporate-diaries-executive-planners",
+  "corporate-gifts": "corporate-welcome-gift-kits",
+  "gift-sets": "corporate-welcome-gift-kits",
 };
 
 export async function getProductBySlug(slug: string): Promise<Product | undefined> {

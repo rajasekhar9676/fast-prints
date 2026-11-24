@@ -12,7 +12,7 @@ export default function CartPage() {
   const { gate, loading } = useRequireCustomerLogin();
 
   return (
-    <div className="space-y-10 pb-10">
+    <div className="mx-auto max-w-7xl px-4 py-5 md:px-6 md:py-7 space-y-10 pb-10">
       <SectionHeader
         eyebrow="Basket"
         title="Your cart"

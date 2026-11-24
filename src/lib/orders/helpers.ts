@@ -18,10 +18,24 @@ export function buildOrderItems(body: CreateOrderPayload): OrderItem[] {
     selectedUnits: item.selectedUnits,
     unitPrice: item.unitPrice,
     lineTotal: item.unitPrice * item.quantity,
+    designFileName: item.designFileName,
+    designFileUrl: item.designFileUrl,
   }));
 }
 
 export function buildPendingOrder(body: CreateOrderPayload, userId?: string): Order {
+  const items = buildOrderItems(body);
+
+  // Compile artwork files into notes if available for legacy/external integrations
+  const artworkNotes = items
+    .filter((item) => item.designFileName || item.designFileUrl)
+    .map(
+      (item) =>
+        `[Artwork File]: ${item.productName} -> ${item.designFileName || "Design file"} (${item.designFileUrl || "Shared via WhatsApp"})`
+    );
+
+  const combinedNotes = [body.notes, ...artworkNotes].filter(Boolean).join("\n");
+
   return {
     id: crypto.randomUUID(),
     orderNumber: generateOrderNumber(),
@@ -30,8 +44,8 @@ export function buildPendingOrder(body: CreateOrderPayload, userId?: string): Or
     paymentStatus: "pending",
     userId,
     customer: body.customer,
-    notes: body.notes,
-    items: buildOrderItems(body),
+    notes: combinedNotes || undefined,
+    items,
     subtotal: body.subtotal,
   };
 }

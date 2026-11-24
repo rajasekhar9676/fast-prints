@@ -7,6 +7,30 @@ import type { Order as DbOrder, OrderItem as DbOrderItem, Product as DbProduct, 
 
 type DbOrderWithItems = DbOrder & { items: DbOrderItem[] };
 
+const FALLBACK_IMAGE_MAP: Record<string, string> = {
+  "/images/visiting-cards.jpg": "/images/visiting-cards.png",
+  "/images/letterheads.jpg": "/images/letterheads-agrya.png",
+  "/images/envelopes.jpg": "/images/envelopes.png",
+  "/images/bulk-multicolor.png": "/images/bulk-multicolor-print.png",
+  "/images/digital-press.jpg": "/images/bulk-multicolor-print.png",
+  "/images/flyers-pamphlets.jpg": "/images/pamphlet-multicolor.png",
+  "/images/bill-books.jpg": "/images/receipt-books.png",
+  "/images/stamps-seals.jpg": "/images/id-cards.png",
+  "/images/id-cards-lanyards.jpg": "/images/id-cards.png",
+  "/images/mugs-drinkware.jpg": "/images/smart-keychains.png",
+  "/images/stickers-labels.jpg": "/images/smart-keychains.png",
+  "/images/photo-frame.jpg": "/images/photo-print.png",
+  "/images/apparel.jpg": "/images/services-overview.png",
+  "/images/banners-standees.jpg": "/images/signage-wall-mural.png",
+  "/images/calendars.jpg": "/images/calendar-tabletop.png",
+};
+
+export function normalizeImagePath(img: string | null | undefined): string {
+  if (!img) return "/images/services-overview.png";
+  if (FALLBACK_IMAGE_MAP[img]) return FALLBACK_IMAGE_MAP[img];
+  return img;
+}
+
 export function toProduct(row: DbProduct): Product {
   return {
     id: row.id,
@@ -16,8 +40,8 @@ export function toProduct(row: DbProduct): Product {
     description: row.description,
     basePrice: row.basePrice,
     turnaround: row.turnaround,
-    image: row.image,
-    gallery: (row.gallery as string[] | null) ?? undefined,
+    image: normalizeImagePath(row.image),
+    gallery: (row.gallery as string[] | null)?.map(normalizeImagePath) ?? undefined,
     category: row.category as Product["category"],
     popular: row.popular || undefined,
     bestseller: row.bestseller || undefined,
@@ -64,7 +88,7 @@ export function toCategory(row: {
     id: row.id as ProductCategory["id"],
     name: row.name,
     tagline: row.tagline,
-    image: row.image,
+    image: normalizeImagePath(row.image),
     iconColor: row.iconColor,
   };
 }
@@ -118,6 +142,7 @@ export function toUser(row: DbUser): CustomerUser {
 }
 
 export function toOrderItem(row: DbOrderItem): OrderItem {
+  const anyRow = row as unknown as Record<string, unknown>;
   return {
     productId: row.productId,
     productName: row.productName,
@@ -128,6 +153,8 @@ export function toOrderItem(row: DbOrderItem): OrderItem {
     selectedUnits: row.selectedUnits,
     unitPrice: row.unitPrice,
     lineTotal: row.lineTotal,
+    designFileName: typeof anyRow.designFileName === "string" ? anyRow.designFileName : undefined,
+    designFileUrl: typeof anyRow.designFileUrl === "string" ? anyRow.designFileUrl : undefined,
   };
 }
 

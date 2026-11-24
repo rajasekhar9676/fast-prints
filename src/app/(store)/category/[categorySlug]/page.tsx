@@ -58,7 +58,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   const categoryProducts = products.filter((p) => p.category === resolvedSlug);
 
   return (
-    <div className="space-y-6 pb-12">
+    <div className="mx-auto max-w-7xl px-4 py-5 md:px-6 md:py-7 space-y-6 pb-12">
       {/* Category Hero Banner */}
       <div className="relative overflow-hidden rounded-[1.8rem] bg-gradient-to-br from-[#181512] via-[#0f0d0b] to-[#1a1610] p-6 sm:p-8 text-white shadow-lg border border-brand-500/20">
         <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-brand-500/20 blur-3xl" aria-hidden />

@@ -7,16 +7,21 @@
     "description": "Official rate list visiting cards printed on 300GSM premium board. Available single-sided (S/S) or double-sided (D/S) with optional Glossy or Matt lamination. Standard size 89mm × 51mm.",
     "basePrice": 200,
     "turnaround": "24–48 hrs",
-    "image": "/images/visiting-cards.png",
+    "image": "/images/products/visiting-card-liceria-front-studio.jpg",
     "gallery": [
-      "/images/visiting-cards.png"
+      "/images/products/visiting-card-liceria-front-studio.jpg",
+      "/images/products/visiting-cards-trio-showcase.jpg",
+      "/images/products/visiting-card-kashmir-studio.jpg",
+      "/images/products/visiting-cards-size-guide.jpg",
+      "/images/products/visiting-cards-design-guidelines.jpg",
+      "/images/products/visiting-cards-stack.jpg"
     ],
     "category": "business-essentials",
     "popular": true,
     "bestseller": true,
     "badge": "Rate Card Featured",
-    "rating": 4.9,
-    "reviewCount": 142,
+    "rating": 4.8,
+    "reviewCount": 1895,
     "highlights": [
       "300GSM Board (Plain / Glossy / Matt Lamination)",
       "Single Sided (S/S) & Double Sided (D/S) rates",
@@ -24,13 +29,15 @@
     ],
     "options": {
       "sizes": [
-        "Standard 89×51mm",
-        "Square 2.5 in"
+        "Standard (85 x 55 mm)",
+        "Long (90 x 55 mm)",
+        "Square (55 x 55 mm)",
+        "Mini Card (85 x 25 mm)"
       ],
       "finishes": [
-        "300GSM Board Plain (S/S)",
-        "300GSM Board Plain (D/S)",
-        "300GSM Board + Glossy / Matt Lamination"
+        "Matte Lamination (Smooth Premium Anti-Glare)",
+        "Glossy Lamination (Vibrant High-Gloss)",
+        "Plain (Natural Matte 300GSM Board)"
       ],
       "quantities": [
         100,
@@ -90,7 +97,7 @@
     "basePrice": 1200,
     "turnaround": "24–48 hrs",
     "image": "/images/envelopes.png",
-    "category": "business-essentials",
+    "category": "packaging",
     "highlights": [
       "9.5\" × 4.5\" standard commercial",
       "100GSM sunshine paper",
@@ -119,9 +126,9 @@
     "description": "High-resolution 13 x 19 inch (330mm x 483mm) digital sheet printing. Available in 300GSM Board, 350GSM Board, Texture Board, and Non-Tearable Sheet for S/S and D/S printing.",
     "basePrice": 50,
     "turnaround": "Same-day",
-    "image": "/images/bulk-multicolor.png",
+    "image": "/images/bulk-multicolor-print.png",
     "gallery": [
-      "/images/bulk-multicolor.png",
+      "/images/bulk-multicolor-print.png",
       "/images/pamphlet-multicolor.png"
     ],
     "category": "marketing-materials",
@@ -163,12 +170,16 @@
     "id": "p5",
     "slug": "13x19-sticker-sheets",
     "name": "Stickers & Die-Cut Labels (13x19)",
-    shortDescription: "13\"×19\" sticker sheet · normal, non-tearable, round & half-cut.",
-    description: "Digital sticker printing on 13 x 19 inch sheets. Includes normal sticker sheets, non-tearable sticker sheets, round sticker cutting (min 10 sheets), and half-cut rectangle/square stickers.",
-    basePrice": 50,
-    turnaround": "Same-day",
-    image": "/images/smart-keychains.png",
-    "category": "marketing-materials",
+    "shortDescription": "13\"×19\" sticker sheet · normal, non-tearable, round & half-cut.",
+    "description": "Digital sticker printing on 13 x 19 inch sheets. Includes normal sticker sheets, non-tearable sticker sheets, round sticker cutting (min 10 sheets), and half-cut rectangle/square stickers.",
+    "basePrice": 50,
+    "turnaround": "Same-day",
+    "image": "/images/products/stickers-diecut-labels.jpg",
+    "gallery": [
+      "/images/products/stickers-diecut-labels.jpg",
+      "/images/presentation-envelopes.png"
+    ],
+    "category": "packaging",
     "bestseller": true,
     "badge": "Sticker Sheet",
     "highlights": [
@@ -203,11 +214,11 @@
     "id": "p6",
     "slug": "offset-multicolor-print",
     "name": "Offset Multicolor Printing (3-Day)",
-    shortDescription: "Bulk letterheads, envelopes, A5 & A4 pamphlets on 90gsm art paper.",
-    description: "High-volume commercial offset printing with 3 working days lead time. Includes 1000 A4 Letterheads, 1000 Envelopes, 2000 A5 Pamphlets (D/S), and 1000 A4 Pamphlets (D/S).",
-    basePrice: 3500,
-    turnaround: "3 Working Days",
-    image": "/images/pamphlet-multicolor.png",
+    "shortDescription": "Bulk letterheads, envelopes, A5 & A4 pamphlets on 90gsm art paper.",
+    "description": "High-volume commercial offset printing with 3 working days lead time. Includes 1000 A4 Letterheads, 1000 Envelopes, 2000 A5 Pamphlets (D/S), and 1000 A4 Pamphlets (D/S).",
+    "basePrice": 3500,
+    "turnaround": "3 Working Days",
+    "image": "/images/pamphlet-multicolor.png",
     "category": "marketing-materials",
     "popular": true,
     "highlights": [
@@ -237,11 +248,11 @@
     "id": "p7",
     "slug": "single-color-bill-books",
     "name": "Bill Book (Offset Single Color)",
-    shortDescription: "1+1 White + Pink duplicate set · A5, A4, 1/5th, 1/6th, 1/16th sizes.",
-    description: "Single color offset printed bill books with 1+1 (White + Pink duplicate paper) pages. Available in 1/16th, 1/6th, 1/5th, A5, and A4 sizes with sequential numbering.",
-    basePrice: 1440,
-    turnaround: "3–5 days",
-    image": "/images/receipt-books.png",
+    "shortDescription": "1+1 White + Pink duplicate set · A5, A4, 1/5th, 1/6th, 1/16th sizes.",
+    "description": "Single color offset printed bill books with 1+1 (White + Pink duplicate paper) pages. Available in 1/16th, 1/6th, 1/5th, A5, and A4 sizes with sequential numbering.",
+    "basePrice": 1440,
+    "turnaround": "3–5 days",
+    "image": "/images/receipt-books.png",
     "gallery": [
       "/images/receipt-books.png",
       "/images/invoice-books.png"
@@ -277,11 +288,11 @@
     "id": "p8",
     "slug": "seals-stamps",
     "name": "Seals & Rubber Stamps",
-    shortDescription: "Rubber stamps, address seals & self-inking stamps (small to large).",
-    description: "Custom rubber stamps and self-inking seals for business registration, address stamping, and official authorization. Quick turnaround at BTM 2nd Stage office.",
-    basePrice: 200,
-    turnaround: "Same-day / 24 hrs",
-    image": "/images/id-cards.png",
+    "shortDescription": "Rubber stamps, address seals & self-inking stamps (small to large).",
+    "description": "Custom rubber stamps and self-inking seals for business registration, address stamping, and official authorization. Quick turnaround at BTM 2nd Stage office.",
+    "basePrice": 200,
+    "turnaround": "Same-day / 24 hrs",
+    "image": "/images/products/seals-rubber-stamps.jpg",
     "category": "business-essentials",
     "highlights": [
       "Rubber Round Seals (₹200)",
@@ -314,11 +325,11 @@
     "id": "p9",
     "slug": "id-cards-lanyards",
     "name": "ID Cards & Lanyards (Tags)",
-    shortDescription: "PVC ID cards, white holders, and 10mm, 16mm & 20mm multicolor lanyards.",
-    description: "Complete employee identity gear: PVC double-sided multicolor ID cards (₹100), PVC holders (₹10), and custom printed lanyards in 10mm, 16mm, and 20mm widths with quantity discount breaks down to ₹18/pc.",
-    basePrice: 100,
-    turnaround: "2–4 days",
-    image": "/images/id-cards.png",
+    "shortDescription": "PVC ID cards, white holders, and 10mm, 16mm & 20mm multicolor lanyards.",
+    "description": "Complete employee identity gear: PVC double-sided multicolor ID cards (₹100), PVC holders (₹10), and custom printed lanyards in 10mm, 16mm, and 20mm widths with quantity discount breaks down to ₹18/pc.",
+    "basePrice": 100,
+    "turnaround": "2–4 days",
+    "image": "/images/id-cards.png",
     "gallery": [
       "/images/id-cards.png",
       "/images/lanyards.png",
@@ -360,11 +371,15 @@
     "id": "p10",
     "slug": "ceramic-magic-mugs",
     "name": "Ceramic Mugs & Magic Mugs",
-    shortDescription: "11oz ceramic mug & heat-sensitive magic mug with full-color sublimation.",
-    description: "Custom printed 11oz ceramic mugs and heat-activated magic mugs. Great for corporate giveaways, team onboarding, and personal photo gifts.",
-    basePrice: 300,
-    turnaround: "Same-day / 24 hrs",
-    image": "/images/smart-keychains.png",
+    "shortDescription": "11oz ceramic mug & heat-sensitive magic mug with full-color sublimation.",
+    "description": "Custom printed 11oz ceramic mugs and heat-activated magic mugs. Great for corporate giveaways, team onboarding, and personal photo gifts.",
+    "basePrice": 300,
+    "turnaround": "Same-day / 24 hrs",
+    "image": "/images/products/ceramic-magic-mugs.jpg",
+    "gallery": [
+      "/images/products/ceramic-magic-mugs.jpg",
+      "/images/hero/fastprints-2027-corporate-gifts.jpg"
+    ],
     "category": "photo-gifts",
     "bestseller": true,
     "highlights": [
@@ -392,11 +407,11 @@
     "id": "p11",
     "slug": "button-badges",
     "name": "Button Badges (Pin Badges)",
-    shortDescription: "44mm, 55mm & 70mm pin badges for campaigns, events & branding.",
-    description: "Vivid pin button badges in 44mm, 55mm, and 70mm diameters. Durable metal back with safety pin — ideal for marketing campaigns, elections, and school events.",
-    basePrice: 360,
-    turnaround: "24–48 hrs",
-    image": "/images/smart-keychains.png",
+    "shortDescription": "44mm, 55mm & 70mm pin badges for campaigns, events & branding.",
+    "description": "Vivid pin button badges in 44mm, 55mm, and 70mm diameters. Durable metal back with safety pin — ideal for marketing campaigns, elections, and school events.",
+    "basePrice": 360,
+    "turnaround": "24–48 hrs",
+    "image": "/images/products/button-pin-badges.jpg",
     "category": "marketing-materials",
     "highlights": [
       "44mm, 55mm & 70mm sizes available",
@@ -426,11 +441,11 @@
     "id": "p12",
     "slug": "photo-print-with-frame",
     "name": "Photo Print with Frame",
-    shortDescription: "4x6 up to 20x30 inch framed photo prints with 1-inch beeding frame.",
-    description: "High quality photo printing mounted inside a sleek 1-inch beeding frame. Sizes range from desktop 4x6 inch to large wall 20x30 inch display frames.",
-    basePrice: 250,
-    turnaround: "24–48 hrs",
-    image": "/images/photo-print.png",
+    "shortDescription": "4x6 up to 20x30 inch framed photo prints with 1-inch beeding frame.",
+    "description": "High quality photo printing mounted inside a sleek 1-inch beeding frame. Sizes range from desktop 4x6 inch to large wall 20x30 inch display frames.",
+    "basePrice": 250,
+    "turnaround": "24–48 hrs",
+    "image": "/images/photo-print.png",
     "category": "photo-gifts",
     "bestseller": true,
     "highlights": [
@@ -462,11 +477,11 @@
     "id": "p13",
     "slug": "document-lamination",
     "name": "Lamination (A5, A4, A3)",
-    shortDescription: "Thermal pouch lamination for certificates, IDs, and menus.",
-    description: "Heavy-duty thermal pouch lamination for A5, A4, and A3 documents. Bulk discounts down to ₹12/pc for A5, ₹14/pc for A4, and ₹35/pc for A3.",
-    basePrice: 50,
-    turnaround: "Instant / Same-day",
-    image": "/images/services-overview.png",
+    "shortDescription": "Thermal pouch lamination for certificates, IDs, and menus.",
+    "description": "Heavy-duty thermal pouch lamination for A5, A4, and A3 documents. Bulk discounts down to ₹12/pc for A5, ₹14/pc for A4, and ₹35/pc for A3.",
+    "basePrice": 50,
+    "turnaround": "Instant / Same-day",
+    "image": "/images/products/document-lamination.jpg",
     "category": "stationery",
     "highlights": [
       "A5, A4 & A3 standard document sizes",
@@ -495,11 +510,11 @@
     "id": "p14",
     "slug": "banners-vinyl-stickers",
     "name": "Banners & Vinyl Stickers (Per Sq. Ft.)",
-    shortDescription: "Normal flex, Star flex banner & laminated vinyl stickers.",
-    description: "Wide format outdoor printing charged by square feet. Normal Flex Banner (₹20–₹50/sqft), Star Flex Banner (₹40–₹60/sqft), and Vinyl Sticker with Lamination (₹110–₹130/sqft).",
-    basePrice: 500,
-    turnaround: "Same-day / 24 hrs",
-    image": "/images/signage-wall-mural.png",
+    "shortDescription": "Normal flex, Star flex banner & laminated vinyl stickers.",
+    "description": "Wide format outdoor printing charged by square feet. Normal Flex Banner (₹20–₹50/sqft), Star Flex Banner (₹40–₹60/sqft), and Vinyl Sticker with Lamination (₹110–₹130/sqft).",
+    "basePrice": 500,
+    "turnaround": "Same-day / 24 hrs",
+    "image": "/images/signage-wall-mural.png",
     "category": "large-format",
     "popular": true,
     "bestseller": true,
@@ -530,11 +545,11 @@
     "id": "p15",
     "slug": "custom-signages-led-boards",
     "name": "Custom Signage & LED Boards (Quotation)",
-    shortDescription: "Frame banners, 2D/3D LED boards, standees, acrylic boards, canopies & umbrellas.",
-    description: "Custom signage & outdoor display products provided via custom quotation: Banner with frame, Backlit lighting board, 3D LED board, 2D LED board, Rollup standee with Star flex, Acrylic office name board, Promotional Canopy, Promo table, and Branded Outdoor Umbrella.",
-    basePrice: 1500,
-    turnaround: "3–7 days",
-    image": "/images/signage-wall-mural.png",
+    "shortDescription": "Frame banners, 2D/3D LED boards, standees, acrylic boards, canopies & umbrellas.",
+    "description": "Custom signage & outdoor display products provided via custom quotation: Banner with frame, Backlit lighting board, 3D LED board, 2D LED board, Rollup standee with Star flex, Acrylic office name board, Promotional Canopy, Promo table, and Branded Outdoor Umbrella.",
+    "basePrice": 1500,
+    "turnaround": "3–7 days",
+    "image": "/images/signage-wall-mural.png",
     "gallery": [
       "/images/signage-wall-mural.png",
       "/images/services-overview.png"
@@ -565,6 +580,130 @@
         1,
         2,
         5
+      ]
+    }
+  },
+  {
+    "id": "p16",
+    "slug": "custom-2027-desk-calendars",
+    "name": "Custom 2027 Desk & Wall Calendars",
+    "shortDescription": "350gsm matte textured card · twin wire-o spiral binding · custom dated.",
+    "description": "Official 2027 custom corporate desktop tent calendars and wall calendars. Printed on premium 350GSM textured matte card stock with durable twin-loop wire-o binding and personalized corporate branding.",
+    "basePrice": 120,
+    "turnaround": "24–48 hrs",
+    "image": "/images/hero/fastprints-2027-desk-calendar.jpg",
+    "gallery": [
+      "/images/hero/fastprints-2027-desk-calendar.jpg",
+      "/images/calendar-tabletop.png",
+      "/images/calendar-wall.png"
+    ],
+    "category": "stationery",
+    "popular": true,
+    "bestseller": true,
+    "badge": "2027 Edition",
+    "highlights": [
+      "350GSM Matte Textured Art Card",
+      "Twin-loop wire-o spiral binding with tent stand",
+      "Custom monthly branding & corporate date highlights"
+    ],
+    "options": {
+      "sizes": [
+        "Desktop Tent (8.5 × 5.5 inch)",
+        "Wall Hanging (11 × 17 inch)"
+      ],
+      "finishes": [
+        "Matte Lamination",
+        "Gloss Lamination",
+        "Gold Foil Header"
+      ],
+      "quantities": [
+        25,
+        50,
+        100,
+        250,
+        500
+      ]
+    }
+  },
+  {
+    "id": "p17",
+    "slug": "corporate-diaries-executive-planners",
+    "name": "Custom 2027 Corporate Diaries & Planners",
+    "shortDescription": "Hardbound leatherette journal · metallic gold foil debossing · silk ribbon.",
+    "description": "Luxury corporate executive daily planners and diaries in premium midnight navy, matte black, and cognac leatherette with custom gold foil debossed company logo.",
+    "basePrice": 350,
+    "turnaround": "2-4 days",
+    "image": "/images/hero/fastprints-2027-executive-diaries.jpg",
+    "gallery": [
+      "/images/hero/fastprints-2027-executive-diaries.jpg",
+      "/images/hero/fastprints-2027-corporate-gifts.jpg"
+    ],
+    "category": "stationery",
+    "popular": true,
+    "bestseller": true,
+    "badge": "Executive 2027",
+    "highlights": [
+      "Premium Leatherette Hardbound Cover",
+      "Metallic Gold / Silver Foil Debossed Logo",
+      "80GSM Natural Shade Paper with Bookmark Ribbon"
+    ],
+    "options": {
+      "sizes": [
+        "A5 Executive",
+        "B5 Daily Planner"
+      ],
+      "finishes": [
+        "Matte Black Leatherette",
+        "Midnight Navy Blue",
+        "Warm Cognac Brown"
+      ],
+      "quantities": [
+        20,
+        50,
+        100,
+        250,
+        500
+      ]
+    }
+  },
+  {
+    "id": "p18",
+    "slug": "corporate-welcome-gift-kits",
+    "name": "Curated 2027 Corporate Gift Sets & Hampers",
+    "shortDescription": "Rigid luxury gift box · engraved thermal flask · 2027 diary & ceramic mug.",
+    "description": "Complete corporate employee onboarding and client appreciation gift kits in a matte black magnetic gift box with custom laser-engraved flask, 2027 journal, metal pen, and ceramic mug.",
+    "basePrice": 950,
+    "turnaround": "3-5 days",
+    "image": "/images/hero/fastprints-2027-corporate-gifts.jpg",
+    "gallery": [
+      "/images/hero/fastprints-2027-corporate-gifts.jpg",
+      "/images/hero/fastprints-2027-executive-diaries.jpg",
+      "/images/products/ceramic-magic-mugs.jpg"
+    ],
+    "category": "business-essentials",
+    "popular": true,
+    "bestseller": true,
+    "badge": "Corporate Kit",
+    "highlights": [
+      "Matte Black Presentation Box with Ribbon",
+      "Laser-Engraved Vacuum Insulated Thermal Bottle",
+      "2027 Executive Diary, Metal Pen & Custom Ceramic Mug"
+    ],
+    "options": {
+      "sizes": [
+        "Standard 4-in-1 Kit",
+        "Executive 5-in-1 Premium Hamper"
+      ],
+      "finishes": [
+        "Matte Black & Gold Accent",
+        "Executive Navy & Silver Accent"
+      ],
+      "quantities": [
+        10,
+        25,
+        50,
+        100,
+        250
       ]
     }
   }

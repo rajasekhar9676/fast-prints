@@ -3,7 +3,7 @@
 import { Product } from "@/types/product";
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
-type CartItem = {
+export type CartItem = {
   id: string;
   product: Product;
   quantity: number;
@@ -11,14 +11,18 @@ type CartItem = {
   selectedFinish: string;
   selectedUnits: number;
   unitPrice: number;
+  designFileName?: string;
+  designFileUrl?: string;
 };
 
-type AddToCartPayload = {
+export type AddToCartPayload = {
   product: Product;
   quantity: number;
   selectedSize: string;
   selectedFinish: string;
   selectedUnits: number;
+  designFileName?: string;
+  designFileUrl?: string;
 };
 
 type CartContextType = {
@@ -61,6 +65,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     selectedSize,
     selectedFinish,
     selectedUnits,
+    designFileName,
+    designFileUrl,
   }: AddToCartPayload) => {
     const unitPrice = product.basePrice * (selectedUnits / product.options.quantities[0]);
 
@@ -74,6 +80,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         selectedFinish,
         selectedUnits,
         unitPrice,
+        designFileName,
+        designFileUrl,
       },
     ]);
   };

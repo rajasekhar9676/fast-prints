@@ -31,18 +31,17 @@ export function SiteHeader() {
       {/* Main bar */}
       <div className="border-b border-ink-100/80 bg-white/90 shadow-sm backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center gap-3 px-4 py-3.5 md:gap-6 md:px-6">
-          <Link href="/" className="group flex shrink-0 items-center gap-3" onClick={() => setMobileOpen(false)}>
-            <span className="relative block h-11 w-11 overflow-hidden rounded-full border-2 border-brand-500 bg-ink-950 shadow-md shadow-brand-500/30 transition group-hover:shadow-brand-500/50">
-              <Image src="/logo.png" alt="Fast Prints" fill className="object-cover p-0.5" sizes="44px" priority />
-            </span>
-            <span className="hidden leading-tight sm:block">
-              <span className="font-[family-name:var(--font-display)] text-base font-extrabold tracking-tight text-ink-950">
-                FAST PRINTS
-              </span>
-              <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-brand-600">
-                Bengaluru
-              </span>
-            </span>
+          <Link href="/" className="group flex shrink-0 items-center py-0.5" onClick={() => setMobileOpen(false)}>
+            <div className="relative flex items-center">
+              <Image
+                src="/logo.png"
+                alt="Fast Prints - Think Printing... Think Us..."
+                width={220}
+                height={48}
+                className="h-9 sm:h-11 w-auto object-contain transition duration-200 group-hover:opacity-95"
+                priority
+              />
+            </div>
           </Link>
 
           <div className="hidden min-w-0 flex-1 lg:block">

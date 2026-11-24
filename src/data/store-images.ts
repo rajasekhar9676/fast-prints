@@ -1,7 +1,13 @@
 /** Local Fast Prints product & marketing images (public/images/) */
 export const storeImages = {
   servicesOverview: "/images/services-overview.png",
-  visitingCards: "/images/visiting-cards.png",
+  visitingCards: "/images/products/visiting-card-liceria-front-studio.jpg",
+  visitingCardFront: "/images/products/visiting-card-liceria-front-studio.jpg",
+  visitingCardTrio: "/images/products/visiting-cards-trio-showcase.jpg",
+  visitingCardKashmir: "/images/products/visiting-card-kashmir-studio.jpg",
+  visitingCardDimensions: "/images/products/visiting-cards-size-guide.jpg",
+  visitingCardGuidelines: "/images/products/visiting-cards-design-guidelines.jpg",
+  visitingCardStack: "/images/products/visiting-cards-stack.jpg",
   letterheadsAgrya: "/images/letterheads-agrya.png",
   letterheadsCorporate: "/images/letterheads-corporate.png",
   pamphletMulticolor: "/images/pamphlet-multicolor.png",
@@ -17,11 +23,18 @@ export const storeImages = {
   idCardLanyardSet: "/images/id-card-lanyard-set.png",
   lanyards: "/images/lanyards.png",
   calendarWall: "/images/calendar-wall.png",
-  calendarTabletop: "/images/calendar-tabletop.png",
+  calendarTabletop: "/images/hero/fastprints-2027-desk-calendar.jpg",
+  corporateDiaries: "/images/hero/fastprints-2027-executive-diaries.jpg",
+  corporateGifts: "/images/hero/fastprints-2027-corporate-gifts.jpg",
   receiptBooks: "/images/receipt-books.png",
   invoiceBooks: "/images/invoice-books.png",
   bulkMulticolor: "/images/bulk-multicolor-print.png",
   signageWallMural: "/images/signage-wall-mural.png",
+  stickersDiecutLabels: "/images/products/stickers-diecut-labels.jpg",
+  sealsRubberStamps: "/images/products/seals-rubber-stamps.jpg",
+  ceramicMagicMugs: "/images/products/ceramic-magic-mugs.jpg",
+  buttonPinBadges: "/images/products/button-pin-badges.jpg",
+  documentLamination: "/images/products/document-lamination.jpg",
 } as const;
 
 export const categoryImages = {
@@ -44,14 +57,14 @@ export const heroBanners = [
     image: storeImages.visitingCards,
   },
   {
-    href: "/products/photo-print",
+    href: "/products/photo-print-with-frame",
     label: "Photo Prints",
     sub: '6"×4" to 12"×18" · Same-day pickup',
     cta: "Print photos",
     image: storeImages.photoPrint,
   },
   {
-    href: "/products/wall-signage-printing",
+    href: "/products/banners-vinyl-stickers",
     label: "Signages & Wall Graphics",
     sub: "Indoor & outdoor branding",
     cta: "Get a quote",

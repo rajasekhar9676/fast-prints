@@ -18,7 +18,7 @@ export default async function ServicesPage() {
   const grouped = groupServices(services);
 
   return (
-    <div className="space-y-14 pb-8">
+    <div className="mx-auto max-w-7xl px-4 py-5 md:px-6 md:py-7 space-y-14 pb-8">
       <section className="relative overflow-hidden rounded-3xl bg-ink-950 px-6 py-14 text-white md:px-12">
         <div className="pointer-events-none absolute inset-0 bg-grid-pattern opacity-30" />
         <div className="pointer-events-none absolute right-0 top-0 h-64 w-64 rounded-full bg-brand-500/20 blur-3xl" />

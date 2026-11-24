@@ -6,7 +6,7 @@ export default async function ContactPage() {
   const settings = await getSettings();
 
   return (
-    <div className="space-y-12 pb-8">
+    <div className="mx-auto max-w-7xl px-4 py-5 md:px-6 md:py-7 space-y-12 pb-8">
       <section className="space-y-3">
         <p className="text-sm font-bold uppercase tracking-wider text-brand-700">Visit & call</p>
         <h1 className="font-[family-name:var(--font-display)] text-4xl font-bold text-ink-950">
