@@ -105,7 +105,7 @@ export const defaultHomepageContent: HomepageContent = {
       id: "files",
       question: "How do I send my design files?",
       answer:
-        "Email print-ready PDFs to fastprintsbtm@gmail.com, WhatsApp +91 91647 79922, or walk in with a USB drive at the store.",
+        "Email print-ready PDFs to fastprintsdigital@gmail.com, WhatsApp +91 63669 12357, or walk in with a USB drive at the store (10 AM to 7 PM).",
     },
     {
       id: "popular",

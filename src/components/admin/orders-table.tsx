@@ -712,7 +712,7 @@ export function OrdersTable({ orders }: { orders: Order[] }) {
                     #24, 7th Cross, 24th Main, BTM Layout 2nd Stage, Bengaluru - 560076
                   </p>
                   <p className="text-[11px] text-gray-600">
-                    Phone: +91 91647 79922 | Email: support@fastprints.in | GSTIN: 29AABCF1234F1Z5
+                    Phone: +91 63669 12357 | Email: fastprintsdigital@gmail.com | GSTIN: 29AABCF1234F1Z5
                   </p>
                 </div>
                 <div className="text-right space-y-1">

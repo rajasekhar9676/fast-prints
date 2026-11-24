@@ -66,7 +66,7 @@ export function CorporateBulkForm() {
       <textarea name="notes" placeholder="Artwork status, deadline, delivery location…" className={`${inputClass} min-h-28`} />
 
       {status === "error" ? (
-        <p className="text-sm font-semibold text-red-600">Could not submit. Please call +91 91647 79922.</p>
+        <p className="text-sm font-semibold text-red-600">Could not submit. Please call +91 63669 12357.</p>
       ) : null}
 
       <button type="submit" disabled={status === "loading"} className="btn-primary w-full py-3.5 disabled:opacity-60">

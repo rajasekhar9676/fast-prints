@@ -20,10 +20,10 @@ export function CtaBanner() {
             Start an order
           </Link>
           <Link
-            href="tel:+919164779922"
+            href="tel:+916366912357"
             className="inline-flex rounded-xl border border-white/25 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm hover:bg-white/15"
           >
-            Call +91 91647 79922
+            Call +91 63669 12357
           </Link>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 import { getSettings } from "@/lib/cms/queries";
 
@@ -62,6 +62,21 @@ export default async function ContactPage() {
                 <a href={`https://wa.me/${settings.whatsapp.replace(/\D/g, "")}`} className="font-semibold text-brand-700 hover:underline">
                   {settings.whatsapp}
                 </a>
+              </p>
+            </div>
+          </div>
+
+          <div className="flex gap-4">
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-500/15 text-amber-900 border border-amber-300">
+              <Clock className="h-6 w-6 text-amber-700" aria-hidden />
+            </span>
+            <div>
+              <h2 className="font-[family-name:var(--font-display)] font-bold text-ink-950">Store Timings</h2>
+              <p className="mt-1 text-sm font-extrabold text-brand-800">
+                10:00 AM – 7:00 PM
+              </p>
+              <p className="text-xs text-ink-500">
+                Monday to Saturday · Walk-ins &amp; pickup welcomed
               </p>
             </div>
           </div>

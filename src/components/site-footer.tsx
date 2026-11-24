@@ -115,7 +115,7 @@ export function SiteFooter() {
             </div>
 
             <div className="text-xs space-y-1 text-ink-700 pt-1">
-              <p className="font-bold text-ink-950">Mon – Sat: <span className="text-brand-700 font-extrabold">9:30 AM – 9:00 PM</span></p>
+              <p className="font-bold text-ink-950">Mon – Sat: <span className="text-brand-700 font-extrabold">10:00 AM – 7:00 PM</span></p>
               <p className="text-[11px] text-ink-500">BTM 2nd Stage, Outer Ring Road, Bengaluru</p>
             </div>
           </div>

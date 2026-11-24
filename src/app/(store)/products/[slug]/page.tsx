@@ -22,13 +22,32 @@ export default async function ProductDetailPage({
 
   const categoryTitles: Record<string, string> = {
     "business-essentials": "Business Essentials",
+    "marketing-materials": "Marketing Materials",
     "marketing-collateral": "Marketing Collateral",
+    "photo-gifts": "Photo & Gifting",
     "photo-gifting": "Photo & Gifting",
     "large-format": "Large Format",
     "signage-displays": "Signage & Displays",
     stationery: "Stationery",
     packaging: "Packaging",
+    apparel: "Apparel & Promotional",
     "apparel-promotional": "Apparel & Promotional",
+    events: "Events & Exhibitions",
+  };
+
+  const idealForMap: Record<string, string> = {
+    "business-essentials": "Startups, Corporate Teams, Consultants & Retail Stores",
+    "marketing-materials": "Marketing Campaigns, Product Promotions, Events & Exhibitions",
+    "marketing-collateral": "Marketing Campaigns, Product Promotions, Events & Exhibitions",
+    "large-format": "Storefront Signages, Retail Displays, Trade Shows & Outdoor Branding",
+    "signage-displays": "Storefront Signages, Retail Displays, Trade Shows & Outdoor Branding",
+    packaging: "Ecommerce Packaging, Shipping, Corporate Dispatch & Product Delivery",
+    apparel: "Corporate Uniforms, Tech Conferences, College Fests & Team Events",
+    "apparel-promotional": "Corporate Uniforms, Tech Conferences, College Fests & Team Events",
+    "photo-gifts": "Personalized Gifting, Employee Welcome Kits & Client Appreciation",
+    "photo-gifting": "Personalized Gifting, Employee Welcome Kits & Client Appreciation",
+    stationery: "Offices, Schools, Accounting Departments & Executive Desks",
+    events: "Seminars, Conferences, Expos, Weddings & Festivals",
   };
 
   const categoryTitle = categoryTitles[product.category] || "Printing Services";
@@ -117,36 +136,84 @@ export default async function ProductDetailPage({
               <h1 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-extrabold text-ink-950 leading-tight">
                 {product.name}
               </h1>
-              <p className="mt-1.5 text-xs sm:text-sm text-ink-600 font-medium leading-relaxed">
-                Clean, polished, and versatile — personalized cards with a professional look.
-              </p>
+              {product.shortDescription && (
+                <p className="mt-1.5 text-xs sm:text-sm text-ink-600 font-medium leading-relaxed">
+                  {product.shortDescription}
+                </p>
+              )}
             </div>
 
-            {/* Structured Bullet Points (Printo / VistaPrint Style) */}
+            {/* Description paragraph if different from shortDescription */}
+            {product.description && product.description !== product.shortDescription && (
+              <p className="text-xs sm:text-sm text-ink-700 leading-relaxed border-t border-ink-100 pt-3">
+                {product.description}
+              </p>
+            )}
+
+            {/* Structured Bullet Points (Dynamic for each product) */}
             <div className="space-y-2 border-t border-ink-100 pt-3 text-xs sm:text-sm text-ink-700">
               <ul className="space-y-1.5">
+                {/* Available Sizes / Dimensions */}
+                {product.options.sizes?.length > 0 && (
+                  <li className="flex items-start gap-2">
+                    <span className="text-brand-600 font-bold">•</span>
+                    <span>
+                      <strong>Sizes / Formats:</strong> {product.options.sizes.join(", ")}
+                    </span>
+                  </li>
+                )}
+
+                {/* Stock & Material Finishes */}
+                {product.options.finishes?.length > 0 && (
+                  <li className="flex items-start gap-2">
+                    <span className="text-brand-600 font-bold">•</span>
+                    <span>
+                      <strong>Stock &amp; Finish:</strong> {product.options.finishes.join(", ")}
+                    </span>
+                  </li>
+                )}
+
+                {/* Highlights */}
+                {product.highlights && product.highlights.length > 0 ? (
+                  product.highlights.map((highlight, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <span className="text-brand-600 font-bold">•</span>
+                      <span>{highlight}</span>
+                    </li>
+                  ))
+                ) : (
+                  <li className="flex items-start gap-2">
+                    <span className="text-brand-600 font-bold">•</span>
+                    <span>
+                      <strong>Printing:</strong> Commercial high-definition digital &amp; offset print
+                    </span>
+                  </li>
+                )}
+
+                {/* Turnaround Time */}
+                {product.turnaround && (
+                  <li className="flex items-start gap-2">
+                    <span className="text-brand-600 font-bold">•</span>
+                    <span>
+                      <strong>Turnaround:</strong> {product.turnaround}
+                    </span>
+                  </li>
+                )}
+
+                {/* Artwork Options */}
                 <li className="flex items-start gap-2">
                   <span className="text-brand-600 font-bold">•</span>
-                  <span><strong>Sizes:</strong> 3.5 x 2 inches (Standard 85 x 55 mm, Long 90 x 55 mm, Square 55 x 55 mm, Mini 85 x 25 mm)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-brand-600 font-bold">•</span>
-                  <span><strong>Paper Stock:</strong> 300GSM / 350GSM premium card with smooth matte or glossy lamination</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-brand-600 font-bold">•</span>
-                  <span><strong>Printing:</strong> High-definition digital &amp; offset color printing with sharp typography</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-brand-600 font-bold">•</span>
-                  <span><strong>Artwork Options:</strong> Upload print-ready PDF/CDR/AI designs or request free design soft proof</span>
+                  <span>
+                    <strong>Artwork Options:</strong> Upload print-ready PDF, AI, CDR, PSD, PNG designs or share via WhatsApp
+                  </span>
                 </li>
               </ul>
             </div>
 
             {/* Ideal For Callout */}
             <div className="rounded-xl bg-ink-50/70 p-2.5 text-xs text-ink-700 font-medium">
-              <strong className="text-ink-950 font-bold">Ideal for:</strong> Startups, Consultants, Corporate Teams, Events &amp; Retail Business
+              <strong className="text-ink-950 font-bold">Ideal for:</strong>{" "}
+              {idealForMap[product.category] || "Startups, Businesses, Events & Personal Gifting"}
             </div>
 
             {/* Same Day Delivery Notice (Exact before 12 / after 12 schedule) */}

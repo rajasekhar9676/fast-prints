@@ -110,7 +110,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
   // WhatsApp prefilled message
   const whatsappUrl = useMemo(() => {
     const text = encodeURIComponent(
-      `Hi Fast Prints, I want to order visiting cards / send my design:\n` +
+      `Hi Fast Prints, I want to order ${product.name} / send my design:\n` +
       `• Product: ${product.name}\n` +
       `• Size: ${selectedSize}\n` +
       `• Finish / Material: ${selectedFinish}\n` +
@@ -120,7 +120,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
       `• Artwork: ${designFile ? `Uploaded ${designFile.name}` : "Sharing file directly on WhatsApp"}\n` +
       `Please confirm soft proof & delivery!`
     );
-    return `https://wa.me/919164779922?text=${text}`;
+    return `https://wa.me/916366912357?text=${text}`;
   }, [product.name, selectedSize, selectedFinish, hasBothSidesOption, printSide, selectedUnits, designFile, priceDetails.totalWithGst]);
 
   return (
@@ -167,8 +167,8 @@ export function ProductConfigurator({ product }: { product: Product }) {
           {product.options.finishes?.length > 0 && (
             <div className="space-y-1.5">
               <label htmlFor="select-finish" className="text-xs font-bold uppercase tracking-wider text-ink-700 flex justify-between">
-                <span>Paper Stock &amp; Finish</span>
-                <span className="text-brand-600 font-extrabold normal-case text-xs">Premium 300GSM</span>
+                <span>Material &amp; Finish</span>
+                <span className="text-brand-600 font-extrabold normal-case text-xs">Premium Quality</span>
               </label>
               <div className="relative">
                 <select
@@ -225,7 +225,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
               >
                 {product.options.quantities.map((units) => (
                   <option key={units} value={units}>
-                    {units} units {units >= 1000 ? "— Best Value (₹1.00/pc)" : `— ₹${priceDetails.unitPrice} per unit`}
+                    {units} units {units === selectedUnits ? `— ₹${priceDetails.unitPrice.toFixed(2)} per unit` : ""}
                   </option>
                 ))}
               </select>
@@ -366,7 +366,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
               className="inline-flex items-center gap-1.5 font-bold text-emerald-800 hover:underline"
             >
               <MessageCircle className="h-3.5 w-3.5 text-emerald-600" />
-              Chat with Designer (+91 91647 79922)
+              Chat with Designer (+91 63669 12357)
             </a>
           </div>
         )}

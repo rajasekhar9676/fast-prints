@@ -192,7 +192,7 @@ export default function CheckoutPage() {
 
         <p className="mt-4 text-sm text-ink-600">
           Our print team will review your order artwork and contact you on{" "}
-          <span className="font-bold text-ink-950">+91 91647 79922</span> to confirm finishing options and delivery timeline.
+          <span className="font-bold text-ink-950">+91 63669 12357</span> to confirm finishing options and delivery timeline.
         </p>
         
         {whatsappUrl ? (

@@ -22,11 +22,11 @@ import {
 
 export const defaultSettings: SiteSettings = {
   businessName: "Fast Prints Bengaluru",
-  phone: "+91 91647 79922",
-  email: "fastprintsbtm@gmail.com",
-  whatsapp: "+91 91647 79922",
+  phone: "+91 63669 12357",
+  email: "fastprintsdigital@gmail.com",
+  whatsapp: "+91 63669 12357",
   website: "www.fastprintsdigital.in",
-  promoText: "Same day delivery in Bengaluru · Pickup at BTM 2nd Stage · +91 91647 79922",
+  promoText: "Same day delivery in Bengaluru · Pickup at BTM 2nd Stage (10 AM – 7 PM) · +91 63669 12357",
   addressLines: [
     "Landmark: 15, 20th Main Rd,",
     "below Canara Bank, opp. Metro Pillar 154,",
