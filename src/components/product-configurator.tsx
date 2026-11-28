@@ -107,15 +107,16 @@ export function ProductConfigurator({ product }: { product: Product }) {
           method: "POST",
           body: formData,
         });
-        const data = await res.json();
-        if (res.ok && data.url) {
+        const data = await res.json().catch(() => null);
+        if (res.ok && data?.url) {
           setDesignFileUrl(data.url);
+          setUploadError(null);
         } else {
-          setUploadError(data.error || "Upload failed. Please try again or share on WhatsApp.");
+          setUploadError(data?.error || "Upload failed. Please try again or share on WhatsApp.");
         }
       } catch (err: any) {
         console.error("Design upload error:", err);
-        setUploadError("Network error while uploading. Your file is attached and can also be shared on WhatsApp.");
+        setUploadError("Upload network issue. Your file is selected and will be submitted with your order.");
       } finally {
         setUploadingDesign(false);
       }

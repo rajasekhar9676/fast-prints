@@ -49,8 +49,7 @@ export function CustomerSignupForm() {
     }
 
     await refresh();
-    router.push(next);
-    router.refresh();
+    window.location.href = next;
   }
 
   return (

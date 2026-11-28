@@ -31,8 +31,21 @@ import {
 import { defaultSettings, ensureDbSeeded } from "./seed";
 import { getMasterCategory, isProductInMasterCategory } from "@/data/master-categories";
 
+let dbHealthy = true;
+let lastDbCheck = 0;
+
+function markDbFailed() {
+  dbHealthy = false;
+  lastDbCheck = Date.now();
+}
+
 function hasDb() {
-  return !!(process.env.DATABASE_URL || process.env.POSTGRES_PRISMA_URL || process.env.POSTGRES_URL);
+  const url = process.env.DATABASE_URL || process.env.POSTGRES_PRISMA_URL || process.env.POSTGRES_URL;
+  if (!url) return false;
+  if (!dbHealthy && Date.now() - lastDbCheck < 60000) {
+    return false;
+  }
+  return true;
 }
 
 const orderInclude = { items: true } as const;
@@ -44,6 +57,7 @@ export async function getProducts(): Promise<Product[]> {
       const rows = await prisma.product.findMany({ orderBy: { name: "asc" } });
       if (rows.length > 0) return rows.map(toProduct);
     } catch {
+      markDbFailed();
       // fallback to JSON
     }
   }
@@ -85,12 +99,13 @@ export async function getProductBySlug(slug: string): Promise<Product | undefine
 }
 
 export async function getCategories(): Promise<ProductCategory[]> {
-  if (process.env.DATABASE_URL) {
+  if (hasDb()) {
     try {
       await ensureDbSeeded();
       const rows = await prisma.category.findMany({ orderBy: { name: "asc" } });
       if (rows.length > 0) return rows.map(toCategory);
     } catch {
+      markDbFailed();
       // fallback to JSON
     }
   }
@@ -99,12 +114,13 @@ export async function getCategories(): Promise<ProductCategory[]> {
 }
 
 export async function getServices(): Promise<Service[]> {
-  if (process.env.DATABASE_URL) {
+  if (hasDb()) {
     try {
       await ensureDbSeeded();
       const rows = await prisma.service.findMany({ orderBy: { name: "asc" } });
       if (rows.length > 0) return rows.map(toService);
     } catch {
+      markDbFailed();
       // fallback to JSON
     }
   }
@@ -113,12 +129,13 @@ export async function getServices(): Promise<Service[]> {
 }
 
 export async function getSettings(): Promise<SiteSettings> {
-  if (process.env.DATABASE_URL) {
+  if (hasDb()) {
     try {
       await ensureDbSeeded();
       const row = await prisma.siteSettings.findUnique({ where: { id: "default" } });
       if (row) return toSiteSettings(row);
     } catch {
+      markDbFailed();
       // fallback to JSON
     }
   }
@@ -138,7 +155,7 @@ export async function getOrders(): Promise<Order[]> {
       });
       return rows.map(toOrder);
     } catch {
-      // fallback to JSON
+      markDbFailed();
     }
   }
   const json = await readCmsJson<Order[]>(cmsFiles.orders);
@@ -155,7 +172,7 @@ export async function getOrders(): Promise<Order[]> {
 
 export async function saveProducts(products: Product[]): Promise<void> {
   await writeCmsJson(cmsFiles.products, products);
-  if (!process.env.DATABASE_URL) return;
+  if (!hasDb()) return;
   try {
     await prisma.$transaction(async (tx) => {
       const ids = products.map((p) => p.id);
@@ -169,13 +186,13 @@ export async function saveProducts(products: Product[]): Promise<void> {
       }
     });
   } catch {
-    // optional DB sync failed
+    markDbFailed();
   }
 }
 
 export async function saveCategories(categories: ProductCategory[]): Promise<void> {
   await writeCmsJson(cmsFiles.categories, categories);
-  if (!process.env.DATABASE_URL) return;
+  if (!hasDb()) return;
   try {
     await prisma.$transaction(async (tx) => {
       const ids = categories.map((c) => c.id);
@@ -188,12 +205,14 @@ export async function saveCategories(categories: ProductCategory[]): Promise<voi
         });
       }
     });
-  } catch {}
+  } catch {
+    markDbFailed();
+  }
 }
 
 export async function saveServices(services: Service[]): Promise<void> {
   await writeCmsJson(cmsFiles.services, services);
-  if (!process.env.DATABASE_URL) return;
+  if (!hasDb()) return;
   try {
     await prisma.$transaction(async (tx) => {
       const ids = services.map((s) => s.id);
@@ -206,7 +225,9 @@ export async function saveServices(services: Service[]): Promise<void> {
         });
       }
     });
-  } catch {}
+  } catch {
+    markDbFailed();
+  }
 }
 
 export async function saveSettings(settings: SiteSettings): Promise<void> {
@@ -222,12 +243,14 @@ export async function saveSettings(settings: SiteSettings): Promise<void> {
 }
 
 export async function getHomepageContent(): Promise<HomepageContent> {
-  if (process.env.DATABASE_URL) {
+  if (hasDb()) {
     try {
       await ensureDbSeeded();
       const doc = await prisma.cmsDocument.findUnique({ where: { id: "homepage" } });
       if (doc) return toHomepageContent(doc.content);
-    } catch {}
+    } catch {
+      markDbFailed();
+    }
   }
   const json = await readCmsJson<HomepageContent>(cmsFiles.homepage);
   return json ?? defaultHomepageContent;
@@ -235,23 +258,27 @@ export async function getHomepageContent(): Promise<HomepageContent> {
 
 export async function saveHomepageContent(content: HomepageContent): Promise<void> {
   await writeCmsJson(cmsFiles.homepage, content);
-  if (!process.env.DATABASE_URL) return;
+  if (!hasDb()) return;
   try {
     await prisma.cmsDocument.upsert({
       where: { id: "homepage" },
       create: { id: "homepage", content },
       update: { content },
     });
-  } catch {}
+  } catch {
+    markDbFailed();
+  }
 }
 
 export async function getTestimonialsContent(): Promise<TestimonialsContent> {
-  if (process.env.DATABASE_URL) {
+  if (hasDb()) {
     try {
       await ensureDbSeeded();
       const doc = await prisma.cmsDocument.findUnique({ where: { id: "testimonials" } });
       if (doc) return toTestimonialsContent(doc.content);
-    } catch {}
+    } catch {
+      markDbFailed();
+    }
   }
   const json = await readCmsJson<TestimonialsContent>(cmsFiles.testimonials);
   return json ?? defaultTestimonialsContent;
@@ -259,23 +286,27 @@ export async function getTestimonialsContent(): Promise<TestimonialsContent> {
 
 export async function saveTestimonialsContent(content: TestimonialsContent): Promise<void> {
   await writeCmsJson(cmsFiles.testimonials, content);
-  if (!process.env.DATABASE_URL) return;
+  if (!hasDb()) return;
   try {
     await prisma.cmsDocument.upsert({
       where: { id: "testimonials" },
       create: { id: "testimonials", content },
       update: { content },
     });
-  } catch {}
+  } catch {
+    markDbFailed();
+  }
 }
 
 export async function getCorporateContent(): Promise<CorporateContent> {
-  if (process.env.DATABASE_URL) {
+  if (hasDb()) {
     try {
       await ensureDbSeeded();
       const doc = await prisma.cmsDocument.findUnique({ where: { id: "corporate" } });
       if (doc) return toCorporateContent(doc.content);
-    } catch {}
+    } catch {
+      markDbFailed();
+    }
   }
   const json = await readCmsJson<CorporateContent>(cmsFiles.corporate);
   return json ?? defaultCorporateContent;
@@ -283,19 +314,21 @@ export async function getCorporateContent(): Promise<CorporateContent> {
 
 export async function saveCorporateContent(content: CorporateContent): Promise<void> {
   await writeCmsJson(cmsFiles.corporate, content);
-  if (!process.env.DATABASE_URL) return;
+  if (!hasDb()) return;
   try {
     await prisma.cmsDocument.upsert({
       where: { id: "corporate" },
       create: { id: "corporate", content },
       update: { content },
     });
-  } catch {}
+  } catch {
+    markDbFailed();
+  }
 }
 
 export async function saveOrders(orders: Order[]): Promise<void> {
   await writeCmsJson(cmsFiles.orders, orders);
-  if (!process.env.DATABASE_URL) return;
+  if (!hasDb()) return;
   try {
     await prisma.$transaction(async (tx) => {
       const ids = orders.map((o) => o.id);
@@ -378,12 +411,14 @@ export async function updateOrder(id: string, patch: Partial<Order>): Promise<Or
 const memoryUsersCache: CustomerUser[] = [];
 
 export async function getUsers(): Promise<CustomerUser[]> {
-  if (process.env.DATABASE_URL) {
+  if (hasDb()) {
     try {
       await ensureDbSeeded();
       const rows = await prisma.user.findMany({ orderBy: { createdAt: "desc" } });
       if (rows.length > 0) return rows.map(toUser);
-    } catch {}
+    } catch {
+      markDbFailed();
+    }
   }
   const json = await readCmsJson<CustomerUser[]>(cmsFiles.users);
   const fileUsers = json ?? [];
@@ -412,7 +447,7 @@ export async function createUser(user: CustomerUser): Promise<void> {
   memoryUsersCache.unshift(user);
   const all = await getUsers();
   await writeCmsJson(cmsFiles.users, all);
-  if (!process.env.DATABASE_URL) return;
+  if (!hasDb()) return;
   try {
     await prisma.user.create({
       data: {
@@ -425,7 +460,9 @@ export async function createUser(user: CustomerUser): Promise<void> {
         createdAt: new Date(user.createdAt),
       },
     });
-  } catch {}
+  } catch {
+    markDbFailed();
+  }
 }
 
 export async function updateUser(

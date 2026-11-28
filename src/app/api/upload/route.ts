@@ -16,6 +16,7 @@ const ALLOWED_EXTENSIONS = new Set([
   ".jpeg",
   ".webp",
   ".svg",
+  ".gif",
   ".eps",
   ".tiff",
   ".tif",
@@ -36,15 +37,16 @@ function getUploadDirectories(): string[] {
   const dirs: string[] = [];
   const cwd = process.cwd();
 
-  // 1. Direct path inside fast-prints
+  // 1. Direct path inside current working directory
   dirs.push(path.join(cwd, "public", "uploads", "designs"));
 
-  // 2. If cwd is root containing fast-prints
-  dirs.push(path.join(cwd, "fast-prints", "public", "uploads", "designs"));
+  // 2. If running from repo root
+  if (!cwd.endsWith("fast-prints")) {
+    dirs.push(path.join(cwd, "fast-prints", "public", "uploads", "designs"));
+  }
 
   // 3. Absolute path to workspace directory
   dirs.push("C:\\Users\\mraja\\Desktop\\Gitfastprints\\fast-prints\\public\\uploads\\designs");
-  dirs.push("C:\\Users\\mraja\\Desktop\\Gitfastprints\\public\\uploads\\designs");
 
   return Array.from(new Set(dirs));
 }
@@ -68,9 +70,20 @@ export async function POST(request: Request) {
         ? (file as any).size
         : 0;
 
+    const fileType =
+      file && typeof file === "object" && "type" in file && typeof (file as any).type === "string"
+        ? (file as any).type.toLowerCase()
+        : "";
+
     let ext = path.extname(fileName).toLowerCase();
-    if (!ext) {
-      ext = ".png";
+    if (!ext || ext === ".") {
+      if (fileType.includes("jpeg") || fileType.includes("jpg")) ext = ".jpg";
+      else if (fileType.includes("png")) ext = ".png";
+      else if (fileType.includes("webp")) ext = ".webp";
+      else if (fileType.includes("pdf")) ext = ".pdf";
+      else if (fileType.includes("svg")) ext = ".svg";
+      else if (fileType.includes("gif")) ext = ".gif";
+      else ext = ".png";
     }
 
     if (!ALLOWED_EXTENSIONS.has(ext)) {
@@ -91,16 +104,20 @@ export async function POST(request: Request) {
 
     // Extract buffer safely across Web API and Node.js environments
     let buffer: Buffer;
-    if (typeof (file as any).bytes === "function") {
-      const bytes = await (file as any).bytes();
-      buffer = Buffer.from(bytes);
-    } else if (typeof (file as any).arrayBuffer === "function") {
+    if (typeof (file as any).arrayBuffer === "function") {
       const arrayBuffer = await (file as any).arrayBuffer();
       buffer = Buffer.from(arrayBuffer);
+    } else if (typeof (file as any).bytes === "function") {
+      const bytes = await (file as any).bytes();
+      buffer = Buffer.from(bytes);
     } else if (Buffer.isBuffer(file)) {
       buffer = file;
-    } else {
+    } else if (typeof (file as any).text === "function") {
       buffer = Buffer.from(await (file as any).text());
+    } else if (typeof file === "string") {
+      buffer = Buffer.from(file);
+    } else {
+      throw new Error("Unable to parse uploaded file content.");
     }
 
     // Safe base filename
