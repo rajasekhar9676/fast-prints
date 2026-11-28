@@ -92,6 +92,14 @@ export function ProductConfigurator({ product }: { product: Product }) {
       setUploadingDesign(true);
       setUploadError(null);
 
+      // Instant local preview so the user sees their file ready immediately
+      try {
+        const localPreview = URL.createObjectURL(file);
+        setDesignFileUrl(localPreview);
+      } catch {
+        // ignore if unsupported
+      }
+
       try {
         const formData = new FormData();
         formData.append("file", file);
@@ -103,10 +111,11 @@ export function ProductConfigurator({ product }: { product: Product }) {
         if (res.ok && data.url) {
           setDesignFileUrl(data.url);
         } else {
-          setUploadError(data.error || "Upload failed. Please try again.");
+          setUploadError(data.error || "Upload failed. Please try again or share on WhatsApp.");
         }
-      } catch (err) {
-        setUploadError("Network error while uploading. File can also be shared on WhatsApp.");
+      } catch (err: any) {
+        console.error("Design upload error:", err);
+        setUploadError("Network error while uploading. Your file is attached and can also be shared on WhatsApp.");
       } finally {
         setUploadingDesign(false);
       }

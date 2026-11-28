@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import fs from "fs/promises";
+import fsSync from "fs";
 import path from "path";
+
+export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
 
 const ALLOWED_EXTENSIONS = new Set([
   ".pdf",
@@ -16,69 +20,136 @@ const ALLOWED_EXTENSIONS = new Set([
   ".tiff",
   ".tif",
   ".zip",
+  ".rar",
+  ".7z",
+  ".jfif",
+  ".heic",
+  ".heif",
+  ".avif",
+  ".bmp",
 ]);
 
 // 50 MB limit for high-resolution print files
 const MAX_FILE_SIZE = 50 * 1024 * 1024;
 
+function getUploadDirectories(): string[] {
+  const dirs: string[] = [];
+  const cwd = process.cwd();
+
+  // 1. Direct path inside fast-prints
+  dirs.push(path.join(cwd, "public", "uploads", "designs"));
+
+  // 2. If cwd is root containing fast-prints
+  dirs.push(path.join(cwd, "fast-prints", "public", "uploads", "designs"));
+
+  // 3. Absolute path to workspace directory
+  dirs.push("C:\\Users\\mraja\\Desktop\\Gitfastprints\\fast-prints\\public\\uploads\\designs");
+  dirs.push("C:\\Users\\mraja\\Desktop\\Gitfastprints\\public\\uploads\\designs");
+
+  return Array.from(new Set(dirs));
+}
+
 export async function POST(request: Request) {
   try {
     const formData = await request.formData();
-    const file = formData.get("file") as File | null;
+    const file = formData.get("file");
 
     if (!file) {
       return NextResponse.json({ error: "No design file provided." }, { status: 400 });
     }
 
-    const ext = path.extname(file.name).toLowerCase();
+    const fileName =
+      file && typeof file === "object" && "name" in file && typeof (file as any).name === "string"
+        ? (file as any).name
+        : "design-artwork.png";
+
+    const fileSize =
+      file && typeof file === "object" && "size" in file && typeof (file as any).size === "number"
+        ? (file as any).size
+        : 0;
+
+    let ext = path.extname(fileName).toLowerCase();
+    if (!ext) {
+      ext = ".png";
+    }
+
     if (!ALLOWED_EXTENSIONS.has(ext)) {
       return NextResponse.json(
         {
-          error: `Unsupported file type (${ext || "unknown"}). Allowed formats: PDF, AI, CDR, PSD, PNG, JPG, EPS, TIFF, ZIP.`,
+          error: `Unsupported file type (${ext}). Allowed formats: PDF, AI, CDR, PSD, PNG, JPG, EPS, TIFF, ZIP, HEIC.`,
         },
         { status: 400 }
       );
     }
 
-    if (file.size > MAX_FILE_SIZE) {
+    if (fileSize > MAX_FILE_SIZE) {
       return NextResponse.json(
         { error: "File exceeds 50MB limit. For larger files, please share via Google Drive or WhatsApp." },
         { status: 400 }
       );
     }
 
-    const uploadDir = path.join(process.cwd(), "public", "uploads", "designs");
-    await fs.mkdir(uploadDir, { recursive: true });
+    // Extract buffer safely across Web API and Node.js environments
+    let buffer: Buffer;
+    if (typeof (file as any).bytes === "function") {
+      const bytes = await (file as any).bytes();
+      buffer = Buffer.from(bytes);
+    } else if (typeof (file as any).arrayBuffer === "function") {
+      const arrayBuffer = await (file as any).arrayBuffer();
+      buffer = Buffer.from(arrayBuffer);
+    } else if (Buffer.isBuffer(file)) {
+      buffer = file;
+    } else {
+      buffer = Buffer.from(await (file as any).text());
+    }
 
     // Safe base filename
-    const rawBase = path.basename(file.name, ext);
-    const safeBase = rawBase
-      .toLowerCase()
-      .replace(/[^a-z0-9_-]/g, "-")
-      .replace(/-+/g, "-")
-      .slice(0, 50);
+    const rawBase = path.basename(fileName, ext);
+    const safeBase =
+      rawBase
+        .toLowerCase()
+        .replace(/[^a-z0-9_-]/g, "-")
+        .replace(/-+/g, "-")
+        .slice(0, 50) || "design";
 
     const rand = Math.floor(Math.random() * 9000 + 1000);
     const uniqueFileName = `${Date.now()}-${rand}-${safeBase}${ext}`;
-    const destinationPath = path.join(uploadDir, uniqueFileName);
 
-    const arrayBuffer = await file.arrayBuffer();
-    const buffer = Buffer.from(arrayBuffer);
-    await fs.writeFile(destinationPath, buffer);
+    const uploadDirs = getUploadDirectories();
+    let writeSuccessCount = 0;
+
+    for (const dir of uploadDirs) {
+      try {
+        if (!fsSync.existsSync(dir)) {
+          fsSync.mkdirSync(dir, { recursive: true });
+        }
+        await fs.writeFile(path.join(dir, uniqueFileName), buffer);
+        writeSuccessCount++;
+      } catch (writeErr) {
+        console.warn(`Could not write to upload dir ${dir}:`, writeErr);
+      }
+    }
+
+    if (writeSuccessCount === 0) {
+      throw new Error("Could not save design file to upload directory.");
+    }
 
     const fileUrl = `/uploads/designs/${uniqueFileName}`;
 
     return NextResponse.json({
       ok: true,
       url: fileUrl,
-      fileName: file.name,
+      fileName,
       storedName: uniqueFileName,
-      size: file.size,
+      size: buffer.length,
     });
-  } catch (error) {
+  } catch (error: any) {
     console.error("Artwork upload error:", error);
     return NextResponse.json(
-      { error: "Failed to upload design artwork. Please try again or share on WhatsApp." },
+      {
+        error: `Failed to upload design artwork: ${error?.message || "Internal server error"}. Please try again or share on WhatsApp.`,
+        details: String(error?.stack || error),
+      },
       { status: 500 }
     );
   }
