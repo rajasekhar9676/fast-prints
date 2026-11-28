@@ -69,7 +69,7 @@ export function HeroSection() {
           <div className="relative aspect-square w-full max-w-md">
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-400/40 via-transparent to-brand-600/20 blur-2xl" />
             <div className="relative mx-auto flex aspect-square max-h-[340px] max-w-[340px] items-center justify-center rounded-full border-4 border-brand-500/80 bg-ink-900/80 p-8 shadow-2xl shadow-black/50 md:max-h-[380px] md:max-w-[380px]">
-              <Image src="/logo.png" alt="Fast Prints Bengaluru logo" width={280} height={280} className="h-auto w-[85%] drop-shadow-lg" priority />
+              <Image src="/logo-icon.png" alt="Fast Prints Bengaluru logo" width={280} height={280} className="h-auto w-[85%] drop-shadow-lg object-contain" priority />
             </div>
             <div className="absolute -bottom-2 left-1/2 hidden w-[90%] -translate-x-1/2 rounded-2xl border border-white/10 bg-ink-900/90 px-4 py-3 text-center text-xs text-white/80 shadow-xl backdrop-blur-md sm:block">
               <span className="font-semibold text-brand-300">Landmark · BTM 2nd Stage</span>

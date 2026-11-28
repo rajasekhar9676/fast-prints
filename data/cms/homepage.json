@@ -127,50 +127,44 @@
     {
       "id": "education",
       "title": "Education & Campus",
-      "href": "/category/stationery",
-      "image": "/images/receipt-books.png"
+      "href": "/products?category=stationery",
+      "image": "/images/products/certificates-gold.jpg",
+      "badge": "POPULAR"
     },
     {
       "id": "startup",
       "title": "Startup Branding",
-      "href": "/category/business-essentials",
-      "image": "/images/visiting-cards.png"
+      "href": "/products/visiting-cards",
+      "image": "/images/products/visiting-cards-studio-pro.jpg",
+      "badge": "POPULAR"
     },
     {
       "id": "events",
       "title": "Events & Promotions",
-      "href": "/category/large-format",
-      "image": "/images/signage-wall-mural.png"
+      "href": "/category/banners-signages",
+      "image": "/images/products/rollup-standy-6x3ft-blue.jpg",
+      "badge": "POPULAR"
     },
     {
       "id": "retail",
       "title": "Retail & Packaging",
-      "href": "/category/packaging",
-      "image": "/images/presentation-envelopes.png"
-    },
-    {
-      "id": "cafe",
-      "title": "Cafe & Restaurant",
-      "href": "/category/marketing-materials",
-      "image": "/images/pamphlet-grocery.png"
-    },
-    {
-      "id": "boutique",
-      "title": "Boutique & Fashion",
-      "href": "/category/packaging",
-      "image": "/images/presentation-envelopes-gift.png"
-    },
-    {
-      "id": "wedding",
-      "title": "Weddings",
-      "href": "/category/marketing-materials",
-      "image": "/images/pamphlet-invitation.png"
+      "href": "/products/gold-stickers",
+      "image": "/images/products/gold-stickers-foil-sheet.jpg",
+      "badge": "POPULAR"
     },
     {
       "id": "corporate",
-      "title": "Corporate ID Kits",
-      "href": "/products/id-cards-lanyards",
-      "image": "/images/id-card-lanyard-set.png"
+      "title": "Corporate Merch & Gifting",
+      "href": "/category/photo-gifts",
+      "image": "/images/products/executive-diary-gold-leaf.jpg",
+      "badge": "NEW FOR 2025"
+    },
+    {
+      "id": "id-kits",
+      "title": "Employee ID Kits",
+      "href": "/products/id-cards-pvc",
+      "image": "/images/products/id-cards-pvc-pair.jpg",
+      "badge": "BESTSELLER"
     }
   ],
   "budgetRanges": [

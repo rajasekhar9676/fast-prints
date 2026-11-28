@@ -1,4 +1,7 @@
 export type ProductCategoryId =
+  | "digital-prints"
+  | "banners-signages"
+  | "gifts-merchandise"
   | "business-essentials"
   | "marketing-materials"
   | "large-format"
@@ -6,7 +9,8 @@ export type ProductCategoryId =
   | "apparel"
   | "photo-gifts"
   | "stationery"
-  | "events";
+  | "events"
+  | (string & {});
 
 export type ProductCategory = {
   id: ProductCategoryId;

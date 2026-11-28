@@ -1,495 +1,2461 @@
 import type { Product } from "@/types/product";
-import { storeImages } from "./store-images";
 
 export const products: Product[] = [
   {
-    id: "p1",
-    slug: "visiting-cards",
-    name: "Visiting Cards (300GSM Board)",
-    shortDescription: "300gsm board · plain or glossy/matt lamination · 100 to 1000 cards.",
-    description:
-      "Official rate list visiting cards printed on 300GSM premium board. Available single-sided (S/S) or double-sided (D/S) with optional Glossy or Matt lamination. Standard size 89mm × 51mm.",
-    basePrice: 200,
-    turnaround: "24–48 hrs",
-    image: "/images/products/visiting-card-liceria-front-studio.jpg",
-    gallery: [
-      "/images/products/visiting-card-liceria-front-studio.jpg",
-      "/images/products/visiting-cards-trio-showcase.jpg",
-      "/images/products/visiting-card-kashmir-studio.jpg",
-      "/images/products/visiting-cards-size-guide.jpg",
-      "/images/products/visiting-cards-design-guidelines.jpg",
-      "/images/products/visiting-cards-stack.jpg",
+    "id": "dp-01",
+    "slug": "visiting-cards",
+    "name": "Visiting Cards (300GSM Board)",
+    "shortDescription": "300gsm premium board · plain (under 500) · glossy, matt or velvet lamination (500+) · standard or rounded corners.",
+    "description": "Premium corporate visiting cards printed on 300GSM thick board. Under 500 cards are printed Plain (Non-Laminated). Orders of 500+ cards include premium Glossy, Matt, or Velvet Touch lamination. Available in single-sided (S/S) or double-sided (D/S). Standard 89mm x 51mm cut.",
+    "basePrice": 200,
+    "turnaround": "24–48 hrs",
+    "image": "/images/products/visiting-cards-studio-pro.jpg",
+    "gallery": [
+      "/images/products/visiting-cards-studio-pro.jpg",
+      "/fastprintsweb_photos/Modern Gold Accented Business Cards.png",
+      "/fastprintsweb_photos/Minimal Wave Business Card Mockup-1.png",
+      "/fastprintsweb_photos/Elegant Navy and Gold Business Cards-4.png"
     ],
-    category: "business-essentials",
-    popular: true,
-    bestseller: true,
-    badge: "Rate Card Featured",
-    rating: 4.8,
-    reviewCount: 1895,
-    highlights: [
-      "300GSM Board (Plain / Glossy / Matt Lamination)",
-      "Single Sided (S/S) & Double Sided (D/S) rates",
-      "Bulk quantity discounts down to ₹1.00/unit",
+    "category": "business-essentials",
+    "popular": true,
+    "bestseller": true,
+    "badge": "Bestseller",
+    "rating": 4.9,
+    "reviewCount": 1895,
+    "highlights": [
+      "300GSM Heavy Cardstock",
+      "Under 500 Qty: Plain (Non-Laminated)",
+      "500+ Qty: Protective Matt / Gloss / Velvet Lamination Included",
+      "Square or Rounded Die-cut Corners"
     ],
-    options: {
-      sizes: [
-        "Standard (85 x 55 mm)",
-        "Long (90 x 55 mm)",
-        "Square (55 x 55 mm)",
-        "Mini Card (85 x 25 mm)",
+    "options": {
+      "sizes": [
+        "Standard (89 x 51 mm)",
+        "Rounded Corner (89 x 51 mm)",
+        "Square (55 x 55 mm)"
       ],
-      finishes: [
-        "Matte Lamination (Smooth Premium Anti-Glare)",
-        "Glossy Lamination (Vibrant High-Gloss)",
-        "Plain (Natural Matte 300GSM Board)",
+      "finishes": [
+        "Plain (Non-Laminated)",
+        "Glossy Lamination",
+        "Matt Lamination",
+        "Velvet Touch Lamination"
       ],
-      quantities: [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],
-    },
+      "quantities": [
+        100,
+        200,
+        300,
+        500,
+        1000
+      ]
+    }
   },
   {
-    id: "p2",
-    slug: "letterheads",
-    name: "Letter Heads (100GSM Bond)",
-    shortDescription: "A4 size · 100gsm bond paper · digital or offset multicolor print.",
-    description:
-      "Corporate letterheads on 100GSM Bond Paper in A4 size. Digital print for smaller runs (100–500) and multicolor offset print for bulk 1000+ runs with 3-day turnaround.",
-    basePrice: 850,
-    turnaround: "Same-day (Digital) / 3 Days (Offset)",
-    image: storeImages.letterheadsAgrya,
-    gallery: [storeImages.letterheadsAgrya, storeImages.letterheadsCorporate],
-    category: "business-essentials",
-    popular: true,
-    highlights: ["A4 size · 100GSM Bond", "Digital (100/500 qty) & Offset (1000 qty)", "GST 18% billed"],
-    options: {
-      sizes: ["A4 Letterhead (210×297mm)"],
-      finishes: ["Digital Print (100GSM Bond)", "Multicolor Offset Print (1000 qty)"],
-      quantities: [100, 500, 1000],
-    },
-  },
-  {
-    id: "p3",
-    slug: "envelopes",
-    name: "Envelopes (9.5 x 4.5 inch)",
-    shortDescription: "9.5\" × 4.5\" · 100gsm paper · digital & offset print.",
-    description:
-      "Standard commercial envelopes (9.5 x 4.5 inch) on 100GSM sunshine paper. Available in Digital Print (100, 500, 1000) and Multicolor Offset Print (1000 qty).",
-    basePrice: 1200,
-    turnaround: "24–48 hrs",
-    image: storeImages.envelopes,
-    category: "packaging",
-    highlights: ['9.5" × 4.5" standard commercial', "100GSM sunshine paper", "Digital & Offset printing"],
-    options: {
-      sizes: ['9.5" × 4.5" Commercial'],
-      finishes: ["Digital Print 100GSM", "Multicolor Offset Print 100GSM"],
-      quantities: [100, 500, 1000],
-    },
-  },
-  {
-    id: "p4",
-    slug: "13x19-digital-print",
-    name: "13 x 19 Size Digital Prints",
-    shortDescription: "13\"×19\" sheet · 300gsm, 350gsm, texture board & non-tearable sheet.",
-    description:
-      "High-resolution 13 x 19 inch (330mm x 483mm) digital sheet printing. Available in 300GSM Board, 350GSM Board, Texture Board, and Non-Tearable Sheet for S/S and D/S printing.",
-    basePrice: 50,
-    turnaround: "Same-day",
-    image: storeImages.bulkMulticolor,
-    gallery: [storeImages.bulkMulticolor, storeImages.pamphletMulticolor],
-    category: "marketing-materials",
-    popular: true,
-    bestseller: true,
-    badge: "Digital Sheet",
-    rating: 4.9,
-    reviewCount: 88,
-    highlights: [
-      "13 × 19 inch (330×483mm)",
-      "300GSM, 350GSM, Texture & Non-Tearable stock",
-      "Single-sided (S/S) & Double-sided (D/S)",
+    "id": "dp-02",
+    "slug": "letterheads",
+    "name": "Letter Heads (100GSM Bond)",
+    "shortDescription": "A4 size · 100gsm executive bond paper · digital or offset multicolor print.",
+    "description": "Corporate letterheads on 100GSM Bond Paper in standard A4 size. Digital print for small runs (100–500) and multicolor offset print for bulk 1000+ quantities.",
+    "basePrice": 850,
+    "turnaround": "Same-day / 24 hrs",
+    "image": "/images/products/letterheads-executive-pro.jpg",
+    "gallery": [
+      "/images/products/letterheads-executive-pro.jpg",
+      "/fastprintsweb_photos/Modern Blue and Gold Letterhead Mockup.png",
+      "/fastprintsweb_photos/Modern Blue and Gold Letterhead Mockup-2.png",
+      "/fastprintsweb_photos/Elegant Blue and Gold Letterhead Mockup.png",
+      "/fastprintsweb_photos/Elegant Branded Letterhead Office Mockup.png"
     ],
-    options: {
-      sizes: ["13 × 19 inch Sheet"],
-      finishes: [
-        "300GSM Board (S/S)",
-        "300GSM Board (D/S)",
-        "350GSM Board (S/S)",
-        "350GSM Board (D/S)",
-        "Texture Board (S/S & D/S)",
-        "Non-Tearable (N.Terable) Sheet",
+    "category": "business-essentials",
+    "popular": true,
+    "badge": "Corporate",
+    "rating": 4.8,
+    "reviewCount": 420,
+    "highlights": [
+      "A4 Size (210 x 297mm)",
+      "100GSM Royal Executive Bond",
+      "Smooth ink absorbency & laser printer safe"
+    ],
+    "options": {
+      "sizes": [
+        "A4 (210 x 297 mm)"
       ],
-      quantities: [1, 2, 5, 10, 20, 21, 50, 100],
-    },
-  },
-  {
-    id: "p5",
-    slug: "13x19-sticker-sheets",
-    name: "Stickers & Die-Cut Labels (13x19)",
-    shortDescription: "13\"×19\" sticker sheet · normal, non-tearable, round & half-cut.",
-    description:
-      "Digital sticker printing on 13 x 19 inch sheets. Includes normal sticker sheets, non-tearable sticker sheets, round sticker cutting (min 10 sheets), and half-cut rectangle/square stickers.",
-    basePrice: 50,
-    turnaround: "Same-day",
-    image: storeImages.stickersDiecutLabels,
-    gallery: [storeImages.stickersDiecutLabels, "/images/presentation-envelopes.png"],
-    category: "packaging",
-    bestseller: true,
-    badge: "Sticker Sheet",
-    highlights: [
-      "13 × 19 inch Sticker Sheet",
-      "Normal & Non-Tearable (Waterproof) Sticker",
-      "Round sticker die-cut & half-cut options",
-    ],
-    options: {
-      sizes: ["13 × 19 Sheet", "Custom Die-cut"],
-      finishes: [
-        "Normal Digital Sticker Sheet",
-        "Non-Tearable Sticker Sheet",
-        "Round Sticker Cutting (Min 10 Sheets)",
-        "Half Cut Sticker (Rectangle / Square)",
+      "finishes": [
+        "100GSM Executive Bond Paper",
+        "100GSM Alabaster White",
+        "120GSM Super Sunshine"
       ],
-      quantities: [1, 2, 5, 10, 20, 21, 50, 100],
-    },
+      "quantities": [
+        100,
+        250,
+        500,
+        1000
+      ]
+    }
   },
   {
-    id: "p6",
-    slug: "offset-multicolor-print",
-    name: "Offset Multicolor Printing (3-Day)",
-    shortDescription: "Bulk letterheads, envelopes, A5 & A4 pamphlets on 90gsm art paper.",
-    description:
-      "High-volume commercial offset printing with 3 working days lead time. Includes 1000 A4 Letterheads, 1000 Envelopes, 2000 A5 Pamphlets (D/S), and 1000 A4 Pamphlets (D/S).",
-    basePrice: 3500,
-    turnaround: "3 Working Days",
-    image: storeImages.pamphletMulticolor,
-    category: "marketing-materials",
-    popular: true,
-    highlights: ["3 Working Days lead time", "90GSM Art Paper D/S for Pamphlets", "Unbeatable bulk prices"],
-    options: {
-      sizes: ["A5 Size", "A4 Size", "9.5 x 4.5 Envelope"],
-      finishes: [
-        "A4 Letterhead (1000 Qty @ ₹3.5/unit)",
-        "Envelope 9.5x4.5 (1000 Qty @ ₹5.5/unit)",
-        "A5 Pamphlet 90GSM Art D/S (2000 Qty - ₹3500 Lot)",
-        "A4 Pamphlet 90GSM Art D/S (1000 Qty - ₹3500 Lot)",
+    "id": "dp-03",
+    "slug": "envelopes",
+    "name": "Envelopes (9.5 x 4.5 inch)",
+    "shortDescription": "9.5\" x 4.5\" commercial envelopes · 100gsm sunshine paper · digital & offset print.",
+    "description": "Standard business mailing envelopes with peel-and-seal adhesive flap. Custom printed with company logo, sender details, and brand accents.",
+    "basePrice": 750,
+    "turnaround": "24–48 hrs",
+    "image": "/images/products/envelopes-corporate-pro.jpg",
+    "gallery": [
+      "/images/products/envelopes-corporate-pro.jpg",
+      "/fastprintsweb_photos/Elegant Branded Envelope Stationery.png",
+      "/images/products/envelopes-corporate-studio.jpg"
+    ],
+    "category": "packaging",
+    "highlights": [
+      "9.5\" x 4.5\" Standard Size",
+      "Self-Adhesive Peel & Seal Strip",
+      "100GSM Sunshine Paper"
+    ],
+    "options": {
+      "sizes": [
+        "9.5 x 4.5 inch (Commercial)"
       ],
-      quantities: [1000, 2000],
-    },
-  },
-  {
-    id: "p7",
-    slug: "single-color-bill-books",
-    name: "Bill Book (Offset Single Color)",
-    shortDescription: "1+1 White + Pink duplicate set · A5, A4, 1/5th, 1/6th, 1/16th sizes.",
-    description:
-      "Single color offset printed bill books with 1+1 (White + Pink duplicate paper) pages. Available in 1/16th, 1/6th, 1/5th, A5, and A4 sizes with sequential numbering.",
-    basePrice: 1440,
-    turnaround: "3–5 days",
-    image: storeImages.receiptBooks,
-    gallery: [storeImages.receiptBooks, storeImages.invoiceBooks],
-    category: "stationery",
-    bestseller: true,
-    badge: "Official Books",
-    highlights: [
-      "1+1 (White + Pink Paper) Duplicate",
-      "A5, A4, 1/5th, 1/6th, 1/16th Sizes",
-      "Sequential numbering included",
-    ],
-    options: {
-      sizes: ["1/16th Size (12 Books)", "1/6th Size (10 Books)", "1/5th Size (10 Books)", "A5 Size (10 Books)", "A4 Size (10 Books)"],
-      finishes: ["Single Color Offset (White + Pink Set)"],
-      quantities: [10, 12, 20, 50],
-    },
-  },
-  {
-    id: "p8",
-    slug: "seals-stamps",
-    name: "Seals & Rubber Stamps",
-    shortDescription: "Rubber stamps, address seals & self-inking stamps (small to large).",
-    description:
-      "Custom rubber stamps and self-inking seals for business registration, address stamping, and official authorization. Quick turnaround at BTM 2nd Stage office.",
-    basePrice: 200,
-    turnaround: "Same-day / 24 hrs",
-    image: storeImages.sealsRubberStamps,
-    category: "business-essentials",
-    highlights: ["Rubber Round Seals (₹200)", "Address Seals (₹250)", "Self Ink Seals (₹450 / ₹650 / ₹750)"],
-    options: {
-      sizes: ["Standard Round", "Rectangular Address", "Self Ink Compact", "Self Ink Heavy Duty"],
-      finishes: [
-        "Rubber Stamp - Round Seal (₹200)",
-        "For / Address Seal (₹250)",
-        "Self Ink Seal - Small (₹450)",
-        "Self Ink Seal - Medium (₹650)",
-        "Self Ink Seal - Large (₹750)",
+      "finishes": [
+        "100GSM Sunshine Paper",
+        "100GSM Bond Paper"
       ],
-      quantities: [1, 2, 5, 10],
-    },
+      "quantities": [
+        100,
+        250,
+        500,
+        1000
+      ]
+    }
   },
   {
-    id: "p9",
-    slug: "id-cards-lanyards",
-    name: "ID Cards & Lanyards (Tags)",
-    shortDescription: "PVC ID cards, white holders, and 10mm, 16mm & 20mm multicolor lanyards.",
-    description:
-      "Complete employee identity gear: PVC double-sided multicolor ID cards (₹100), PVC holders (₹10), and custom printed lanyards in 10mm, 16mm, and 20mm widths with quantity discount breaks down to ₹18/pc.",
-    basePrice: 100,
-    turnaround: "2–4 days",
-    image: storeImages.idCards,
-    gallery: [storeImages.idCards, storeImages.lanyards, storeImages.idCardLanyardSet],
-    category: "business-essentials",
-    popular: true,
-    bestseller: true,
-    badge: "Popular Set",
-    highlights: [
-      "PVC D/S Multicolor ID Card (₹100)",
-      "10mm, 16mm & 20mm Multicolor Printed Lanyards",
-      "Quantity discounts for 50, 100, 500, 1000 units",
+    "id": "dp-04",
+    "slug": "invitations",
+    "name": "Invitations",
+    "shortDescription": "Wedding, corporate gala & event invites · premium metallic & texture cardstocks.",
+    "description": "Bespoke invitation cards printed on imported Italian textured cardstocks, metallic pearl boards, and velvet cardstocks. Single flat cards or bi-fold cards with matching envelopes.",
+    "basePrice": 400,
+    "turnaround": "24–48 hrs",
+    "image": "/images/products/invitations-wedding-pro.jpg",
+    "gallery": [
+      "/images/products/invitations-wedding-pro.jpg",
+      "/fastprintsweb_photos/Elegant Floral Wedding Invitation Mockup.png"
     ],
-    options: {
-      sizes: ["CR80 Standard PVC Card", "10mm Lanyard Tag", "16mm Lanyard Tag", "20mm Lanyard Tag"],
-      finishes: [
-        "PVC ID Card D/S Print",
-        "White PVC Card Holder",
-        "20mm Multicolor Satin Lanyard",
-        "16mm Multicolor Satin Lanyard",
-        "10mm Multicolor Satin Lanyard",
+    "category": "events",
+    "popular": true,
+    "highlights": [
+      "Textured & Metallic Cardstocks",
+      "Includes Matching Outer Envelope",
+      "Gold / Silver Foil Stamping available"
+    ],
+    "options": {
+      "sizes": [
+        "5 x 7 inch",
+        "A5 (148 x 210 mm)",
+        "Square (6 x 6 inch)"
       ],
-      quantities: [1, 50, 100, 500, 1000],
-    },
-  },
-  {
-    id: "p10",
-    slug: "ceramic-magic-mugs",
-    name: "Ceramic Mugs & Magic Mugs",
-    shortDescription: "11oz ceramic mug & heat-sensitive magic mug with full-color sublimation.",
-    description:
-      "Custom printed 11oz ceramic mugs and heat-activated magic mugs. Great for corporate giveaways, team onboarding, and personal photo gifts.",
-    basePrice: 300,
-    turnaround: "Same-day / 24 hrs",
-    image: storeImages.ceramicMagicMugs,
-    gallery: [storeImages.ceramicMagicMugs, "/images/hero/fastprints-2027-corporate-gifts.jpg"],
-    category: "photo-gifts",
-    bestseller: true,
-    highlights: [
-      "11oz Ceramic Mug (₹300 | 50+ @ ₹200)",
-      "11oz Magic Heat Sensitive Mug (₹550 | 10+ @ ₹350)",
-      "Full-color glossy sublimation print",
-    ],
-    options: {
-      sizes: ["11 oz Standard Mug"],
-      finishes: [
-        "11oz White Ceramic Mug (Standard)",
-        "11oz Heat-Sensitive Magic Mug (Black to White photo reveal)",
+      "finishes": [
+        "Pearl Metallic Board",
+        "Linen Texture Board",
+        "350GSM Velvet Matte"
       ],
-      quantities: [1, 10, 50, 100],
-    },
+      "quantities": [
+        50,
+        100,
+        200,
+        500
+      ]
+    }
   },
   {
-    id: "p11",
-    slug: "button-badges",
-    name: "Button Badges (Pin Badges)",
-    shortDescription: "44mm, 55mm & 70mm pin badges for campaigns, events & branding.",
-    description:
-      "Vivid pin button badges in 44mm, 55mm, and 70mm diameters. Durable metal back with safety pin — ideal for marketing campaigns, elections, and school events.",
-    basePrice: 360,
-    turnaround: "24–48 hrs",
-    image: storeImages.buttonPinBadges,
-    category: "marketing-materials",
-    highlights: [
-      "44mm, 55mm & 70mm sizes available",
-      "Quantity tiers: 15–30, 100, 500, 1000 pcs",
-      "Vivid glossy laminated finish",
+    "id": "dp-05",
+    "slug": "pamphlets",
+    "name": "Pamphlets / Flyers",
+    "shortDescription": "A5 & A4 art paper flyers · 130gsm / 170gsm gloss or matt · single or double-sided.",
+    "description": "Vibrant marketing flyers and pamphlets for store launches, real estate promotions, and events. Printed on high-sheen 130GSM or 170GSM art paper with sharp text and bold photography.",
+    "basePrice": 450,
+    "turnaround": "24 hrs (Digital) / 3 Days (Offset)",
+    "image": "/fastprintsweb_photos/tri-fold-brochure-innovation.png",
+    "gallery": [
+      "/fastprintsweb_photos/tri-fold-brochure-innovation.png",
+      "/images/products/brochures-trifold-pro.jpg",
+      "/fastprintsweb_photos/Modern Tri-Fold Business Brochure Mockup.png",
+      "/images/products/pamphlets-flyers-studio.jpg"
     ],
-    options: {
-      sizes: ["44mm Pin Badge", "55mm Pin Badge", "70mm Pin Badge"],
-      finishes: ["Gloss Laminated Surface"],
-      quantities: [15, 24, 30, 100, 500, 1000],
-    },
-  },
-  {
-    id: "p12",
-    slug: "photo-print-with-frame",
-    name: "Photo Print with Frame",
-    shortDescription: "4x6 up to 20x30 inch framed photo prints with 1-inch beeding frame.",
-    description:
-      "High quality photo printing mounted inside a sleek 1-inch beeding frame. Sizes range from desktop 4x6 inch to large wall 20x30 inch display frames.",
-    basePrice: 250,
-    turnaround: "24–48 hrs",
-    image: storeImages.photoPrint,
-    category: "photo-gifts",
-    bestseller: true,
-    highlights: [
-      "1-inch Beeding frame included",
-      "Sizes: 4x6, 5x7, 6x8, 10x8, 12x18, 20x30 inch",
-      "Archival photo paper printing",
+    "category": "marketing-materials",
+    "bestseller": true,
+    "highlights": [
+      "A5 & A4 Standard Formats",
+      "130GSM / 170GSM Gloss Art Paper",
+      "Single-sided (S/S) or Double-sided (D/S)"
     ],
-    options: {
-      sizes: ['4 × 6"', '5 × 7"', '6 × 8"', '10 × 8"', '12 × 18"', '20 × 30"'],
-      finishes: ["Sleek 1-Inch Beeding Frame"],
-      quantities: [1, 2, 5, 10],
-    },
-  },
-  {
-    id: "p13",
-    slug: "document-lamination",
-    name: "Lamination (A5, A4, A3)",
-    shortDescription: "Thermal pouch lamination for certificates, IDs, and menus.",
-    description:
-      "Heavy-duty thermal pouch lamination for A5, A4, and A3 documents. Bulk discounts down to ₹12/pc for A5, ₹14/pc for A4, and ₹35/pc for A3.",
-    basePrice: 50,
-    turnaround: "Instant / Same-day",
-    image: storeImages.documentLamination,
-    category: "stationery",
-    highlights: [
-      "A5, A4 & A3 standard document sizes",
-      "Crystal clear waterproof pouch lamination",
-      "Quantity discounts for 10, 100, 500, 1000 units",
-    ],
-    options: {
-      sizes: ["A5 Size", "A4 Size", "A3 Size"],
-      finishes: ["Gloss Thermal Pouch Lamination"],
-      quantities: [1, 10, 100, 500, 1000],
-    },
-  },
-  {
-    id: "p14",
-    slug: "banners-vinyl-stickers",
-    name: "Banners & Vinyl Stickers (Per Sq. Ft.)",
-    shortDescription: "Normal flex, Star flex banner & laminated vinyl stickers.",
-    description:
-      "Wide format outdoor printing charged by square feet. Normal Flex Banner (₹20–₹50/sqft), Star Flex Banner (₹40–₹60/sqft), and Vinyl Sticker with Lamination (₹110–₹130/sqft).",
-    basePrice: 500,
-    turnaround: "Same-day / 24 hrs",
-    image: storeImages.signageWallMural,
-    category: "large-format",
-    popular: true,
-    bestseller: true,
-    highlights: [
-      "Normal Flex Banner (from ₹20/sqft)",
-      "Star Flex Banner (from ₹40/sqft)",
-      "Laminated Vinyl Sticker (from ₹110/sqft)",
-    ],
-    options: {
-      sizes: ["10 sq ft", "50 sq ft", "100 sq ft"],
-      finishes: ["Normal Flex Banner", "Star Flex Banner", "Vinyl Sticker with Lamination"],
-      quantities: [10, 50, 100],
-    },
-  },
-  {
-    id: "p15",
-    slug: "custom-signages-led-boards",
-    name: "Custom Signage & LED Boards (Quotation)",
-    shortDescription: "Frame banners, 2D/3D LED boards, standees, acrylic boards, canopies & umbrellas.",
-    description:
-      "Custom signage & outdoor display products provided via custom quotation: Banner with frame, Backlit lighting board, 3D LED board, 2D LED board, Rollup standee with Star flex, Acrylic office name board, Promotional Canopy, Promo table, and Branded Outdoor Umbrella.",
-    basePrice: 1500,
-    turnaround: "3–7 days",
-    image: storeImages.signageWallMural,
-    gallery: [storeImages.signageWallMural, storeImages.servicesOverview],
-    category: "large-format",
-    badge: "Quote Based",
-    highlights: [
-      "Custom dimensions & site measurements",
-      "3D LED, Backlit & Standee options",
-      "BTM 2nd Stage team installation guidance",
-    ],
-    options: {
-      sizes: ["Custom Site Measurement"],
-      finishes: [
-        "Banner with Frame",
-        "Backlight Lighting Board",
-        "3D LED Board",
-        "2D LED Board",
-        "Rollup Standee with Star Flex Banner",
-        "Acrylic Office Name Board",
-        "Canopy Tent",
-        "Promo Table",
-        "Outdoor Umbrella",
+    "options": {
+      "sizes": [
+        "A5 (148 x 210 mm)",
+        "A4 (210 x 297 mm)",
+        "DL (99 x 210 mm)"
       ],
-      quantities: [1, 2, 5],
-    },
+      "finishes": [
+        "130GSM Gloss Art Paper",
+        "170GSM Premium Art Paper"
+      ],
+      "quantities": [
+        100,
+        500,
+        1000,
+        2000,
+        5000
+      ]
+    }
   },
   {
-    id: "p16",
-    slug: "custom-2027-desk-calendars",
-    name: "Custom 2027 Desk & Wall Calendars",
-    shortDescription: "350gsm matte textured card · twin wire-o spiral binding · custom dated.",
-    description:
-      "Official 2027 custom corporate desktop tent calendars and wall calendars. Printed on premium 350GSM textured matte card stock with durable twin-loop wire-o binding and personalized corporate branding.",
-    basePrice: 120,
-    turnaround: "24–48 hrs",
-    image: storeImages.calendarTabletop,
-    gallery: [storeImages.calendarTabletop, "/images/calendar-tabletop.png", "/images/calendar-wall.png"],
-    category: "stationery",
-    popular: true,
-    bestseller: true,
-    badge: "2027 Edition",
-    highlights: [
-      "350GSM Matte Textured Art Card",
-      "Twin-loop wire-o spiral binding with tent stand",
-      "Custom monthly branding & corporate date highlights",
+    "id": "dp-06",
+    "slug": "brochures",
+    "name": "Brochures",
+    "shortDescription": "Bi-fold & tri-fold brochures · 170gsm/250gsm art paper · gloss or matte lamination.",
+    "description": "Multi-panel brochures engineered for high sales conversions. Available in 4-panel bi-fold or 6-panel tri-fold on 170GSM or 250GSM art paper with optional protective lamination.",
+    "basePrice": 1500,
+    "turnaround": "2–3 days",
+    "image": "/images/products/brochures-trifold-pro.jpg",
+    "gallery": [
+      "/images/products/brochures-trifold-pro.jpg",
+      "/fastprintsweb_photos/Modern Tri-Fold Business Brochure Mockup.png",
+      "/fastprintsweb_photos/tri-fold-brochure-innovation.png"
     ],
-    options: {
-      sizes: ["Desktop Tent (8.5 × 5.5 inch)", "Wall Hanging (11 × 17 inch)"],
-      finishes: ["Matte Lamination", "Gloss Lamination", "Gold Foil Header"],
-      quantities: [25, 50, 100, 250, 500],
-    },
+    "category": "marketing-materials",
+    "popular": true,
+    "highlights": [
+      "Bi-fold (4 Panels) & Tri-fold (6 Panels)",
+      "Machine Pre-Scored Crisp Folds",
+      "170GSM / 250GSM Art Paper"
+    ],
+    "options": {
+      "sizes": [
+        "A4 Tri-Fold (6 Panels)",
+        "A4 Bi-Fold (A3 folded - 4 Panels)"
+      ],
+      "finishes": [
+        "170GSM Art Paper (No Lamination)",
+        "250GSM Board with Matte Lamination",
+        "250GSM Board with Gloss Lamination"
+      ],
+      "quantities": [
+        100,
+        250,
+        500,
+        1000
+      ]
+    }
   },
   {
-    id: "p17",
-    slug: "corporate-diaries-executive-planners",
-    name: "Custom 2027 Corporate Diaries & Planners",
-    shortDescription: "Hardbound leatherette journal · metallic gold foil debossing · silk ribbon.",
-    description:
-      "Luxury corporate executive daily planners and diaries in premium midnight navy, matte black, and cognac leatherette with custom gold foil debossed company logo.",
-    basePrice: 350,
-    turnaround: "2-4 days",
-    image: storeImages.corporateDiaries,
-    gallery: [storeImages.corporateDiaries, "/images/hero/fastprints-2027-corporate-gifts.jpg"],
-    category: "stationery",
-    popular: true,
-    bestseller: true,
-    badge: "Executive 2027",
-    highlights: [
+    "id": "dp-07",
+    "slug": "posters",
+    "name": "Posters",
+    "shortDescription": "A3 & 12x18 inch display posters · 170gsm / 300gsm art paper with high-gloss sheen.",
+    "description": "Eye-catching promotional posters for retail windows, notices, concerts, and campaigns. High-saturation digital print with razor-sharp detail on 170GSM or 300GSM art card.",
+    "basePrice": 60,
+    "turnaround": "Same-day",
+    "image": "/images/products/wall-posters-dream-bigger.jpg",
+    "gallery": [
+      "/images/products/wall-posters-dream-bigger.jpg",
+      "/images/products/wall-posters-dreambig-pro.jpg",
+      "/fastprintsweb_photos/wallposters.png",
+      "/fastprintsweb_photos/Chic Summer Sale Poster Display.png"
+    ],
+    "category": "marketing-materials",
+    "highlights": [
+      "A3 (297 x 420mm) & 12x18 inch",
+      "Rich photo-quality saturation",
+      "170GSM Art Paper or 300GSM Board"
+    ],
+    "options": {
+      "sizes": [
+        "A3 (297 x 420 mm)",
+        "12 x 18 inch"
+      ],
+      "finishes": [
+        "170GSM Gloss Paper",
+        "300GSM Heavy Art Board",
+        "300GSM with Gloss Lamination"
+      ],
+      "quantities": [
+        5,
+        10,
+        25,
+        50,
+        100
+      ]
+    }
+  },
+  {
+    "id": "dp-08",
+    "slug": "certificates",
+    "name": "Certificates",
+    "shortDescription": "A4 archival parchment & 300gsm textured cardstock · gold foil seal accents.",
+    "description": "Formal certificates of appreciation, course completion, merit awards, and sports championships. Printed on heavyweight 300GSM archival textured board with optional embossed gold foil seals.",
+    "basePrice": 350,
+    "turnaround": "Same-day / 24 hrs",
+    "image": "/images/products/certificates-gold.jpg",
+    "gallery": [
+      "/images/products/certificates-gold.jpg",
+      "/fastprintsweb_photos/certificate.png"
+    ],
+    "category": "business-essentials",
+    "highlights": [
+      "A4 Standard (210 x 297mm)",
+      "Archival 300GSM Non-Yellowing Card",
+      "Variable serial numbers & recipient names"
+    ],
+    "options": {
+      "sizes": [
+        "A4 (210 x 297 mm)"
+      ],
+      "finishes": [
+        "Smooth 300GSM Heavy Card",
+        "Natural Parchment Texture",
+        "Metallic Pearl Board"
+      ],
+      "quantities": [
+        10,
+        25,
+        50,
+        100,
+        250
+      ]
+    }
+  },
+  {
+    "id": "dp-09",
+    "slug": "tent-cards",
+    "name": "Tent Cards",
+    "shortDescription": "350gsm rigid board triangular tabletop tent cards for restaurants, cafes & retail.",
+    "description": "Double-sided self-standing tabletop tent cards. Pre-creased and scored on stiff 350GSM board with protective matt or gloss lamination for QR menus, table numbers, and promotions.",
+    "basePrice": 450,
+    "turnaround": "24–48 hrs",
+    "image": "/images/products/tent-cards-thank-you.jpg",
+    "gallery": [
+      "/images/products/tent-cards-thank-you.jpg",
+      "/fastprintsweb_photos/table-tent-card-display.png"
+    ],
+    "category": "marketing-materials",
+    "highlights": [
+      "Stiff 350GSM Board",
+      "Self-Standing Triangular Base",
+      "Anti-Scratch Lamination"
+    ],
+    "options": {
+      "sizes": [
+        "4 x 6 inch (Tabletop)",
+        "5 x 7 inch (Standard)"
+      ],
+      "finishes": [
+        "Matte Lamination",
+        "Glossy Lamination"
+      ],
+      "quantities": [
+        20,
+        50,
+        100,
+        200
+      ]
+    }
+  },
+  {
+    "id": "dp-10",
+    "slug": "magazines",
+    "name": "Magazines & Booklets",
+    "shortDescription": "Saddle-stitched multi-page publications · 130gsm inside pages with 300gsm laminated cover.",
+    "description": "Professional saddle-stitched (center-stapled) magazines, corporate annual reports, quarterly bulletins, and event brochures with crystal-clear full-color interior pages.",
+    "basePrice": 1800,
+    "turnaround": "3–4 days",
+    "image": "/images/products/magazines-living-better.jpg",
+    "gallery": [
+      "/images/products/magazines-living-better.jpg",
+      "/fastprintsweb_photos/magazine.png"
+    ],
+    "category": "marketing-materials",
+    "highlights": [
+      "A4 & A5 Standard Formats",
+      "8 to 48 Pages Saddle-Stitched",
+      "Heavy 300GSM Laminated Outer Cover"
+    ],
+    "options": {
+      "sizes": [
+        "A4 Size (Closed)",
+        "A5 Size (Closed)"
+      ],
+      "finishes": [
+        "8 Pages (Cover + 4 Inner)",
+        "16 Pages (Cover + 12 Inner)",
+        "24 Pages (Cover + 20 Inner)",
+        "32 Pages (Cover + 28 Inner)"
+      ],
+      "quantities": [
+        50,
+        100,
+        250,
+        500
+      ]
+    }
+  },
+  {
+    "id": "dp-11",
+    "slug": "danglers",
+    "name": "Danglers",
+    "shortDescription": "Round & custom die-cut hanging ceiling danglers with pre-punched hole & thread.",
+    "description": "High-visibility ceiling danglers for supermarkets, retail showrooms, trade shows, and store sales. 350GSM heavy board with double-sided printing and die-cut shapes.",
+    "basePrice": 350,
+    "turnaround": "24–48 hrs",
+    "image": "/images/products/danglers-special-offer.jpg",
+    "gallery": [
+      "/images/products/danglers-special-offer.jpg",
+      "/fastprintsweb_photos/danglers.png"
+    ],
+    "category": "marketing-materials",
+    "highlights": [
+      "Round, Square or Custom Die-Cut",
+      "Pre-Punched Hanging Eyelet",
+      "Double-Sided 350GSM Board"
+    ],
+    "options": {
+      "sizes": [
+        "8 inch Round",
+        "8 x 8 inch Square",
+        "Custom Die-Cut Shape"
+      ],
+      "finishes": [
+        "Gloss Lamination",
+        "Matte Lamination"
+      ],
+      "quantities": [
+        25,
+        50,
+        100,
+        250
+      ]
+    }
+  },
+  {
+    "id": "dp-12",
+    "slug": "product-catalogue",
+    "name": "Product Catalogue",
+    "shortDescription": "Comprehensive corporate product catalogs · wiro bound or saddle-stitched.",
+    "description": "Showcase your entire inventory with high-resolution photographic product catalogues. Printed with accurate color fidelity on archival coated paper with durable binding.",
+    "basePrice": 2200,
+    "turnaround": "3–5 days",
+    "image": "/images/products/product-catalogue-armchair.jpg",
+    "gallery": [
+      "/images/products/product-catalogue-armchair.jpg",
+      "/fastprintsweb_photos/productcatalogue.png"
+    ],
+    "category": "marketing-materials",
+    "highlights": [
+      "Saddle-Stitched or Wiro Binding",
+      "High-Density Photo Printing",
+      "Tear-Resistant Laminated Covers"
+    ],
+    "options": {
+      "sizes": [
+        "A4 Portrait",
+        "A4 Landscape",
+        "A5 Compact"
+      ],
+      "finishes": [
+        "Wiro Spiral Bound",
+        "Saddle Stitched (Stapled)"
+      ],
+      "quantities": [
+        25,
+        50,
+        100,
+        250
+      ]
+    }
+  },
+  {
+    "id": "dp-13",
+    "slug": "wall-posters",
+    "name": "Wall Posters",
+    "shortDescription": "Large decorative & brand wall art prints · photo satin or matte paper.",
+    "description": "High-definition wall posters for office interior decor, motivational brand values, retail showrooms, and home decor. Printed up to 13x19 inches on heavy non-glare satin photo card.",
+    "basePrice": 120,
+    "turnaround": "Same-day",
+    "image": "/images/products/wall-posters-dreambig-pro.jpg",
+    "gallery": [
+      "/images/products/wall-posters-dreambig-pro.jpg",
+      "/images/products/wall-posters-dream-bigger.jpg",
+      "/fastprintsweb_photos/wallposters.png"
+    ],
+    "category": "marketing-materials",
+    "highlights": [
+      "12x18 inch & 13x19 inch",
+      "Vivid archival pigment inks",
+      "Fade-resistant matte & gloss coatings"
+    ],
+    "options": {
+      "sizes": [
+        "12 x 18 inch",
+        "13 x 19 inch"
+      ],
+      "finishes": [
+        "Photo Satin 250GSM",
+        "High Gloss 300GSM",
+        "Velvet Matte Board"
+      ],
+      "quantities": [
+        2,
+        5,
+        10,
+        20,
+        50
+      ]
+    }
+  },
+  {
+    "id": "dp-14",
+    "slug": "presentation-envelopes",
+    "name": "Presentation Envelopes",
+    "shortDescription": "7\" x 4\" royal textured envelopes for cash gifts, vouchers & executive invites.",
+    "description": "Exquisite presentation envelopes crafted for corporate awards, wedding shagun, VIP passes, and gift vouchers in 7x4 inch size on 100GSM sunshine white or royal textured paper.",
+    "basePrice": 599,
+    "turnaround": "24–48 hrs",
+    "image": "/images/products/presentation-envelopes-wax-seal.jpg",
+    "gallery": [
+      "/images/products/presentation-envelopes-wax-seal.jpg",
+      "/fastprintsweb_photos/Elegant Forest Green and Gold Envelope.png",
+      "/images/products/design-bag-white.jpg",
+      "/images/products/envelopes-corporate-pro.jpg"
+    ],
+    "category": "packaging",
+    "highlights": [
+      "7\" x 4\" Classic Shagun / Gift Size",
+      "Premium Forest Green, Navy or White Stock",
+      "Gold Foil Bordering Options"
+    ],
+    "options": {
+      "sizes": [
+        "7 x 4 inch Standard"
+      ],
+      "finishes": [
+        "Royal Forest Green Board",
+        "Classic Navy & Gold",
+        "100GSM Sunshine White"
+      ],
+      "quantities": [
+        50,
+        100,
+        200,
+        500
+      ]
+    }
+  },
+  {
+    "id": "st-01",
+    "slug": "normal-stickers",
+    "name": "Normal Paper Stickers",
+    "shortDescription": "Mirror coat paper sheet stickers · custom kiss-cut or die-cut shapes.",
+    "description": "Cost-effective, high-tack paper stickers on 13x19 inch mirror-coat sheets. Pre-cut for easy peeling into round, square, or custom contour shapes.",
+    "basePrice": 30,
+    "turnaround": "Same-day / 24 hrs",
+    "image": "/images/products/stickers-diecut-pro.jpg",
+    "gallery": [
+      "/images/products/stickers-diecut-pro.jpg",
+      "/images/products/vinyl-stickers-sheet.jpg",
+      "/fastprintsweb_photos/Elegant Blush Thank You Sticker Set.png"
+    ],
+    "category": "packaging",
+    "highlights": [
+      "Mirror Coat High Gloss Paper",
+      "Precision Computer Kiss-Cutting",
+      "Strong permanent self-adhesive"
+    ],
+    "options": {
+      "sizes": [
+        "13 x 19 inch Sheet (Multiple labels per sheet)"
+      ],
+      "finishes": [
+        "Glossy Mirror Coat",
+        "Matte Paper"
+      ],
+      "quantities": [
+        5,
+        10,
+        20,
+        50,
+        100
+      ]
+    }
+  },
+  {
+    "id": "st-02",
+    "slug": "barcode-stickers",
+    "name": "Barcode Stickers",
+    "shortDescription": "High-contrast 1D & 2D QR code / Barcode labels for inventory & retail scanning.",
+    "description": "Crisp, scannable barcode and QR code stickers printed with ultra-high edge acuity. Compatible with all laser and optical POS barcode scanners.",
+    "basePrice": 25,
+    "turnaround": "Same-day / 24 hrs",
+    "image": "/images/products/barcode-stickers-sheet.jpg",
+    "gallery": [
+      "/images/products/barcode-stickers-sheet.jpg",
+      "/fastprintsweb_photos/Minimal barcode label on white background.png",
+      "/fastprintsweb_photos/Minimal Product ID Barcode Label.png"
+    ],
+    "category": "packaging",
+    "highlights": [
+      "100% Optical Scanner Scannable",
+      "Sequential Barcode Serial Numbers supported",
+      "Smudge-proof thermal/digital print"
+    ],
+    "options": {
+      "sizes": [
+        "50 x 25 mm Labels",
+        "38 x 25 mm Labels",
+        "13 x 19 Sheet Format"
+      ],
+      "finishes": [
+        "Semi-Gloss Paper",
+        "Water-Resistant Poly"
+      ],
+      "quantities": [
+        100,
+        500,
+        1000,
+        2000,
+        5000
+      ]
+    }
+  },
+  {
+    "id": "st-03",
+    "slug": "mrp-labels",
+    "name": "MRP Labels",
+    "shortDescription": "Retail package pricing stickers with MRP, Batch No., Mfg Date & Net Qty.",
+    "description": "Official retail MRP compliance labels for packaged goods, food containers, cosmetics, and garments. Pre-cut labels ready to peel and stick onto jars, boxes, and pouches.",
+    "basePrice": 25,
+    "turnaround": "Same-day / 24 hrs",
+    "image": "/images/products/mrp-labels-shelf-499.jpg",
+    "gallery": [
+      "/images/products/mrp-labels-shelf-499.jpg",
+      "/fastprintsweb_photos/Bold MRP 499.00 Price Label.png",
+      "/fastprintsweb_photos/MRP ₹499 Label Roll.png"
+    ],
+    "category": "packaging",
+    "highlights": [
+      "Compliant with retail packaging laws",
+      "High-tack adhesive sticks to glass, plastic & cardboard",
+      "Pre-cut for quick assembly line application"
+    ],
+    "options": {
+      "sizes": [
+        "40 x 20 mm",
+        "50 x 30 mm",
+        "13 x 19 Sheet (Custom Grid)"
+      ],
+      "finishes": [
+        "Standard Mirror Coat",
+        "Removable Adhesive",
+        "Waterproof PVC"
+      ],
+      "quantities": [
+        100,
+        500,
+        1000,
+        2000,
+        5000
+      ]
+    }
+  },
+  {
+    "id": "st-04",
+    "slug": "non-tearable-stickers-pvc",
+    "name": "Non-Tearable Stickers (PVC)",
+    "shortDescription": "100% waterproof, oil-proof & tear-proof synthetic PVC vinyl stickers.",
+    "description": "Industrial grade non-tearable PVC vinyl stickers engineered for shampoo bottles, frozen foods, cosmetics, outdoor equipment, and vehicle branding. 100% water and grease proof.",
+    "basePrice": 55,
+    "turnaround": "Same-day / 24 hrs",
+    "image": "/images/products/non-tearable-pvc-stickers.jpg",
+    "gallery": [
+      "/images/products/non-tearable-pvc-stickers.jpg",
+      "/fastprintsweb_photos/pvsstickerslabel.png"
+    ],
+    "category": "packaging",
+    "popular": true,
+    "bestseller": true,
+    "highlights": [
+      "100% Tear-Proof Synthetic Polymer",
+      "Waterproof & Freezer-Grade Adhesive",
+      "Indoor & Outdoor Durable"
+    ],
+    "options": {
+      "sizes": [
+        "13 x 19 inch Sheet (Kiss-Cut)",
+        "Custom Individual Cut"
+      ],
+      "finishes": [
+        "Gloss White PVC",
+        "Matte White PVC"
+      ],
+      "quantities": [
+        5,
+        10,
+        20,
+        50,
+        100
+      ]
+    }
+  },
+  {
+    "id": "st-05",
+    "slug": "gold-stickers",
+    "name": "Gold Metallic Stickers",
+    "shortDescription": "Mirror reflective metallic gold stickers for luxury packaging & seal of quality.",
+    "description": "Reflective gold metallic stickers that give products an instant luxury appearance. Perfect for perfume bottles, premium confectionery, gift boxes, and wedding favors.",
+    "basePrice": 70,
+    "turnaround": "Same-day / 24 hrs",
+    "image": "/fastprintsweb_photos/golsstickersingle.png",
+    "gallery": [
+      "/fastprintsweb_photos/golsstickersingle.png",
+      "/fastprintsweb_photos/goldenstickerlabels.png"
+    ],
+    "category": "packaging",
+    "popular": true,
+    "highlights": [
+      "Mirror Gold Foil Metallic Surface",
+      "Water & Scratch Resistant",
+      "Round, Oval or Custom Contour Cut"
+    ],
+    "options": {
+      "sizes": [
+        "13 x 19 inch Sheet Format",
+        "2 inch Round Labels",
+        "1.5 inch Round Labels"
+      ],
+      "finishes": [
+        "Mirror Shiny Gold",
+        "Brushed Matte Gold"
+      ],
+      "quantities": [
+        5,
+        10,
+        20,
+        50,
+        100
+      ]
+    }
+  },
+  {
+    "id": "st-06",
+    "slug": "silver-stickers",
+    "name": "Silver Metallic Stickers",
+    "shortDescription": "Sleek mirror chrome silver metallic stickers for electronics & modern branding.",
+    "description": "Stunning chrome silver metallic stickers with ultra-smooth reflection. Widely used on electronic appliances, machinery rating plates, artisan goods, and luxury packaging.",
+    "basePrice": 70,
+    "turnaround": "Same-day / 24 hrs",
+    "image": "/images/products/silver-stickers-foil-sheet.jpg",
+    "gallery": [
+      "/images/products/silver-stickers-foil-sheet.jpg",
+      "/fastprintsweb_photos/silverstickersingle.png",
+      "/fastprintsweb_photos/silversticker label.png"
+    ],
+    "category": "packaging",
+    "highlights": [
+      "Mirror Chrome Silver Reflective Sheen",
+      "High-Bond Synthetic Adhesive",
+      "Tear-Proof & Weather-Resistant"
+    ],
+    "options": {
+      "sizes": [
+        "13 x 19 inch Sheet Format",
+        "2 inch Round Labels",
+        "Custom Shape"
+      ],
+      "finishes": [
+        "Mirror Shiny Silver",
+        "Brushed Matte Silver"
+      ],
+      "quantities": [
+        5,
+        10,
+        20,
+        50,
+        100
+      ]
+    }
+  },
+  {
+    "id": "st-07",
+    "slug": "transparent-stickers",
+    "name": "Transparent Stickers",
+    "shortDescription": "Crystal clear transparent vinyl stickers with seamless see-through background.",
+    "description": "Invisible-edge transparent clear stickers that look directly printed onto glass jars, clear cosmetic bottles, plastic containers, and envelopes. Clean water-clear finish.",
+    "basePrice": 60,
+    "turnaround": "Same-day / 24 hrs",
+    "image": "/images/products/transparent-stickers-stay-positive.jpg",
+    "gallery": [
+      "/images/products/transparent-stickers-stay-positive.jpg",
+      "/fastprintsweb_photos/Transparentstickers.png",
+      "/fastprintsweb_photos/Transparentbundle.png"
+    ],
+    "category": "packaging",
+    "highlights": [
+      "100% Optical Clarity Clear Vinyl",
+      "Seamless No-Label Look",
+      "Waterproof & Oil-Resistant"
+    ],
+    "options": {
+      "sizes": [
+        "13 x 19 inch Sheet Format",
+        "Custom Die-Cut Shape"
+      ],
+      "finishes": [
+        "Clear Gloss Vinyl",
+        "Frosted Clear"
+      ],
+      "quantities": [
+        5,
+        10,
+        20,
+        50,
+        100
+      ]
+    }
+  },
+  {
+    "id": "bp-01",
+    "slug": "13x19-sheet-prints",
+    "name": "13 x 19 Size Sheet Prints",
+    "shortDescription": "Standard digital press sheet prints on 130gsm, 170gsm, 300gsm & 350gsm.",
+    "description": "Full commercial 13 x 19 inch (330mm x 483mm) digital press prints. The industry workhorse for graphic designers, printers, and corporate publishers for short runs from 1 to 500+ sheets.",
+    "basePrice": 25,
+    "turnaround": "Same-day (Under 2 hrs)",
+    "image": "/images/products/board-350-gsm.jpg",
+    "gallery": [
+      "/images/products/board-350-gsm.jpg",
+      "/images/products/paper-130-gsm-stack.jpg",
+      "/images/products/paper-170-gsm-stack.jpg",
+      "/images/products/board-300-gsm-stack.jpg",
+      "/fastprintsweb_photos/Modern Print Shop Product Showcase.png"
+    ],
+    "category": "digital-prints",
+    "popular": true,
+    "bestseller": true,
+    "badge": "Digital Press",
+    "highlights": [
+      "13 x 19 inch (330 x 483 mm)",
+      "130GSM Paper to 350GSM Board",
+      "Single-sided (S/S) & Double-sided (D/S)"
+    ],
+    "options": {
+      "sizes": [
+        "13 x 19 inch Sheet"
+      ],
+      "finishes": [
+        "130GSM Art Paper",
+        "170GSM Art Paper",
+        "300GSM Art Board",
+        "350GSM Heavy Board"
+      ],
+      "quantities": [
+        1,
+        5,
+        10,
+        20,
+        50,
+        100,
+        200
+      ]
+    }
+  },
+  {
+    "id": "bp-02",
+    "slug": "texture-board-prints",
+    "name": "Texture Board Prints (13x19)",
+    "shortDescription": "Specialty Italian textures: Linen, Needle, Kriss Cross, Velentino & Metallic Boards.",
+    "description": "Architectural and luxury imported 13x19 inch texture boards including Classic Linen White, Lenin Cream, Kriss Cross, Needle Texture, Velentino, Toyle Moyne, Design Bag White, and HB Pearl/Ice White Metallic boards.",
+    "basePrice": 75,
+    "turnaround": "Same-day",
+    "image": "/images/products/needle-texture-board.jpg",
+    "gallery": [
+      "/images/products/needle-texture-board.jpg",
+      "/images/products/linen-texture-board.jpg",
+      "/images/products/linen-cream-texture-board.jpg",
+      "/images/products/kriss-cross-texture-board.jpg",
+      "/images/products/classic-linen-white.jpg",
+      "/images/products/valentino-white.jpg",
+      "/images/products/toyle-moyne-white.jpg",
+      "/images/products/hb-pearl-white-metallic.jpg",
+      "/images/products/hb-ice-white-metallic.jpg"
+    ],
+    "category": "digital-prints",
+    "highlights": [
+      "Imported Italian Textures",
+      "Deep tactile emboss & weave feel",
+      "Single-sided (S/S) & Double-sided (D/S)"
+    ],
+    "options": {
+      "sizes": [
+        "13 x 19 inch Sheet"
+      ],
+      "finishes": [
+        "Classic Linen White",
+        "Lenin Texture Board",
+        "Lenin Cream Texture Board",
+        "Needle Texture Board",
+        "Kriss Cross Texture Board",
+        "Velentino White",
+        "Toyle Moyne White",
+        "Design Bag White",
+        "HB Pearl White Metallic Board",
+        "HB Ice White Metallic Board"
+      ],
+      "quantities": [
+        1,
+        5,
+        10,
+        20,
+        50,
+        100
+      ]
+    }
+  },
+  {
+    "id": "bp-03",
+    "slug": "lamination-13x19",
+    "name": "13 x 19 Lamination",
+    "shortDescription": "Thermal pouch & roll lamination in Glossy or Matt finish for sheets and prints.",
+    "description": "Protective thermal lamination for 13 x 19 inch digital prints, A3, A4 certificates, menus, and posters. Shields against moisture, dust, fading, and tearing with high optical clarity.",
+    "basePrice": 20,
+    "turnaround": "Instant while you wait",
+    "image": "/images/products/glossy-lamination-sheet.jpg",
+    "gallery": [
+      "/images/products/glossy-lamination-sheet.jpg",
+      "/images/products/matte-lamination-sheet.jpg",
+      "/images/products/document-lamination.jpg"
+    ],
+    "category": "digital-prints",
+    "highlights": [
+      "13 x 19 inch, A3 & A4",
+      "Glossy (Vibrant) or Matt (Anti-glare)",
+      "Heat-sealed moisture-tight bond"
+    ],
+    "options": {
+      "sizes": [
+        "13 x 19 inch",
+        "A3 Size (12 x 18)",
+        "A4 Size"
+      ],
+      "finishes": [
+        "Glossy Lamination",
+        "Matt Lamination",
+        "Soft Velvet Touch"
+      ],
+      "quantities": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ]
+    }
+  },
+  {
+    "id": "bb-01",
+    "slug": "bill-books",
+    "name": "Bill Books",
+    "shortDescription": "A5 & A4 size carbonless duplicate/triplicate bill books (White + Pink + Yellow).",
+    "description": "Customized business invoice and receipt bill books. Printed on carbonless NCR paper (White top + Pink duplicate + Yellow triplicate) with machine perforation and red sequential numbering.",
+    "basePrice": 180,
+    "turnaround": "2–3 days",
+    "image": "/images/products/bill-books-1-6th.jpg",
+    "gallery": [
+      "/images/products/bill-books-1-6th.jpg",
+      "/images/products/bill-book-a5-yellow.jpg",
+      "/images/products/bill-book-a4-yellow.jpg",
+      "/images/products/bill-book-1-5th-pink.jpg",
+      "/images/products/bill-books-invoice-pro.jpg"
+    ],
+    "category": "stationery",
+    "bestseller": true,
+    "highlights": [
+      "A5 & A4 Standard Sizes",
+      "1+1 Duplicate, 1+2 Triplicate, 1+3 Quadruplicate",
+      "Serial Numbering & Perforation included"
+    ],
+    "options": {
+      "sizes": [
+        "A5 Size (148 x 210 mm)",
+        "A4 Size (210 x 297 mm)",
+        "1/5th Size (Compact)",
+        "1/6th Size (Pocket)"
+      ],
+      "finishes": [
+        "1+1 (Duplicate: White + Pink)",
+        "1+2 (Triplicate: White + Pink + Yellow)",
+        "1+3 (Quadruplicate)"
+      ],
+      "quantities": [
+        5,
+        10,
+        20,
+        50,
+        100
+      ]
+    }
+  },
+  {
+    "id": "bb-02",
+    "slug": "voucher-books",
+    "name": "Voucher Books (A5 Size)",
+    "shortDescription": "Payment, petty cash, and debit/credit vouchers in A5 size with counterfoil.",
+    "description": "Accountant and administrative payment voucher books. Standard A5 size with perforated receipt tear-off and hardboard binding for daily office bookkeeping.",
+    "basePrice": 160,
+    "turnaround": "2–3 days",
+    "image": "/images/products/voucher-books-a5.jpg",
+    "gallery": [
+      "/images/products/voucher-books-a5.jpg",
+      "/images/products/bill-book-a5-yellow.jpg",
+      "/images/products/bill-books-invoice-pro.jpg"
+    ],
+    "category": "stationery",
+    "highlights": [
+      "A5 Standard Format",
+      "50 or 100 Sets per Book",
+      "Pre-Printed Signature Fields"
+    ],
+    "options": {
+      "sizes": [
+        "A5 Size (148 x 210 mm)"
+      ],
+      "finishes": [
+        "Single Sheet Book (100 leaves)",
+        "Duplicate 1+1 (50 sets)"
+      ],
+      "quantities": [
+        5,
+        10,
+        20,
+        50
+      ]
+    }
+  },
+  {
+    "id": "bb-03",
+    "slug": "delivery-challan-books",
+    "name": "Delivery Challan Books",
+    "shortDescription": "Goods dispatch delivery challan books with vehicle, LR, and receiver stamp fields.",
+    "description": "Triplicate delivery challan books for warehouse dispatch, logistics, and proof of customer delivery. 1+1 or 1+2 NCR carbonless format.",
+    "basePrice": 180,
+    "turnaround": "2–3 days",
+    "image": "/images/products/delivery-challans-book.jpg",
+    "gallery": [
+      "/images/products/delivery-challans-book.jpg",
+      "/fastprintsweb_photos/Professional Blue Bill Book Invoice Pad.png",
+      "/fastprintsweb_photos/Professional Navy and Gold Bill Book Mockup-5.png"
+    ],
+    "category": "stationery",
+    "highlights": [
+      "A5 & A4 Formats",
+      "Triplicate 1+2 for accounts, driver & gate pass",
+      "Hardbound back cover"
+    ],
+    "options": {
+      "sizes": [
+        "A5 Size",
+        "A4 Size"
+      ],
+      "finishes": [
+        "1+1 Duplicate (50 sets)",
+        "1+2 Triplicate (50 sets)"
+      ],
+      "quantities": [
+        5,
+        10,
+        20,
+        50
+      ]
+    }
+  },
+  {
+    "id": "bb-04",
+    "slug": "register-books",
+    "name": "Register Books",
+    "shortDescription": "Heavy ledger paper registers for attendance, inventory stock & entry logs.",
+    "description": "Hardcover bound office register books for security visitor logs, staff daily attendance, asset tracking, and manufacturing inventory registers.",
+    "basePrice": 250,
+    "turnaround": "2–3 days",
+    "image": "/images/products/register-book-hardbound.jpg",
+    "gallery": [
+      "/images/products/register-book-hardbound.jpg",
+      "/fastprintsweb_photos/hardbound-register-books-stack.png"
+    ],
+    "category": "stationery",
+    "highlights": [
+      "Heavyweight Ledger Paper",
+      "Sturdy Rexine Hardboard Binding",
+      "Numbered Pages"
+    ],
+    "options": {
+      "sizes": [
+        "A4 Standard Ledger",
+        "Full Sheet Foolscap"
+      ],
+      "finishes": [
+        "100 Pages Hardbound",
+        "200 Pages Hardbound",
+        "300 Pages Hardbound"
+      ],
+      "quantities": [
+        2,
+        5,
+        10,
+        25
+      ]
+    }
+  },
+  {
+    "id": "os-01",
+    "slug": "id-cards-pvc",
+    "name": "ID Cards (PVC Color Print)",
+    "shortDescription": "CR80 credit card size rigid PVC cards · high definition dye-sublimation print.",
+    "description": "Official company and school identity cards printed on standard CR80 rigid PVC. Crisp photo quality, microtext security, barcodes, and employee details that never peel or smudge.",
+    "basePrice": 60,
+    "turnaround": "24–48 hrs",
+    "image": "/images/products/id-cards-pvc-pair.jpg",
+    "gallery": [
+      "/images/products/id-cards-pvc-pair.jpg",
+      "/fastprintsweb_photos/idcard.png",
+      "/fastprintsweb_photos/idcardbundle.png",
+      "/images/products/id-cards-lanyard-pro.jpg"
+    ],
+    "category": "business-essentials",
+    "popular": true,
+    "bestseller": true,
+    "highlights": [
+      "Standard CR80 (85.6 x 54 mm)",
+      "Durable Non-Fading PVC",
+      "Single or Double-Sided Full Color"
+    ],
+    "options": {
+      "sizes": [
+        "CR80 Standard (85.6 x 54 mm)"
+      ],
+      "finishes": [
+        "Single-Sided Print",
+        "Double-Sided Print"
+      ],
+      "quantities": [
+        5,
+        10,
+        25,
+        50,
+        100,
+        250
+      ]
+    }
+  },
+  {
+    "id": "os-02",
+    "slug": "lanyard-tags",
+    "name": "Lanyard Tags (20mm Multicolor Prints)",
+    "shortDescription": "Silky smooth 20mm satin lanyards with full-color continuous dye-sublimation branding.",
+    "description": "Custom printed corporate lanyards with company logos, brand name, and colors. Premium 20mm satin polyester with dog hook attachment and optional safety breakaway buckle.",
+    "basePrice": 35,
+    "turnaround": "24–48 hrs",
+    "image": "/images/products/lanyard-tags-20mm.jpg",
+    "gallery": [
+      "/images/products/lanyard-tags-20mm.jpg",
+      "/fastprintsweb_photos/lanyard.png",
+      "/fastprintsweb_photos/lanyardbundle.png",
+      "/fastprintsweb_photos/Corporate ID Badges and Colourful Lanyards.png",
+      "/fastprintsweb_photos/printed-lanyard-single.png"
+    ],
+    "category": "business-essentials",
+    "popular": true,
+    "highlights": [
+      "20mm Wide Premium Satin Ribbon",
+      "Continuous Edge-to-Edge Multicolor Sublimation",
+      "Metal Dog Hook & Crocodile Clip"
+    ],
+    "options": {
+      "sizes": [
+        "20mm Width (Standard)",
+        "16mm Width (Slim)"
+      ],
+      "finishes": [
+        "Metal Dog Hook",
+        "Dog Hook with Safety Breakaway Release"
+      ],
+      "quantities": [
+        25,
+        50,
+        100,
+        250,
+        500
+      ]
+    }
+  },
+  {
+    "id": "os-03",
+    "slug": "id-card-holders",
+    "name": "ID Card Holders",
+    "shortDescription": "Rigid hard-plastic and soft transparent PVC badge holders (portrait & landscape).",
+    "description": "Protective badge holders for employee cards and access keycards. Available in rigid crystal clear polycarbonate or soft flexible waterproof PVC vinyl in portrait or landscape orientations.",
+    "basePrice": 15,
+    "turnaround": "Same-day",
+    "image": "/images/products/card-holders-horizontal.jpg",
+    "gallery": [
+      "/images/products/card-holders-horizontal.jpg",
+      "/fastprintsweb_photos/tags.png",
+      "/fastprintsweb_photos/tagsbundle.png"
+    ],
+    "category": "business-essentials",
+    "highlights": [
+      "Hard Polycarbonate or Soft Vinyl",
+      "Fits Standard CR80 PVC Cards",
+      "Portrait & Landscape Slots"
+    ],
+    "options": {
+      "sizes": [
+        "Portrait (Vertical)",
+        "Landscape (Horizontal)"
+      ],
+      "finishes": [
+        "Rigid Crystal Clear Case",
+        "Soft Transparent PVC Pouch"
+      ],
+      "quantities": [
+        10,
+        25,
+        50,
+        100,
+        250
+      ]
+    }
+  },
+  {
+    "id": "os-04",
+    "slug": "yoyo-badge-clips",
+    "name": "Yoyo Retractable Badge Clips",
+    "shortDescription": "Spring-loaded retractable cord yoyo badge reels with custom epoxy logo dome.",
+    "description": "Retractable badge reels (Yoyo clips) allowing effortless tapping of RFID swipe access cards at office turnstiles. Includes belt clip and custom domed logo branding.",
+    "basePrice": 25,
+    "turnaround": "Same-day / 24 hrs",
+    "image": "/images/products/yoyo-badge-reels-multi.jpg",
+    "gallery": [
+      "/images/products/yoyo-badge-reels-multi.jpg",
+      "/fastprintsweb_photos/Retractable ID Card Holder_bundle.png",
+      "/fastprintsweb_photos/Gemini_Generated_Image_thf99athf99athf9.png"
+    ],
+    "category": "business-essentials",
+    "highlights": [
+      "Smooth 60cm Spring Retractable Nylon Cord",
+      "Stainless Steel Spring Reel",
+      "Custom Full-Color Logo Dome"
+    ],
+    "options": {
+      "sizes": [
+        "Standard 32mm Diameter Reel"
+      ],
+      "finishes": [
+        "Solid Black",
+        "Royal Blue",
+        "Custom Epoxy Dome Logo"
+      ],
+      "quantities": [
+        10,
+        25,
+        50,
+        100,
+        250
+      ]
+    }
+  },
+  {
+    "id": "os-05",
+    "slug": "rubber-stamps",
+    "name": "Rubber Stamps",
+    "shortDescription": "Traditional wooden handle laser-engraved vulcanized rubber stamps.",
+    "description": "Classic durable rubber stamps mounted on seasoned wooden or acrylic handles. Laser engraved for ultra-sharp letterforms, signatures, proprietor seals, and company address impressions.",
+    "basePrice": 120,
+    "turnaround": "Same-day (Under 2 hrs)",
+    "image": "/images/products/rubber-stamps-wooden.jpg",
+    "gallery": [
+      "/images/products/rubber-stamps-wooden.jpg",
+      "/fastprintsweb_photos/Wooden Rubber Stamp.png",
+      "/fastprintsweb_photos/Wooden Rubber Stamp_bundle.png",
+      "/fastprintsweb_photos/rubber-stamps-wooden-handle.png"
+    ],
+    "category": "business-essentials",
+    "highlights": [
+      "Laser Engraved Deep-Etched Rubber",
+      "Ergonomic Hardwood Handle",
+      "Proprietor, Director & Address Layouts"
+    ],
+    "options": {
+      "sizes": [
+        "Small (2 x 0.5 inch)",
+        "Medium (2.5 x 1 inch)",
+        "Large (3 x 1.5 inch)",
+        "Round (30mm)"
+      ],
+      "finishes": [
+        "Wooden Handle",
+        "Clear Acrylic Base"
+      ],
+      "quantities": [
+        1,
+        2,
+        5,
+        10
+      ]
+    }
+  },
+  {
+    "id": "os-06",
+    "slug": "self-inking-seals",
+    "name": "Self-Inking Seals",
+    "shortDescription": "Automatic push-down self-inking seals (Round & Rectangular) · 10,000+ impressions.",
+    "description": "Modern automatic self-inking stamps with integrated ink pad (Shiny / Trodat mechanism). Clean, fast stamping without a messy separate ink pad. Available in Blue, Black, and Violet ink.",
+    "basePrice": 280,
+    "turnaround": "Same-day (Under 2 hrs)",
+    "image": "/images/products/self-ink-stamp-box.jpg",
+    "gallery": [
+      "/images/products/self-ink-stamp-box.jpg",
+      "/images/products/stamp-seals-round.jpg",
+      "/fastprintsweb_photos/self-inking-stamp-single.png",
+      "/fastprintsweb_photos/self-inking-stamp-single-group.png"
+    ],
+    "category": "business-essentials",
+    "popular": true,
+    "highlights": [
+      "Automatic Re-Inking Mechanism",
+      "10,000+ Clean Impressions",
+      "Round Company Seal (30mm/40mm) or Address Line"
+    ],
+    "options": {
+      "sizes": [
+        "Round 30mm Seal",
+        "Round 40mm Seal",
+        "Rectangular (45 x 15 mm)",
+        "Rectangular (60 x 20 mm)"
+      ],
+      "finishes": [
+        "Blue Ink",
+        "Black Ink",
+        "Violet Ink"
+      ],
+      "quantities": [
+        1,
+        2,
+        5,
+        10
+      ]
+    }
+  },
+  {
+    "id": "bs-01",
+    "slug": "flex-banners",
+    "name": "Banners (Normal Flex / Star Flex)",
+    "shortDescription": "Weatherproof outdoor flex banners with metal eyelets · per sq. ft. pricing.",
+    "description": "High-durability outdoor promotional banners. Printed on tear-resistant Normal Flex or heavy-gauge glossy Star Flex with solvent/latex inks and reinforced hemmed edges with brass eyelets.",
+    "basePrice": 15,
+    "turnaround": "Same-day / 24 hrs",
+    "image": "/images/products/star-flex-banner.jpg",
+    "gallery": [
+      "/images/products/star-flex-banner.jpg",
+      "/images/products/normal-flex-banner.jpg",
+      "/images/products/flex-banners-outdoor-pro.jpg",
+      "/fastprintsweb_photos/banner-flex-floating-angle.png"
+    ],
+    "category": "large-format",
+    "popular": true,
+    "bestseller": true,
+    "highlights": [
+      "Normal Flex (economical) & Star Flex (heavy gloss)",
+      "Brass Corner Eyelets included",
+      "Per Sq. Ft. Transparent Rates"
+    ],
+    "options": {
+      "sizes": [
+        "3 x 2 ft",
+        "5 x 3 ft",
+        "6 x 4 ft",
+        "8 x 5 ft",
+        "10 x 4 ft",
+        "Custom Sq. Ft."
+      ],
+      "finishes": [
+        "Normal Flex (per sq.ft)",
+        "Star Flex Glossy (per sq.ft)"
+      ],
+      "quantities": [
+        1,
+        2,
+        5,
+        10
+      ]
+    }
+  },
+  {
+    "id": "bs-02",
+    "slug": "vinyl-stickers-large",
+    "name": "Vinyl Stickers (Large Format)",
+    "shortDescription": "Large format eco-solvent adhesive vinyl prints with protective lamination.",
+    "description": "Wide-format self-adhesive vinyl graphics for shop shutters, counter wraps, wall murals, and promotional vehicle panels with glossy or matte anti-scratch UV lamination.",
+    "basePrice": 35,
+    "turnaround": "Same-day / 24 hrs",
+    "image": "/images/products/vinyl-stickers-sheet.jpg",
+    "gallery": [
+      "/images/products/vinyl-stickers-sheet.jpg",
+      "/fastprintsweb_photos/vinyl-sticker-sheet-peel.png"
+    ],
+    "category": "large-format",
+    "highlights": [
+      "High-Resolution 1440DPI Eco-Solvent",
+      "Laminated with Gloss or Matte Overcoat",
+      "Bubble-Free Permanent Grayback Adhesive"
+    ],
+    "options": {
+      "sizes": [
+        "Custom Dimensions (per sq. ft.)"
+      ],
+      "finishes": [
+        "Vinyl with Gloss Lamination",
+        "Vinyl with Matte Lamination"
+      ],
+      "quantities": [
+        1,
+        2,
+        5,
+        10
+      ]
+    }
+  },
+  {
+    "id": "bs-03",
+    "slug": "frosted-stickers",
+    "name": "Frosted Stickers",
+    "shortDescription": "Glass privacy frosted film with precision plotter logo cutout / digital prints.",
+    "description": "Elegant frosted window film providing conference room and cabin privacy while allowing natural light through. Custom computerized plotter cut with brand logo, geometric bands, or gradients.",
+    "basePrice": 45,
+    "turnaround": "24–48 hrs",
+    "image": "/images/products/frosted-stickers-glass.jpg",
+    "gallery": [
+      "/images/products/frosted-stickers-glass.jpg",
+      "/fastprintsweb_photos/frosted-glass-etched-stand.png",
+      "/fastprintsweb_photos/frosted-vinyl-film-roll.png"
+    ],
+    "category": "large-format",
+    "highlights": [
+      "Subtle etched-glass sandblast aesthetic",
+      "Plotter Kiss-Cut Company Logos & Bands",
+      "Scratch-resistant & easy maintenance"
+    ],
+    "options": {
+      "sizes": [
+        "Custom Glass Area (per sq. ft.)"
+      ],
+      "finishes": [
+        "Plain Frosted Film",
+        "Plotter Cut Stripes & Logo",
+        "Printed Color Frosted"
+      ],
+      "quantities": [
+        1,
+        2,
+        5,
+        10
+      ]
+    }
+  },
+  {
+    "id": "bs-04",
+    "slug": "sunboard-prints",
+    "name": "Sunboard (3mm & 5mm UV & Vinyl)",
+    "shortDescription": "Rigid high-density PVC foam board printed direct via flatbed UV or laminated vinyl.",
+    "description": "Lightweight, rigid PVC foam board displays for point-of-sale signs, retail wall panels, expo booth backdrops, and promotional menus. Available in 3mm and 5mm thickness.",
+    "basePrice": 65,
+    "turnaround": "24 hrs",
+    "image": "/images/products/sunboard-3mm-landscape.jpg",
+    "gallery": [
+      "/images/products/sunboard-3mm-landscape.jpg",
+      "/images/products/sunboard-prints-5mm.jpg",
+      "/fastprintsweb_photos/foam-sunboard-stack.png"
+    ],
+    "category": "large-format",
+    "popular": true,
+    "highlights": [
+      "3mm & 5mm Rigid PVC Foam Board",
+      "Direct Flatbed UV Print or Laminated Vinyl Mount",
+      "Waterproof and warp-resistant"
+    ],
+    "options": {
+      "sizes": [
+        "Custom Sq. Ft.",
+        "1 x 1.5 ft",
+        "2 x 3 ft",
+        "4 x 2 ft",
+        "4 x 6 ft"
+      ],
+      "finishes": [
+        "3mm Sunboard (per sq.ft)",
+        "5mm Sunboard (per sq.ft)",
+        "Direct UV Print on Sunboard"
+      ],
+      "quantities": [
+        1,
+        2,
+        5,
+        10
+      ]
+    }
+  },
+  {
+    "id": "bs-05",
+    "slug": "sunpack-prints",
+    "name": "Sunpack (3mm UV Print)",
+    "shortDescription": "Cost-effective 3mm fluted polypropylene sheet signs for street & pole advertising.",
+    "description": "Waterproof fluted plastic sheets widely used for street pole advertisements, tuition posters, real estate directional signs, and event announcements. Direct UV printed for rain resistance.",
+    "basePrice": 25,
+    "turnaround": "24 hrs",
+    "image": "/images/products/sunpack-3mm-fluted.jpg",
+    "gallery": [
+      "/images/products/sunpack-3mm-fluted.jpg",
+      "/fastprintsweb_photos/foam-sunboard-stack.png"
+    ],
+    "category": "large-format",
+    "highlights": [
+      "Lightweight Fluted Corrugated Sheet",
+      "Direct UV Weatherproof Inks",
+      "Ideal for bulk promotional pole mounting"
+    ],
+    "options": {
+      "sizes": [
+        "1 x 1.5 ft",
+        "2 x 1.5 ft",
+        "2 x 2 ft",
+        "2 x 3 ft"
+      ],
+      "finishes": [
+        "3mm White Sunpack Sheet"
+      ],
+      "quantities": [
+        10,
+        25,
+        50,
+        100,
+        250
+      ]
+    }
+  },
+  {
+    "id": "bs-06",
+    "slug": "one-way-vision-stickers",
+    "name": "One Way Vision Stickers",
+    "shortDescription": "Micro-perforated film: full graphic visibility from outside, see-through from inside.",
+    "description": "Perforated one-way vision window vinyl. Displays high-impact full-color graphics to passersby outside while occupants inside maintain complete exterior visibility and shade.",
+    "basePrice": 55,
+    "turnaround": "24–48 hrs",
+    "image": "/images/products/one-way-vision-window-perforated.jpg",
+    "gallery": [
+      "/images/products/one-way-vision-window-perforated.jpg",
+      "/images/products/frosted-stickers-glass.jpg",
+      "/fastprintsweb_photos/frosted-vinyl-film-roll.png"
+    ],
+    "category": "large-format",
+    "highlights": [
+      "60/40 Perforation Ratio",
+      "Maintains Indoor Privacy & Reduces Sun Glare",
+      "Removes cleanly without glass residue"
+    ],
+    "options": {
+      "sizes": [
+        "Custom Window Dimensions (per sq. ft.)"
+      ],
+      "finishes": [
+        "Standard Perforated Film (per sq.ft)"
+      ],
+      "quantities": [
+        1,
+        2,
+        5,
+        10
+      ]
+    }
+  },
+  {
+    "id": "bs-07",
+    "slug": "acrylic-office-name-boards",
+    "name": "Acrylic Office Name Boards",
+    "shortDescription": "Crystal clear cast acrylic boards with brushed stainless steel standoff studs.",
+    "description": "Executive acrylic door nameplates and reception logo boards. 5mm or 8mm optical grade acrylic with beveled polished edges, reverse UV printing, and premium architectural mounting studs.",
+    "basePrice": 650,
+    "turnaround": "24–48 hrs",
+    "image": "/images/products/acrylic-office-name-board-gold.jpg",
+    "gallery": [
+      "/images/products/acrylic-office-name-board-gold.jpg",
+      "/images/products/uv-print-acrylic-splash.jpg",
+      "/fastprintsweb_photos/acrylic-panels-stack.png"
+    ],
+    "category": "large-format",
+    "popular": true,
+    "highlights": [
+      "5mm & 8mm Cast Clear Acrylic",
+      "Reverse Back-Printed (Scratchproof)",
+      "Includes 4 Stainless Steel Standoff Studs"
+    ],
+    "options": {
+      "sizes": [
+        "12 x 4 inch (Door Plate)",
+        "18 x 6 inch (Cabin)",
+        "24 x 12 inch (Board)",
+        "36 x 18 inch (Reception)"
+      ],
+      "finishes": [
+        "5mm Clear with Metallic Studs",
+        "8mm Luxury Frosted Base"
+      ],
+      "quantities": [
+        1,
+        2,
+        5
+      ]
+    }
+  },
+  {
+    "id": "bs-08",
+    "slug": "easel-stands",
+    "name": "Easel Stands",
+    "shortDescription": "Adjustable wooden & metal tripod easel stands for events, welcome boards & galas.",
+    "description": "Classic artist tripod easel stands in natural pine wood or black metal. Sturdily supports foam board event welcome signs, portrait canvases, and restaurant chalkboard menus.",
+    "basePrice": 650,
+    "turnaround": "Same-day",
+    "image": "/images/products/easel-stand-wood-tripod.jpg",
+    "gallery": [
+      "/images/products/easel-stand-wood-tripod.jpg",
+      "/fastprintsweb_photos/sunboard-easel-stand.png"
+    ],
+    "category": "large-format",
+    "highlights": [
+      "5ft Height Adjustable Tripod Legs",
+      "Natural Seasoned Pinewood or Black Metal",
+      "Folds flat for portable transport"
+    ],
+    "options": {
+      "sizes": [
+        "5 Feet Standard Tripod"
+      ],
+      "finishes": [
+        "Natural Wooden Easel",
+        "Black Lightweight Metal Easel",
+        "Easel + Mounted Board Combo"
+      ],
+      "quantities": [
+        1,
+        2,
+        5
+      ]
+    }
+  },
+  {
+    "id": "bs-09",
+    "slug": "canopy-tents",
+    "name": "Canopy Tents (6x6ft / 4x4ft)",
+    "shortDescription": "Heavy-duty outdoor pop-up promotional canopy tents with 4 printed walls & roof.",
+    "description": "All-weather outdoor pop-up promotional gazebos for field sales, marketing activations, and brand campaigns. Hex-steel collapsible accordion frame with heavy waterproof PVC canopy roof.",
+    "basePrice": 3500,
+    "turnaround": "2–3 days",
+    "image": "/images/products/canopy-tent-6x6ft-blue.jpg",
+    "gallery": [
+      "/images/products/canopy-tent-6x6ft-blue.jpg",
+      "/images/products/canopy-tent-4x4ft-red.jpg",
+      "/images/products/flex-banners-outdoor-pro.jpg"
+    ],
+    "category": "large-format",
+    "highlights": [
+      "4x4x7ft & 6x6x7ft Sizes",
+      "Collapsible Heavy Steel Frame",
+      "Waterproof UV-Coated Flex/Fabric Top"
+    ],
+    "options": {
+      "sizes": [
+        "4 x 4 x 7 ft Compact",
+        "6 x 6 x 7 ft Standard"
+      ],
+      "finishes": [
+        "Canopy Roof Only",
+        "Canopy Roof + Back Wall",
+        "Full 4-Sided Branding Package"
+      ],
+      "quantities": [
+        1,
+        2,
+        5
+      ]
+    }
+  },
+  {
+    "id": "bs-10",
+    "slug": "promo-table-stands",
+    "name": "Promo Table Stands",
+    "shortDescription": "Folding promotion counter tables with header banner & internal shelf for exhibitions.",
+    "description": "Portable demonstration and promotion counter tables for product tasting, leafleting, and registration. Durable plastic construction with printed front, sides, and top header signboard.",
+    "basePrice": 2200,
+    "turnaround": "2–3 days",
+    "image": "/images/products/promo-table-stand-curve.jpg",
+    "gallery": [
+      "/images/products/promo-table-stand-curve.jpg",
+      "/images/products/rollup-standees-pro.jpg"
+    ],
+    "category": "large-format",
+    "highlights": [
+      "Lightweight Collapsible Demo Counter",
+      "Inner Shelf for Stock Storage",
+      "Includes Overhead Printed Header Sign & Carry Bag"
+    ],
+    "options": {
+      "sizes": [
+        "Standard (32\" wide x 78\" total height)"
+      ],
+      "finishes": [
+        "Complete Printed Table + Header + Carry Bag"
+      ],
+      "quantities": [
+        1,
+        2,
+        5
+      ]
+    }
+  },
+  {
+    "id": "bs-11",
+    "slug": "rollup-standees",
+    "name": "Roll-Up Standees (6x3ft, 5x2ft)",
+    "shortDescription": "Lightweight aluminum pull-up banner standees with Star Flex graphic and carry bag.",
+    "description": "The quintessential exhibition display. Pulls up smoothly from a weighted aluminum cassette base and locks into place with an aluminum tension pole. Includes padded zip carry bag.",
+    "basePrice": 1250,
+    "turnaround": "Same-day (Under 4 hrs)",
+    "image": "/images/products/rollup-standy-6x3ft-blue.jpg",
+    "gallery": [
+      "/images/products/rollup-standy-6x3ft-blue.jpg",
+      "/images/products/rollup-standy-5x2ft-green.jpg",
+      "/images/products/rollup-standees-pro.jpg",
+      "/fastprintsweb_photos/printedrollerbanner.png"
+    ],
+    "category": "large-format",
+    "popular": true,
+    "bestseller": true,
+    "badge": "Express 4hr",
+    "highlights": [
+      "6x3ft (Standard) & 5x2ft (Compact)",
+      "Wrinkle-free high-resolution Star Flex banner",
+      "Includes padded zipper travel bag"
+    ],
+    "options": {
+      "sizes": [
+        "6 x 3 ft (Most Popular)",
+        "5 x 2 ft (Compact)"
+      ],
+      "finishes": [
+        "Star Flex Media",
+        "Non-Curl PET Greyback Media"
+      ],
+      "quantities": [
+        1,
+        2,
+        5,
+        10
+      ]
+    }
+  },
+  {
+    "id": "bs-12",
+    "slug": "luxury-rollup-standees",
+    "name": "Luxury Roll-Up Standees",
+    "shortDescription": "Heavyweight teardrop chrome base executive roll-up displays for VIP corporate events.",
+    "description": "Ultra-sleek teardrop chrome-plated aluminum cassette standee. Offers superior floor stability without protruding stabilizer feet, ideal for luxury automotive, real estate, and hotel lobbies.",
+    "basePrice": 1850,
+    "turnaround": "24 hrs",
+    "image": "/images/products/luxury-rollup-standy-gold.jpg",
+    "gallery": [
+      "/images/products/luxury-rollup-standy-gold.jpg",
+      "/images/products/rollup-standy-6x3ft-blue.jpg",
+      "/fastprintsweb_photos/printedrollerbanner.png"
+    ],
+    "category": "large-format",
+    "highlights": [
+      "Wide Solid Teardrop Base (No Swivel Feet needed)",
+      "Chrome Mirror End Caps",
+      "Printed on Flat Non-Curl Greyback Fabric"
+    ],
+    "options": {
+      "sizes": [
+        "6 x 3 ft Luxury Base",
+        "6.5 x 3.2 ft Wide Luxury Base"
+      ],
+      "finishes": [
+        "Chrome Teardrop Base + Non-Curl Graphic"
+      ],
+      "quantities": [
+        1,
+        2,
+        5
+      ]
+    }
+  },
+  {
+    "id": "bs-13",
+    "slug": "engraving-services",
+    "name": "Laser Engraving Services",
+    "shortDescription": "Precision CNC laser engraving & cutting for wood, acrylic, leather & metals.",
+    "description": "High-precision computer-controlled laser engraving service for corporate gifts, wooden mementos, acrylic trophies, leatherette journals, and metal plaques.",
+    "basePrice": 250,
+    "turnaround": "24–48 hrs",
+    "image": "/images/products/laser-engraving-acrylic-tree.jpg",
+    "gallery": [
+      "/images/products/laser-engraving-acrylic-tree.jpg",
+      "/images/products/uv-print-acrylic-splash.jpg",
+      "/fastprintsweb_photos/wood-mounted-print-standing.png"
+    ],
+    "category": "large-format",
+    "highlights": [
+      "Micron-level CO2 & Fiber Laser precision",
+      "Deep wood burning, acrylic etching, metal marking",
+      "Fast prototyping & bulk production"
+    ],
+    "options": {
+      "sizes": [
+        "Small (up to 4 x 4 inch)",
+        "Medium (up to 8 x 8 inch)",
+        "Large (up to 12 x 18 inch)"
+      ],
+      "finishes": [
+        "Acrylic Etching",
+        "Natural Wood Engraving",
+        "Metal Fiber Marking"
+      ],
+      "quantities": [
+        1,
+        5,
+        10,
+        25,
+        50
+      ]
+    }
+  },
+  {
+    "id": "bs-14",
+    "slug": "3d-led-boards",
+    "name": "3D LED Boards",
+    "shortDescription": "Illuminated 3D channel letter signage with energy-saving Samsung/LG LED modules.",
+    "description": "High-impact 3D illuminated letters for storefronts, building facades, and showroom interiors. Fabricated with acrylic face, aluminum/SS returns, and waterproof LED modules.",
+    "basePrice": 1500,
+    "turnaround": "3–5 days (Site inspection available)",
+    "image": "/images/products/3d-boards-open-led.jpg",
+    "gallery": [
+      "/images/products/3d-boards-open-led.jpg",
+      "/images/products/acrylic-led-signage-studio.jpg"
+    ],
+    "category": "large-format",
+    "popular": true,
+    "badge": "Custom Quote",
+    "highlights": [
+      "3D Acrylic & Stainless Steel Letters",
+      "Waterproof IP67 LED illumination",
+      "Frontlit, Backlit (Halo effect), or Edge-lit"
+    ],
+    "options": {
+      "sizes": [
+        "Custom per running inch / sq. ft."
+      ],
+      "finishes": [
+        "Acrylic Frontlit 3D",
+        "Stainless Steel Backlit Halo",
+        "Neon Flex 3D Letters"
+      ],
+      "quantities": [
+        1
+      ]
+    }
+  },
+  {
+    "id": "bs-15",
+    "slug": "2d-boards",
+    "name": "2D Boards",
+    "shortDescription": "Flat backlit glow sign boards & non-lit ACP sheet storefront boards.",
+    "description": "Cost-effective 2D flat illuminated storefront signs. Welded MS tubular frame with translucent Star Flex banner or acrylic sheet face and high-efficiency LED tubes.",
+    "basePrice": 450,
+    "turnaround": "2–4 days",
+    "image": "/images/products/2d-boards-welcome-frame.jpg",
+    "gallery": [
+      "/images/products/2d-boards-welcome-frame.jpg",
+      "/images/products/acrylic-led-signage-studio.jpg"
+    ],
+    "category": "large-format",
+    "highlights": [
+      "Weatherproof Powder-Coated Metal Casing",
+      "Even Light Diffusion with No Hotspots",
+      "Per Sq. Ft. Commercial Pricing"
+    ],
+    "options": {
+      "sizes": [
+        "Custom Sq. Ft.",
+        "6 x 3 ft",
+        "8 x 3 ft",
+        "10 x 4 ft"
+      ],
+      "finishes": [
+        "Backlit Flex Glow Sign",
+        "Acrylic Face 2D Box"
+      ],
+      "quantities": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "id": "bs-16",
+    "slug": "acrylic-stands",
+    "name": "Acrylic Stands (A4, A5, A6)",
+    "shortDescription": "Clear tabletop acrylic T-shape and L-shape menu & poster display stands.",
+    "description": "Optically clear cast acrylic tabletop displays in standard A4, A5, and A6 paper sizes. Double-sided T-shape or slanted L-shape for restaurant menus, counter QR codes, and bank desks.",
+    "basePrice": 180,
+    "turnaround": "Same-day",
+    "image": "/images/products/acrylic-stand-a4.jpg",
+    "gallery": [
+      "/images/products/acrylic-stand-a4.jpg",
+      "/images/products/acrylic-stand-a5.jpg",
+      "/images/products/acrylic-stand-a6.jpg",
+      "/images/products/acrylic-stands-qr-pro.jpg"
+    ],
+    "category": "large-format",
+    "highlights": [
+      "2mm & 3mm Crystal Clear Acrylic",
+      "T-Shape (Double-Sided) or L-Shape (Slanted)",
+      "Flame-Polished Glass-Like Edges"
+    ],
+    "options": {
+      "sizes": [
+        "A4 Size (210 x 297 mm)",
+        "A5 Size (148 x 210 mm)",
+        "A6 Size (105 x 148 mm)"
+      ],
+      "finishes": [
+        "T-Shape Double-Sided Base",
+        "L-Shape Slanted Single-Sided"
+      ],
+      "quantities": [
+        2,
+        5,
+        10,
+        20,
+        50
+      ]
+    }
+  },
+  {
+    "id": "gm-01",
+    "slug": "table-calendars",
+    "name": "Tabletop Desk Calendars",
+    "shortDescription": "Custom 2027 tabletop tent & wire-o spiral desk calendars with company branding.",
+    "description": "12-month desktop calendars customized with company logos, team photos, and brand milestones. Rigid 350GSM triangular tent stand with twin-loop wiro spiral binding.",
+    "basePrice": 150,
+    "turnaround": "24–48 hrs",
+    "image": "/images/products/table-calendar-jan2025.jpg",
+    "gallery": [
+      "/images/products/table-calendar-jan2025.jpg",
+      "/images/products/table-calendars-tent-pro.jpg",
+      "/images/hero/fastprints-2027-desk-calendar.jpg"
+    ],
+    "category": "stationery",
+    "popular": true,
+    "bestseller": true,
+    "badge": "New 2027",
+    "highlights": [
+      "12 Months + Cover Sheet",
+      "Rigid Triangular Hardboard Stand",
+      "Twin-Loop Wiro Spiral Binding"
+    ],
+    "options": {
+      "sizes": [
+        "8.5 x 5.5 inch (Standard Desk)",
+        "6 x 8 inch Portrait"
+      ],
+      "finishes": [
+        "300GSM Art Paper with Wiro",
+        "Texture Paper Deluxe Edition"
+      ],
+      "quantities": [
+        10,
+        25,
+        50,
+        100,
+        250
+      ]
+    }
+  },
+  {
+    "id": "gm-02",
+    "slug": "wall-calendars",
+    "name": "Wall Calendars",
+    "shortDescription": "Large format 2027 wall calendars · tin mounting or spiral wire hanger.",
+    "description": "Single-sheet large format or 12-page monthly hanging wall calendars. Features company contact info, product photo grid, and clear daily date cells.",
+    "basePrice": 120,
+    "turnaround": "2–3 days",
+    "image": "/images/products/wall-calendar-hanging.jpg",
+    "gallery": [
+      "/images/products/wall-calendar-hanging.jpg",
+      "/images/hero/fastprints-2027-desk-calendar.jpg"
+    ],
+    "category": "stationery",
+    "highlights": [
+      "12x18 inch & 17x22 inch",
+      "Top Metal Tin Rim or Spiral Wire Hanger",
+      "High-Visibility Large Date Digits"
+    ],
+    "options": {
+      "sizes": [
+        "12 x 18 inch Single Sheet",
+        "12 x 18 inch (6 Sheets Double-Sided)",
+        "17 x 22 inch Jumbo"
+      ],
+      "finishes": [
+        "Metal Tin Rim Top",
+        "Spiral Hanger Binding"
+      ],
+      "quantities": [
+        25,
+        50,
+        100,
+        250,
+        500
+      ]
+    }
+  },
+  {
+    "id": "gm-03",
+    "slug": "diaries-planners",
+    "name": "Executive Diaries & Planners",
+    "shortDescription": "Hardbound PU leatherette notebook journals with metallic foil debossed company logo.",
+    "description": "Luxury executive daily planners in midnight navy, matte black, and warm cognac brown. Features custom gold/silver foil debossed logo on cover, bookmark ribbon, and pen loop.",
+    "basePrice": 280,
+    "turnaround": "2–3 days",
+    "image": "/images/products/executive-diary-gold-leaf.jpg",
+    "gallery": [
+      "/images/products/executive-diary-gold-leaf.jpg",
+      "/images/hero/fastprints-2027-executive-diaries.jpg"
+    ],
+    "category": "stationery",
+    "popular": true,
+    "highlights": [
       "Premium Leatherette Hardbound Cover",
-      "Metallic Gold / Silver Foil Debossed Logo",
-      "80GSM Natural Shade Paper with Bookmark Ribbon",
+      "Gold / Silver Foil Logo Debossing",
+      "80GSM Natural Shade Ruled Pages with Ribbon"
     ],
-    options: {
-      sizes: ["A5 Executive", "B5 Daily Planner"],
-      finishes: ["Matte Black Leatherette", "Midnight Navy Blue", "Warm Cognac Brown"],
-      quantities: [20, 50, 100, 250, 500],
-    },
+    "options": {
+      "sizes": [
+        "A5 Executive Journal",
+        "B5 Daily Planner"
+      ],
+      "finishes": [
+        "Matte Black Leatherette",
+        "Midnight Navy Blue",
+        "Warm Cognac Tan"
+      ],
+      "quantities": [
+        10,
+        25,
+        50,
+        100,
+        250
+      ]
+    }
   },
   {
-    id: "p18",
-    slug: "corporate-welcome-gift-kits",
-    name: "Curated 2027 Corporate Gift Sets & Hampers",
-    shortDescription: "Rigid luxury gift box · engraved thermal flask · 2027 diary & ceramic mug.",
-    description:
-      "Complete corporate employee onboarding and client appreciation gift kits in a matte black magnetic gift box with custom laser-engraved flask, 2027 journal, metal pen, and ceramic mug.",
-    basePrice: 950,
-    turnaround: "3-5 days",
-    image: storeImages.corporateGifts,
-    gallery: [storeImages.corporateGifts, "/images/hero/fastprints-2027-executive-diaries.jpg", "/images/products/ceramic-magic-mugs.jpg"],
-    category: "business-essentials",
-    popular: true,
-    bestseller: true,
-    badge: "Corporate Kit",
-    highlights: [
-      "Matte Black Presentation Box with Ribbon",
-      "Laser-Engraved Vacuum Insulated Thermal Bottle",
-      "2027 Executive Diary, Metal Pen & Custom Ceramic Mug",
+    "id": "gm-04",
+    "slug": "pen-printing",
+    "name": "Custom Pen Printing",
+    "shortDescription": "Metal laser-engraved executive pens & full-color printed plastic promo pens.",
+    "description": "Corporate promotional ballpoint and rollerball pens customized with company name, website, and phone number. Smooth writing German refill ink.",
+    "basePrice": 25,
+    "turnaround": "24–48 hrs",
+    "image": "/images/products/printed-pen-executive.jpg",
+    "gallery": [
+      "/images/products/printed-pen-executive.jpg",
+      "/images/hero/fastprints-2027-corporate-gifts.jpg"
     ],
-    options: {
-      sizes: ["Standard 4-in-1 Kit", "Executive 5-in-1 Premium Hamper"],
-      finishes: ["Matte Black & Gold Accent", "Executive Navy & Silver Accent"],
-      quantities: [10, 25, 50, 100, 250],
-    },
+    "category": "business-essentials",
+    "highlights": [
+      "Laser Engraved Metal Pens or Screen Printed Plastic",
+      "Smooth Gel Rollerball or Ballpoint",
+      "Elegant gift clip styling"
+    ],
+    "options": {
+      "sizes": [
+        "Standard Pen"
+      ],
+      "finishes": [
+        "Matte Black Metal Pen (Laser Engraved)",
+        "Plastic Push Pen (Printed Logo)"
+      ],
+      "quantities": [
+        50,
+        100,
+        250,
+        500,
+        1000
+      ]
+    }
   },
+  {
+    "id": "gm-05",
+    "slug": "ceramic-mug-print",
+    "name": "Ceramic Mug & Magic Mug Print",
+    "shortDescription": "11oz glossy white ceramic mugs & heat-sensitive color-changing magic mugs.",
+    "description": "Microwave and dishwasher safe 11oz AAA grade ceramic mugs. Upload personal photos, corporate logos, or quotes. Magic mug reveals hidden photo when hot coffee/tea is poured in!",
+    "basePrice": 180,
+    "turnaround": "Same-day (Under 2 hrs)",
+    "image": "/images/products/ceramic-mug-color-wave.jpg",
+    "gallery": [
+      "/images/products/ceramic-mug-color-wave.jpg",
+      "/images/products/ceramic-mugs-pro.jpg",
+      "/images/products/ceramic-magic-mugs.jpg"
+    ],
+    "category": "photo-gifts",
+    "popular": true,
+    "bestseller": true,
+    "highlights": [
+      "11oz AAA Grade Ceramic",
+      "Standard White or Heat Magic Color-Changing",
+      "Includes protective white gift packaging box"
+    ],
+    "options": {
+      "sizes": [
+        "11oz Standard Mug (325ml)"
+      ],
+      "finishes": [
+        "Classic White Ceramic",
+        "Heat-Sensitive Magic Mug (Black to Photo)"
+      ],
+      "quantities": [
+        1,
+        2,
+        5,
+        10,
+        25,
+        50
+      ]
+    }
+  },
+  {
+    "id": "gm-06",
+    "slug": "tshirt-printing",
+    "name": "Custom T-Shirt Printing",
+    "shortDescription": "100% bio-wash cotton round neck & polo t-shirts with durable DTF / screen print.",
+    "description": "Custom branded corporate and event t-shirts. 180-220 GSM breathable combed cotton with high-stretch Direct-to-Film (DTF) full-color prints that never crack or fade in laundry.",
+    "basePrice": 250,
+    "turnaround": "24–48 hrs",
+    "image": "/images/products/printed-tshirt-white.jpg",
+    "gallery": [
+      "/images/products/printed-tshirt-white.jpg",
+      "/images/products/tshirt-printing-pro.jpg"
+    ],
+    "category": "apparel",
+    "popular": true,
+    "highlights": [
+      "180GSM Round Neck & 220GSM Collared Polo",
+      "Full-Color Stretch-Resistant DTF Print",
+      "Unisex sizes XS to 3XL"
+    ],
+    "options": {
+      "sizes": [
+        "Round Neck T-Shirt",
+        "Collared Polo T-Shirt"
+      ],
+      "finishes": [
+        "Black",
+        "White",
+        "Navy Blue",
+        "Royal Blue",
+        "Heather Grey"
+      ],
+      "quantities": [
+        5,
+        10,
+        25,
+        50,
+        100
+      ]
+    }
+  },
+  {
+    "id": "gm-07",
+    "slug": "cap-printing",
+    "name": "Custom Cap Printing",
+    "shortDescription": "Branded cotton baseball caps with embroidered or heat-transfer company logo.",
+    "description": "Structured 5-panel and 6-panel cotton baseball caps. Features adjustable brass buckle strap and high-density 3D embroidery or vinyl transfer logo on front.",
+    "basePrice": 180,
+    "turnaround": "24–48 hrs",
+    "image": "/images/products/printed-cap-navy.jpg",
+    "gallery": [
+      "/images/products/printed-cap-navy.jpg",
+      "/images/hero/hero-corporate-kit.jpg"
+    ],
+    "category": "apparel",
+    "highlights": [
+      "100% Heavy Brushed Cotton",
+      "Adjustable Metal Buckle Strap",
+      "High-Density Embroidery or Heat Transfer"
+    ],
+    "options": {
+      "sizes": [
+        "Free Size Adjustable"
+      ],
+      "finishes": [
+        "Solid Black",
+        "Navy Blue",
+        "White",
+        "Red"
+      ],
+      "quantities": [
+        10,
+        25,
+        50,
+        100
+      ]
+    }
+  },
+  {
+    "id": "gm-08",
+    "slug": "photo-frames",
+    "name": "Photo Frames (4x4, 6x4, A4, 12x18, PP)",
+    "shortDescription": "Sleek 1-inch synthetic wood beeding frames with unbreakable acrylic glass.",
+    "description": "Modern photo frames for family portraits, office memories, and certificates. Includes 1-inch matte black synthetic wood beeding, high-definition photo print, and table/wall mounts.",
+    "basePrice": 250,
+    "turnaround": "24 hrs",
+    "image": "/images/products/photo-frame-4x4-black.jpg",
+    "gallery": [
+      "/images/products/photo-frame-4x4-black.jpg",
+      "/images/products/photo-frame-6x4-wood.jpg",
+      "/images/products/photo-frame-a4-black.jpg",
+      "/images/products/photo-frame-12x18-black.jpg",
+      "/images/products/photo-frames-black-pro.jpg"
+    ],
+    "category": "photo-gifts",
+    "popular": true,
+    "bestseller": true,
+    "highlights": [
+      "1-inch Modern Synthetic Wood Beeding",
+      "Fuji Crystal Archive Photo Print included",
+      "Both Wall Hanging Hook & Table Stand included"
+    ],
+    "options": {
+      "sizes": [
+        "4 x 4 inch",
+        "6 x 4 inch",
+        "A4 Size (8 x 12 inch)",
+        "12 x 18 inch"
+      ],
+      "finishes": [
+        "Matte Black Frame",
+        "Natural Teakwood Finish",
+        "Warm White Frame"
+      ],
+      "quantities": [
+        1,
+        2,
+        5,
+        10
+      ]
+    }
+  },
+  {
+    "id": "gm-09",
+    "slug": "satin-keychains",
+    "name": "Satin Keychains",
+    "shortDescription": "Custom dye-sublimation printed fabric ribbon keychains with steel split ring.",
+    "description": "Double-sided full color satin fabric keychains. Soft on motorcycle and car ignitions, highly durable, and washable with vivid photographic branding.",
+    "basePrice": 45,
+    "turnaround": "24 hrs",
+    "image": "/images/products/satin-keychain-swivel.jpg",
+    "gallery": [
+      "/images/products/satin-keychain-swivel.jpg",
+      "/fastprintsweb_photos/Corporate ID Badges and Colourful Lanyards.png"
+    ],
+    "category": "photo-gifts",
+    "highlights": [
+      "Durable Silky Satin Fabric",
+      "Double-Sided Continuous Sublimation",
+      "Heavy-duty steel split ring & rivet"
+    ],
+    "options": {
+      "sizes": [
+        "Standard (120 x 25 mm)"
+      ],
+      "finishes": [
+        "Steel Split Ring",
+        "Swivel Trigger Snap Hook"
+      ],
+      "quantities": [
+        25,
+        50,
+        100,
+        250,
+        500
+      ]
+    }
+  },
+  {
+    "id": "gm-10",
+    "slug": "round-pin-badges",
+    "name": "Round Badges (44mm, 58mm, 70mm)",
+    "shortDescription": "Glossy button pin badges for election campaigns, college fests & events.",
+    "description": "High-shine button badges with stainless steel safety pin back. Available in 44mm, 58mm, and 70mm diameter with waterproof mylar protective film.",
+    "basePrice": 25,
+    "turnaround": "Same-day",
+    "image": "/images/products/round-badge-58mm-good-vibes.jpg",
+    "gallery": [
+      "/images/products/round-badge-58mm-good-vibes.jpg",
+      "/images/products/round-badge-44mm-gold-leaf.jpg",
+      "/images/products/round-badge-70mm-rainbow.jpg",
+      "/fastprintsweb_photos/button-badge-pair.png"
+    ],
+    "category": "events",
+    "bestseller": true,
+    "highlights": [
+      "44mm, 58mm & 70mm Sizes",
+      "Waterproof Mylar High-Gloss Coating",
+      "Rust-Proof Stainless Steel Pin"
+    ],
+    "options": {
+      "sizes": [
+        "44mm (Medium)",
+        "58mm (Popular Standard)",
+        "70mm (Large)"
+      ],
+      "finishes": [
+        "Glossy Finish",
+        "Soft Matte Finish"
+      ],
+      "quantities": [
+        25,
+        50,
+        100,
+        250,
+        500
+      ]
+    }
+  },
+  {
+    "id": "gm-11",
+    "slug": "name-badges",
+    "name": "Name Badges",
+    "shortDescription": "Metallic corporate employee name badges with magnetic backing or pin.",
+    "description": "Brushed gold or silver metal name badges for hotel staff, corporate executives, doctors, and bank employees. Magnetic backing prevents cloth tearing on formal shirts and blazers.",
+    "basePrice": 120,
+    "turnaround": "24 hrs",
+    "image": "/images/products/name-badge-john-smith.jpg",
+    "gallery": [
+      "/images/products/name-badge-john-smith.jpg",
+      "/fastprintsweb_photos/Modern Employee ID Badge Still Life.png"
+    ],
+    "category": "business-essentials",
+    "highlights": [
+      "Brushed Metallic Gold or Silver",
+      "Strong 3-Point Magnetic Backing (No pin holes)",
+      "Clear Scratchproof Resin Dome available"
+    ],
+    "options": {
+      "sizes": [
+        "70 x 25 mm (Standard)",
+        "75 x 30 mm (Executive)"
+      ],
+      "finishes": [
+        "Brushed Gold Metal",
+        "Brushed Silver Metal",
+        "White Resin Dome"
+      ],
+      "quantities": [
+        5,
+        10,
+        25,
+        50,
+        100
+      ]
+    }
+  },
+  {
+    "id": "gm-12",
+    "slug": "pillow-print",
+    "name": "Pillow Print",
+    "shortDescription": "Personalized satin photo cushion pillows with soft micro-fiber filling.",
+    "description": "Plush 16x16 inch square cushion pillows with edge-to-edge color sublimation photo print. Includes premium soft velvet/satin removable zip cover and hypoallergenic fiber filling.",
+    "basePrice": 350,
+    "turnaround": "24 hrs",
+    "image": "/images/products/printed-pillow-botanical.jpg",
+    "gallery": [
+      "/images/products/printed-pillow-botanical.jpg",
+      "/images/products/photo-frames-black-pro.jpg"
+    ],
+    "category": "photo-gifts",
+    "highlights": [
+      "16 x 16 inch Square Pillow",
+      "Silky Soft Machine-Washable Cover",
+      "Includes Soft Microfiber Insert Cushion"
+    ],
+    "options": {
+      "sizes": [
+        "16 x 16 inch (Standard)"
+      ],
+      "finishes": [
+        "Smooth Satin Cover",
+        "Soft Velvet Fur Trim"
+      ],
+      "quantities": [
+        1,
+        2,
+        5,
+        10
+      ]
+    }
+  },
+  {
+    "id": "gm-13",
+    "slug": "mouse-pad-print",
+    "name": "Mouse Pad Print",
+    "shortDescription": "Anti-slip rubber base desk mousepads with high-precision gaming fabric top.",
+    "description": "Custom printed mousepads with company logo, calendars, shortcut keys, or custom artwork. 3mm thick non-slip vulcanized rubber base with micro-textured precision cloth surface.",
+    "basePrice": 150,
+    "turnaround": "24 hrs",
+    "image": "/images/products/printed-mouse-pad-autumn-lake.jpg",
+    "gallery": [
+      "/images/products/printed-mouse-pad-autumn-lake.jpg",
+      "/images/hero/fastprints-2027-corporate-gifts.jpg"
+    ],
+    "category": "photo-gifts",
+    "highlights": [
+      "3mm Anti-Skid Vulcanized Rubber Base",
+      "High-Precision Micro-Weave Fabric Surface",
+      "Fade-Proof Dye-Sublimation Print"
+    ],
+    "options": {
+      "sizes": [
+        "Standard (210 x 180 mm)",
+        "Large Desk Pad (300 x 250 mm)"
+      ],
+      "finishes": [
+        "Standard Edge",
+        "Stitched Anti-Fray Border"
+      ],
+      "quantities": [
+        5,
+        10,
+        25,
+        50,
+        100
+      ]
+    }
+  }
 ];
-
-export const popularProducts = products.filter((p) => p.popular);
-export const bestsellerProducts = products.filter((p) => p.bestseller);
-export const newLaunchProducts = products.filter((p) => p.newLaunch);
-
-export function getProductsByCategory(categoryId: string) {
-  return products.filter((p) => p.category === categoryId);
-}

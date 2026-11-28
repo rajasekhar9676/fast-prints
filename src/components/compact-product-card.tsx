@@ -6,40 +6,46 @@ import { Star } from "lucide-react";
 
 export function CompactProductCard({ product }: { product: Product }) {
   return (
-    <Link href={`/products/${product.slug}`} className="group w-[168px] shrink-0 sm:w-[210px]">
-      <article className="overflow-hidden rounded-2xl border border-ink-100 bg-white shadow-sm transition duration-300 group-hover:-translate-y-1 group-hover:shadow-lg">
-        <div className="relative aspect-[4/5] bg-[radial-gradient(circle_at_50%_35%,#fff_0%,#fff7e6_55%,#f6f4ef_100%)]">
+    <Link href={`/products/${product.slug}`} className="group w-[175px] shrink-0 sm:w-[215px]">
+      <article className="overflow-hidden rounded-xl border border-slate-200 bg-white transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md">
+        <div className="relative aspect-[4/3] w-full bg-[#f8f9fa]">
           <Image
             src={product.image}
             alt={product.name}
             fill
-            className="object-contain p-4 transition duration-500 group-hover:scale-105"
-            sizes="210px"
+            className="object-contain p-3.5 transition-transform duration-300 group-hover:scale-105"
+            sizes="215px"
           />
           {product.newLaunch ? (
-            <span className="absolute left-3 top-3 rounded-full bg-emerald-600 px-2 py-0.5 text-[10px] font-bold uppercase text-white">
+            <span className="absolute left-2.5 top-2.5 rounded bg-emerald-700 px-1.5 py-0.5 text-[9px] font-bold uppercase text-white">
               New
             </span>
+          ) : product.bestseller ? (
+            <span className="absolute left-2.5 top-2.5 rounded bg-slate-900 px-1.5 py-0.5 text-[9px] font-bold uppercase text-white">
+              Bestseller
+            </span>
           ) : product.badge ? (
-            <span className="absolute left-3 top-3 rounded-full bg-ink-950 px-2 py-0.5 text-[10px] font-bold uppercase text-brand-300">
+            <span className="absolute left-2.5 top-2.5 rounded bg-slate-800 px-1.5 py-0.5 text-[9px] font-bold uppercase text-amber-300">
               {product.badge}
             </span>
           ) : null}
         </div>
-        <div className="space-y-1.5 px-3.5 py-3.5">
-          <h3 className="line-clamp-2 min-h-[2.5rem] text-sm font-semibold leading-snug text-ink-900">
+        <div className="p-3">
+          <h3 className="line-clamp-1 text-xs sm:text-sm font-bold text-slate-900 group-hover:text-brand-600 transition-colors">
             {product.name}
           </h3>
-          <div className="flex items-center justify-between gap-2">
-            <p className="text-sm font-extrabold text-ink-950">
-              <span className="mr-1 text-[11px] font-semibold text-ink-400">From</span>
-              {formatINR(product.basePrice)}
-            </p>
-            {product.rating ? (
-              <p className="flex items-center gap-0.5 text-xs font-semibold text-ink-600">
-                <Star className="h-3 w-3 fill-brand-500 text-brand-500" aria-hidden />
-                {product.rating}
+          <div className="mt-2 flex items-center justify-between gap-1 pt-2 border-t border-slate-100">
+            <div>
+              <span className="block text-[10px] text-slate-400">Starting at</span>
+              <p className="text-xs sm:text-sm font-extrabold text-slate-950">
+                {formatINR(product.basePrice)}
               </p>
+            </div>
+            {product.rating ? (
+              <span className="flex items-center gap-0.5 text-[11px] font-semibold text-slate-600">
+                <Star className="h-2.5 w-2.5 fill-amber-400 text-amber-400" />
+                {product.rating}
+              </span>
             ) : null}
           </div>
         </div>

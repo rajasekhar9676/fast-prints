@@ -11,6 +11,7 @@ import {
   ChevronDown,
   ExternalLink,
   FileCheck2,
+  Info,
   Loader2,
   MessageCircle,
   PackageCheck,
@@ -23,7 +24,7 @@ import {
   Zap,
 } from "lucide-react";
 import Link from "next/link";
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 export function ProductConfigurator({ product }: { product: Product }) {
   const { addToCart } = useCart();
@@ -33,6 +34,25 @@ export function ProductConfigurator({ product }: { product: Product }) {
   const [selectedFinish, setSelectedFinish] = useState(product.options.finishes[0] || "");
   const [selectedUnits, setSelectedUnits] = useState(product.options.quantities[0] || 100);
   const [printSide, setPrintSide] = useState<"Single-Sided (S/S)" | "Double-Sided (D/S)">("Single-Sided (S/S)");
+  const [cornerStyle, setCornerStyle] = useState<"Standard (Square Corners)" | "Rounded Corners">("Standard (Square Corners)");
+
+  // Visiting Cards specific rule: Under 500 cards -> Plain only; 500+ cards -> Lamination only
+  const availableFinishes = useMemo(() => {
+    if (product.slug === "visiting-cards") {
+      if (selectedUnits < 500) {
+        return ["Plain (Non-Laminated)"];
+      }
+      return ["Matt Lamination", "Glossy Lamination", "Velvet Touch Lamination"];
+    }
+    return product.options.finishes;
+  }, [product.slug, product.options.finishes, selectedUnits]);
+
+  // Synchronize selectedFinish when available options change based on quantity
+  useEffect(() => {
+    if (availableFinishes.length > 0 && !availableFinishes.includes(selectedFinish)) {
+      setSelectedFinish(availableFinishes[0]);
+    }
+  }, [availableFinishes, selectedFinish]);
 
   // Design Upload State
   const [designFile, setDesignFile] = useState<File | null>(null);
@@ -59,7 +79,11 @@ export function ProductConfigurator({ product }: { product: Product }) {
   const hasBothSidesOption =
     product.slug === "visiting-cards" ||
     product.slug === "13x19-digital-print" ||
-    product.slug === "13x19-sticker-sheets";
+    product.slug === "sheet-prints-13x19" ||
+    product.slug === "texture-sheet-prints-13x19" ||
+    product.slug === "13x19-sticker-sheets" ||
+    product.slug === "brochures" ||
+    product.slug === "pamphlets";
 
   const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -98,7 +122,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
         },
         quantity: 1,
         selectedSize,
-        selectedFinish: `${selectedFinish}${hasBothSidesOption ? ` (${printSide === "Double-Sided (D/S)" ? "Double-Sided" : "Single-Sided"})` : ""}`,
+        selectedFinish: `${selectedFinish}${hasBothSidesOption ? ` (${printSide === "Double-Sided (D/S)" ? "Double-Sided" : "Single-Sided"})` : ""}${product.slug === "visiting-cards" ? ` · ${cornerStyle}` : ""}`,
         selectedUnits,
         designFileName: designFile ? designFile.name : uploadMethod === "whatsapp" ? "Submitting on WhatsApp" : undefined,
         designFileUrl: designFileUrl || undefined,
@@ -113,6 +137,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
       `Hi Fast Prints, I want to order ${product.name} / send my design:\n` +
       `• Product: ${product.name}\n` +
       `• Size: ${selectedSize}\n` +
+      (product.slug === "visiting-cards" ? `• Corner Style: ${cornerStyle}\n` : "") +
       `• Finish / Material: ${selectedFinish}\n` +
       (hasBothSidesOption ? `• Print Sides: ${printSide === "Double-Sided (D/S)" ? "Double-Sided (Front & Back)" : "Single-Sided (Front Only)"}\n` : "") +
       `• Quantity: ${selectedUnits} units\n` +
@@ -121,7 +146,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
       `Please confirm soft proof & delivery!`
     );
     return `https://wa.me/916366912357?text=${text}`;
-  }, [product.name, selectedSize, selectedFinish, hasBothSidesOption, printSide, selectedUnits, designFile, priceDetails.totalWithGst]);
+  }, [product.name, selectedSize, cornerStyle, selectedFinish, hasBothSidesOption, printSide, selectedUnits, designFile, priceDetails.totalWithGst]);
 
   return (
     <div className="space-y-5">
@@ -163,12 +188,58 @@ export function ProductConfigurator({ product }: { product: Product }) {
             </div>
           )}
 
+          {/* 1.5 Card Style / Corner Type (Standard vs Rounded) - Visiting Cards Only */}
+          {product.slug === "visiting-cards" && (
+            <div className="space-y-1.5">
+              <label className="text-xs font-bold uppercase tracking-wider text-ink-700 flex justify-between">
+                <span>Card Style / Corner Type</span>
+                <span className="text-brand-600 font-extrabold normal-case text-xs">Standard vs Rounded</span>
+              </label>
+
+              <div className="grid grid-cols-2 gap-3">
+                <button
+                  type="button"
+                  onClick={() => setCornerStyle("Standard (Square Corners)")}
+                  className={`flex flex-col items-center justify-center rounded-xl border p-3.5 text-center transition-all cursor-pointer ${
+                    cornerStyle === "Standard (Square Corners)"
+                      ? "border-brand-500 bg-brand-50/70 text-ink-950 ring-2 ring-brand-500/30 shadow-xs"
+                      : "border-ink-200 bg-white text-ink-700 hover:bg-ink-50 hover:border-ink-300"
+                  }`}
+                >
+                  <div className="h-5 w-9 border-2 border-current rounded-none mb-1.5 opacity-80" />
+                  <span className="text-xs font-extrabold">Standard Corners</span>
+                  <span className="text-[10px] text-ink-500 mt-0.5">Classic Square / Sharp</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setCornerStyle("Rounded Corners")}
+                  className={`flex flex-col items-center justify-center rounded-xl border p-3.5 text-center transition-all cursor-pointer ${
+                    cornerStyle === "Rounded Corners"
+                      ? "border-brand-500 bg-brand-50/70 text-ink-950 ring-2 ring-brand-500/30 shadow-xs"
+                      : "border-ink-200 bg-white text-ink-700 hover:bg-ink-50 hover:border-ink-300"
+                  }`}
+                >
+                  <div className="h-5 w-9 border-2 border-current rounded-md mb-1.5 opacity-80" />
+                  <span className="text-xs font-extrabold">Rounded Corners</span>
+                  <span className="text-[10px] text-ink-500 mt-0.5">Smooth Die-Cut Round</span>
+                </button>
+              </div>
+            </div>
+          )}
+
           {/* 2. Paper Stock & Finish Dropdown */}
-          {product.options.finishes?.length > 0 && (
+          {availableFinishes?.length > 0 && (
             <div className="space-y-1.5">
               <label htmlFor="select-finish" className="text-xs font-bold uppercase tracking-wider text-ink-700 flex justify-between">
                 <span>Material &amp; Finish</span>
-                <span className="text-brand-600 font-extrabold normal-case text-xs">Premium Quality</span>
+                <span className="text-brand-600 font-extrabold normal-case text-xs">
+                  {product.slug === "visiting-cards"
+                    ? selectedUnits < 500
+                      ? "Non-Laminated (< 500)"
+                      : "Lamination Included (500+)"
+                    : "Premium Quality"}
+                </span>
               </label>
               <div className="relative">
                 <select
@@ -177,7 +248,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
                   onChange={(e) => setSelectedFinish(e.target.value)}
                   className="w-full appearance-none rounded-xl border border-ink-200 bg-ink-50/70 px-4 py-3 pr-10 text-xs sm:text-sm font-semibold text-ink-950 transition-colors focus:border-brand-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-500/25 cursor-pointer shadow-2xs"
                 >
-                  {product.options.finishes.map((finish) => (
+                  {availableFinishes.map((finish) => (
                     <option key={finish} value={finish}>
                       {finish}
                     </option>
@@ -185,6 +256,25 @@ export function ProductConfigurator({ product }: { product: Product }) {
                 </select>
                 <ChevronDown className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-ink-500" />
               </div>
+
+              {/* Visiting Cards Special Quantity-Lamination Badge Notice */}
+              {product.slug === "visiting-cards" && selectedUnits < 500 && (
+                <div className="flex items-center gap-2 rounded-xl bg-amber-50/90 border border-amber-200/90 px-3.5 py-2.5 text-xs text-amber-900 animate-in fade-in duration-200">
+                  <Info className="h-4 w-4 shrink-0 text-amber-600" />
+                  <div>
+                    <span className="font-bold">Quantity Rule:</span> Orders under 500 cards are printed <strong>Plain (Non-Laminated)</strong>. Lamination is provided exclusively on orders of <strong>500+ cards</strong>.
+                  </div>
+                </div>
+              )}
+
+              {product.slug === "visiting-cards" && selectedUnits >= 500 && (
+                <div className="flex items-center gap-2 rounded-xl bg-emerald-50/90 border border-emerald-200/90 px-3.5 py-2.5 text-xs text-emerald-900 animate-in fade-in duration-200">
+                  <Sparkles className="h-4 w-4 shrink-0 text-emerald-600" />
+                  <div>
+                    <span className="font-bold">Lamination Included:</span> All orders of 500+ cards include premium protective lamination — select <strong>Matt</strong>, <strong>Glossy</strong>, or <strong>Velvet Touch</strong>.
+                  </div>
+                </div>
+              )}
             </div>
           )}
 
@@ -225,7 +315,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
               >
                 {product.options.quantities.map((units) => (
                   <option key={units} value={units}>
-                    {units} units {units === selectedUnits ? `— ₹${priceDetails.unitPrice.toFixed(2)} per unit` : ""}
+                    {units} units {product.slug === "visiting-cards" ? (units < 500 ? "— Plain (Non-Laminated)" : "— With Lamination Included") : (units === selectedUnits ? `— ₹${priceDetails.unitPrice.toFixed(2)} per unit` : "")}
                   </option>
                 ))}
               </select>
@@ -474,6 +564,12 @@ export function ProductConfigurator({ product }: { product: Product }) {
                     {printSide === "Double-Sided (D/S)" ? "Double-Sided" : "Single-Sided"}
                   </span>
                 </div>
+                {product.slug === "visiting-cards" && (
+                  <div>
+                    <span className="text-[10px] font-bold uppercase text-ink-400 block">Corner Style</span>
+                    <span className="font-semibold text-ink-900">{cornerStyle}</span>
+                  </div>
+                )}
                 <div className="col-span-2 border-t border-ink-200/50 pt-1.5 flex items-center justify-between">
                   <div>
                     <span className="text-[10px] font-bold uppercase text-ink-400 block">Artwork Status</span>

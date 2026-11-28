@@ -41,6 +41,7 @@ export type ShopNeedItem = {
   title: string;
   href: string;
   image: string;
+  badge?: string;
 };
 
 export type BudgetRangeItem = {

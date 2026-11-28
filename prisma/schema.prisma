@@ -2,9 +2,9 @@ generator client {
   provider = "prisma-client-js"
 }
 
-// PostgreSQL — local pgAdmin database: fastprints
+// MySQL — Local XAMPP or Remote (Hostinger/cPanel/Cloud)
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
@@ -13,7 +13,7 @@ model User {
   name         String
   email        String   @unique
   phone        String
-  address      String
+  address      String   @db.Text
   passwordHash String
   createdAt    DateTime @default(now())
   orders       Order[]
@@ -23,7 +23,7 @@ model Category {
   id        String @id
   name      String
   tagline   String
-  image     String
+  image     String @db.Text
   iconColor String
 }
 
@@ -31,11 +31,11 @@ model Product {
   id               String  @id
   slug             String  @unique
   name             String
-  shortDescription String
-  description      String
+  shortDescription String  @db.Text
+  description      String  @db.Text
   basePrice        Float
   turnaround       String
-  image            String
+  image            String  @db.Text
   gallery          Json?
   category         String
   popular          Boolean @default(false)
@@ -51,7 +51,7 @@ model Product {
 model Service {
   id          String @id
   name        String
-  description String
+  description String @db.Text
   category    String
   icon        String
 }
@@ -70,16 +70,16 @@ model Order {
   customerName      String
   customerEmail     String
   customerPhone     String
-  customerAddress   String
-  notes             String?
+  customerAddress   String      @db.Text
+  notes             String?     @db.Text
   subtotal          Float
   items             OrderItem[]
 }
 
 model OrderItem {
-  id             String @id @default(uuid())
+  id             String  @id @default(uuid())
   orderId        String
-  order          Order  @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  order          Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
   productId      String
   productName    String
   productSlug    String
@@ -89,6 +89,8 @@ model OrderItem {
   selectedUnits  Int
   unitPrice      Float
   lineTotal      Float
+  designFileName String? @db.Text
+  designFileUrl  String? @db.Text
 }
 
 model SiteSettings {
@@ -98,10 +100,10 @@ model SiteSettings {
   email        String
   whatsapp     String
   website      String
-  promoText    String
+  promoText    String @db.Text
   addressLines Json
-  mapEmbedUrl  String
-  parkingNote  String
+  mapEmbedUrl  String @db.Text
+  parkingNote  String @db.Text
 }
 
 model CmsDocument {
@@ -118,5 +120,5 @@ model CorporateInquiry {
   company   String?
   product   String
   quantity  String
-  notes     String?
+  notes     String?  @db.Text
 }

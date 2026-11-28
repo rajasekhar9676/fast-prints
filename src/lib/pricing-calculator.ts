@@ -50,7 +50,11 @@ export function calculateConfiguratorPrice(input: ConfiguratorInput): {
   }
 
   // 13x19 Digital Prints
-  if (productSlug === "13x19-digital-print") {
+  if (
+    productSlug === "13x19-digital-print" ||
+    productSlug === "sheet-prints-13x19" ||
+    productSlug === "texture-sheet-prints-13x19"
+  ) {
     let rate = 50;
     const is350 = selectedFinish.includes("350GSM");
     const is300 = selectedFinish.includes("300GSM");
@@ -72,7 +76,16 @@ export function calculateConfiguratorPrice(input: ConfiguratorInput): {
   }
 
   // 13x19 Sticker Sheets
-  if (productSlug === "13x19-sticker-sheets") {
+  if (
+    productSlug === "13x19-sticker-sheets" ||
+    productSlug === "normal-stickers" ||
+    productSlug === "barcode-stickers" ||
+    productSlug === "mrp-labels" ||
+    productSlug === "non-tearable-stickers-pvc" ||
+    productSlug === "gold-stickers" ||
+    productSlug === "silver-stickers" ||
+    productSlug === "transparent-stickers"
+  ) {
     let rate = 30;
     const isNonTearableSticker = selectedFinish.toLowerCase().includes("non-tearable");
     const isRoundCut = selectedFinish.toLowerCase().includes("round");
@@ -98,7 +111,13 @@ export function calculateConfiguratorPrice(input: ConfiguratorInput): {
   }
 
   // Lanyard Tags
-  if (productSlug === "lanyards" || productSlug === "id-cards-lanyards") {
+  if (
+    productSlug === "lanyards" ||
+    productSlug === "id-cards-lanyards" ||
+    productSlug === "lanyard-tags" ||
+    productSlug === "id-cards-pvc" ||
+    productSlug === "id-card-holders"
+  ) {
     let rate = 30;
     const width = selectedSize || selectedFinish;
     if (width.includes("20mm")) {
@@ -127,7 +146,7 @@ export function calculateConfiguratorPrice(input: ConfiguratorInput): {
   }
 
   // Button Badges
-  if (productSlug === "button-badges") {
+  if (productSlug === "button-badges" || productSlug === "round-pin-badges") {
     let rate = 12;
     const size = selectedSize || selectedFinish;
     if (size.includes("55mm")) {
@@ -152,7 +171,7 @@ export function calculateConfiguratorPrice(input: ConfiguratorInput): {
   }
 
   // Lamination
-  if (productSlug === "document-lamination") {
+  if (productSlug === "document-lamination" || productSlug === "lamination-13x19") {
     let rate = 30;
     if (selectedSize.includes("A4")) {
       if (selectedUnits >= 1000) rate = 14;
@@ -179,7 +198,11 @@ export function calculateConfiguratorPrice(input: ConfiguratorInput): {
   }
 
   // Banners & Vinyl Stickers
-  if (productSlug === "banners-vinyl-stickers") {
+  if (
+    productSlug === "banners-vinyl-stickers" ||
+    productSlug === "flex-banners" ||
+    productSlug === "vinyl-stickers-large"
+  ) {
     let rate = 30;
     if (selectedFinish.includes("Normal Flex")) {
       if (selectedUnits >= 100) rate = 20;
@@ -200,7 +223,13 @@ export function calculateConfiguratorPrice(input: ConfiguratorInput): {
   }
 
   // Single Color Bill Books
-  if (productSlug === "single-color-bill-books") {
+  if (
+    productSlug === "single-color-bill-books" ||
+    productSlug === "bill-books" ||
+    productSlug === "voucher-books" ||
+    productSlug === "delivery-challans" ||
+    productSlug === "register-books"
+  ) {
     let rate = 200;
     if (selectedSize.includes("A4")) rate = 350;
     else if (selectedSize.includes("A5")) rate = 200;
@@ -213,7 +242,7 @@ export function calculateConfiguratorPrice(input: ConfiguratorInput): {
   }
 
   // Photo Frames
-  if (productSlug === "photo-print-with-frame") {
+  if (productSlug === "photo-print-with-frame" || productSlug === "photo-frames") {
     let rate = 250;
     if (selectedSize.includes("4 X 6")) rate = 250;
     else if (selectedSize.includes("5 X 7")) rate = 300;
@@ -227,7 +256,7 @@ export function calculateConfiguratorPrice(input: ConfiguratorInput): {
   }
 
   // Mugs & Magic Mugs
-  if (productSlug === "ceramic-magic-mugs") {
+  if (productSlug === "ceramic-magic-mugs" || productSlug === "ceramic-mug-print") {
     let rate = 300;
     const isMagic = selectedFinish.toLowerCase().includes("magic");
     if (isMagic) {

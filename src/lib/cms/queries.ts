@@ -29,6 +29,7 @@ import {
   defaultTestimonialsContent,
 } from "./default-content";
 import { defaultSettings, ensureDbSeeded } from "./seed";
+import { getMasterCategory, isProductInMasterCategory } from "@/data/master-categories";
 
 function hasDb() {
   return !!(process.env.DATABASE_URL || process.env.POSTGRES_PRISMA_URL || process.env.POSTGRES_URL);
@@ -459,8 +460,13 @@ export function filterProductsList(
   let list = [...products];
   const categoryIds = new Set(categories.map((c) => c.id));
 
-  if (category && categoryIds.has(category as ProductCategory["id"])) {
-    list = list.filter((p) => p.category === category);
+  if (category) {
+    const master = getMasterCategory(category);
+    if (master) {
+      list = list.filter((p) => isProductInMasterCategory(p, master.id));
+    } else if (categoryIds.has(category as ProductCategory["id"])) {
+      list = list.filter((p) => p.category === category);
+    }
   }
 
   if (budget) {

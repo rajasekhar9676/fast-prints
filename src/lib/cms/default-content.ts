@@ -115,14 +115,12 @@ export const defaultHomepageContent: HomepageContent = {
     },
   ],
   shopNeeds: [
-    { id: "education", title: "Education & Campus", href: "/products?category=stationery", image: storeImages.receiptBooks },
-    { id: "startup", title: "Startup Branding", href: "/products?category=business-essentials", image: storeImages.visitingCards },
-    { id: "events", title: "Events & Promotions", href: "/products?category=large-format", image: storeImages.signageWallMural },
-    { id: "retail", title: "Retail & Packaging", href: "/products?category=packaging", image: storeImages.presentationEnvelopes },
-    { id: "cafe", title: "Cafe & Restaurant", href: "/products?category=marketing-materials", image: storeImages.pamphletGrocery },
-    { id: "boutique", title: "Boutique & Fashion", href: "/products?category=packaging", image: storeImages.presentationEnvelopesGift },
-    { id: "wedding", title: "Weddings", href: "/products?category=events", image: storeImages.pamphletInvitation },
-    { id: "corporate", title: "Corporate ID Kits", href: "/products/id-cards-lanyards", image: storeImages.idCardLanyardSet },
+    { id: "education", title: "Education & Campus", href: "/products?category=stationery", image: "/images/products/certificates-gold.jpg", badge: "POPULAR" },
+    { id: "startup", title: "Startup Branding", href: "/products/visiting-cards", image: "/images/products/visiting-cards-studio-pro.jpg", badge: "POPULAR" },
+    { id: "events", title: "Events & Promotions", href: "/category/banners-signages", image: "/images/products/rollup-standy-6x3ft-blue.jpg", badge: "POPULAR" },
+    { id: "retail", title: "Retail & Packaging", href: "/products/gold-stickers", image: "/fastprintsweb_photos/golsstickersingle.png", badge: "POPULAR" },
+    { id: "corporate", title: "Corporate Merch & Gifting", href: "/category/photo-gifts", image: "/images/products/executive-diary-gold-leaf.jpg", badge: "NEW FOR 2025" },
+    { id: "id-kits", title: "Employee ID Kits", href: "/products/id-cards-pvc", image: "/images/products/id-cards-pvc-pair.jpg", badge: "BESTSELLER" },
   ],
   budgetRanges: [
     {

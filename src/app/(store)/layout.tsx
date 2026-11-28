@@ -10,7 +10,7 @@ export default async function StoreLayout({ children }: { children: React.ReactN
   return (
     <StoreDataProvider categories={categories} settings={settings}>
       <CustomerAuthProvider>
-        <div className="flex min-h-screen flex-1 flex-col bg-[#faf9f6]">
+        <div className="flex min-h-screen flex-1 flex-col bg-white">
           <SiteHeader />
           <main className="flex-1 w-full">{children}</main>
           <SiteFooter />

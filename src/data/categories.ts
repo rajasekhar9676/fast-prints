@@ -3,6 +3,27 @@ import { categoryImages } from "@/data/store-images";
 
 export const categories: ProductCategory[] = [
   {
+    id: "digital-prints",
+    name: "Digital Prints",
+    tagline: "Cards, stationery, stickers & books",
+    image: categoryImages["business-essentials"] || "/images/visiting-cards.png",
+    iconColor: "bg-blue-600",
+  },
+  {
+    id: "banners-signages",
+    name: "Banners & Signages",
+    tagline: "Flex banners, standees & LED signs",
+    image: categoryImages["large-format"] || "/images/signage-wall-mural.png",
+    iconColor: "bg-amber-600",
+  },
+  {
+    id: "gifts-merchandise",
+    name: "Gifts & Merchandise",
+    tagline: "Mugs, photo frames, tees & diaries",
+    image: categoryImages["photo-gifts"] || "/images/smart-keychains.png",
+    iconColor: "bg-rose-600",
+  },
+  {
     id: "business-essentials",
     name: "Business Essentials",
     tagline: "Cards, letterheads & IDs",

@@ -3,134 +3,142 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useStoreData } from "@/context/store-data-context";
-import { telHref, websiteHref } from "@/lib/contact";
-import { Globe, Mail, Phone, MapPin } from "lucide-react";
+import { telHref } from "@/lib/contact";
 
 export function SiteFooter() {
   const { settings } = useStoreData();
 
-  const footerLinks = [
-    {
-      title: "Quick Shop",
-      links: [
-        { href: "/products", label: "All Print Products" },
-        { href: "/rate-card", label: "Official Rate Card" },
-        { href: "/products/visiting-cards", label: "Visiting Cards" },
-        { href: "/products/13x19-digital-print", label: "13x19 Digital Sheets" },
-        { href: "/products/banners-vinyl-stickers", label: "Flex & Vinyl Banners" },
-        { href: "/cart", label: "Shopping Cart" },
-      ],
-    },
-    {
-      title: "Popular Services",
-      links: [
-        { href: "/products/single-color-bill-books", label: "Bill Books & Receipts" },
-        { href: "/products/id-cards-lanyards", label: "ID Cards & Lanyards" },
-        { href: "/products/seals-stamps", label: "Self-Ink Stamps" },
-        { href: "/products/photo-print-with-frame", label: "Photo Frames" },
-        { href: "/services", label: "All Printing Services" },
-        { href: "/contact", label: "Contact & Store Location" },
-      ],
-    },
-  ];
-
   return (
-    <footer className="mt-auto border-t border-ink-200/80 bg-white text-ink-950 shadow-[0_-10px_40px_rgba(0,0,0,0.03)]">
-      <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          {/* Column 1: Brand & Contact Info */}
-          <div className="space-y-4 lg:col-span-1">
-            <Link href="/" className="inline-flex items-center group">
-              <Image
-                src="/logo.png"
-                alt="Fast Prints - Think Printing... Think Us..."
-                width={210}
-                height={46}
-                className="h-9 sm:h-10 w-auto object-contain transition-transform group-hover:scale-[1.02]"
-              />
-            </Link>
-            
-            <p className="text-xs leading-relaxed text-ink-600">
-              Think Printing… Think Us. Premium digital printing, Visiting Cards, Flex Banners, Bill Books &amp; Corporate ID Tags.
-            </p>
-
-            <div className="space-y-2.5 text-xs text-ink-700 pt-1">
-              <p className="flex items-start gap-2.5">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" aria-hidden />
-                <span>
-                  {settings.addressLines.map((line, i) => (
-                    <span key={line} className="block">
-                      {line}
-                    </span>
-                  ))}
-                </span>
-              </p>
-              <p className="flex items-center gap-2.5">
-                <Phone className="h-4 w-4 shrink-0 text-brand-600" aria-hidden />
-                <a href={telHref(settings.phone)} className="font-extrabold text-ink-950 hover:text-brand-600 transition-colors">
-                  {settings.phone}
-                </a>
-              </p>
-              <p className="flex items-center gap-2.5">
-                <Mail className="h-4 w-4 shrink-0 text-brand-600" aria-hidden />
-                <a href={`mailto:${settings.email}`} className="text-ink-700 hover:text-brand-600 font-medium transition-colors">
-                  {settings.email}
-                </a>
-              </p>
-            </div>
+    <footer className="mt-auto bg-[#131110] text-white">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 py-14 sm:py-16 md:grid-cols-4">
+        {/* Column 1: Brand & Contact Info */}
+        <div>
+          <div className="mb-4 inline-block bg-white px-3 py-2 rounded-sm shadow-xs">
+            <Image
+              src="/images/logo/fastprints-official-logo.png"
+              alt="Fast Prints"
+              width={200}
+              height={50}
+              className="h-8 w-auto object-contain"
+            />
           </div>
+          <p className="text-sm leading-relaxed text-white/70">
+            {settings.businessName}
+            <br />
+            {settings.addressLines.map((line) => (
+              <span key={line} className="block">
+                {line}
+              </span>
+            ))}
+            <span className="block mt-2">Email: {settings.email}</span>
+            <span className="block">
+              Contact:{" "}
+              <a href={telHref(settings.phone)} className="hover:text-white transition-colors">
+                {settings.phone}
+              </a>
+            </span>
+          </p>
+        </div>
 
-          {/* Column 2 & 3: Navigation Links */}
-          {footerLinks.map((col) => (
-            <div key={col.title} className="space-y-3">
-              <h3 className="font-[family-name:var(--font-display)] text-xs font-extrabold uppercase tracking-wider text-ink-950 border-b border-ink-100 pb-2">
-                {col.title}
-              </h3>
-              <ul className="space-y-2.5 text-xs">
-                {col.links.map((l) => (
-                  <li key={l.href}>
-                    <Link href={l.href} className="text-ink-600 hover:text-ink-950 hover:translate-x-0.5 font-medium transition-all inline-block">
-                      {l.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        {/* Column 2: Company */}
+        <div>
+          <h3 className="mb-4 text-lg font-semibold text-white">Company</h3>
+          <ul className="space-y-2 text-sm text-white/70">
+            <li>
+              <Link href="/about" className="hover:text-white transition-colors">
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="hover:text-white transition-colors">
+                Contact
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="hover:text-white transition-colors">
+                Store Locator
+              </Link>
+            </li>
+            <li>
+              <Link href="/rate-card" className="hover:text-white transition-colors">
+                Official Rate Card
+              </Link>
+            </li>
+          </ul>
+        </div>
 
-          {/* Column 4: Store Hours & Same-Day Pickup Notice */}
-          <div className="space-y-3">
-            <h3 className="font-[family-name:var(--font-display)] text-xs font-extrabold uppercase tracking-wider text-ink-950 border-b border-ink-100 pb-2">
-              Store Timings &amp; Pickup
-            </h3>
+        {/* Column 3: Shop */}
+        <div>
+          <h3 className="mb-4 text-lg font-semibold text-white">Shop</h3>
+          <ul className="space-y-2 text-sm text-white/70">
+            <li>
+              <Link href="/products/rollup-standees" className="hover:text-white transition-colors">
+                Promotional Display &amp; Standees
+              </Link>
+            </li>
+            <li>
+              <Link href="/products" className="hover:text-white transition-colors">
+                Custom Boxes &amp; Packaging
+              </Link>
+            </li>
+            <li>
+              <Link href="/products/table-calendars" className="hover:text-white transition-colors">
+                Stationery &amp; Desk Calendars
+              </Link>
+            </li>
+            <li>
+              <Link href="/products/brochures" className="hover:text-white transition-colors">
+                Marketing Collateral &amp; Brochures
+              </Link>
+            </li>
+            <li>
+              <Link href="/products/gold-stickers" className="hover:text-white transition-colors">
+                Gold Foil &amp; Die-Cut Stickers
+              </Link>
+            </li>
+            <li>
+              <Link href="/products/photo-frames" className="hover:text-white transition-colors">
+                Photo Frames &amp; Keepsakes
+              </Link>
+            </li>
+          </ul>
+        </div>
 
-            <div className="rounded-2xl border border-amber-200/90 bg-gradient-to-br from-amber-50/80 via-white to-amber-50/40 p-4 space-y-2 text-xs shadow-xs">
-              <div className="flex items-center gap-1.5 font-extrabold text-amber-900">
-                <span className="text-sm">⚡</span>
-                <span>Same-Day Pickup Notice</span>
-              </div>
-              <p className="text-amber-950/80 leading-relaxed text-[11px]">
-                For <strong>Same-Day Store Pickup</strong> or express doorstep delivery, please place your order <strong>before 2:00 PM</strong>.
-              </p>
-            </div>
-
-            <div className="text-xs space-y-1 text-ink-700 pt-1">
-              <p className="font-bold text-ink-950">Mon – Sat: <span className="text-brand-700 font-extrabold">10:00 AM – 7:00 PM</span></p>
-              <p className="text-[11px] text-ink-500">BTM 2nd Stage, Outer Ring Road, Bengaluru</p>
-            </div>
-          </div>
+        {/* Column 4: Policies */}
+        <div>
+          <h3 className="mb-4 text-lg font-semibold text-white">Policies</h3>
+          <ul className="space-y-2 text-sm text-white/70">
+            <li>
+              <Link href="/shipping" className="hover:text-white transition-colors">
+                Shipping Policy
+              </Link>
+            </li>
+            <li>
+              <Link href="/terms" className="hover:text-white transition-colors">
+                Terms of Service
+              </Link>
+            </li>
+            <li>
+              <Link href="/privacy" className="hover:text-white transition-colors">
+                Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link href="/faq" className="hover:text-white transition-colors">
+                Help &amp; FAQ
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
 
       {/* Bottom Sub-Footer */}
-      <div className="border-t border-ink-100 bg-[#fbfaf8] py-5">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-5 text-xs text-ink-500 sm:px-8 sm:flex-row sm:items-center sm:justify-between">
+      <div className="border-t border-white/10 py-6">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 text-xs text-white/50 sm:flex-row">
           <p>© {new Date().getFullYear()} {settings.businessName}. All rights reserved.</p>
-          <div className="flex flex-wrap items-center gap-4 text-[11px] text-ink-600 font-semibold">
-            <span className="inline-flex items-center gap-1">🛡️ GST Billed (18% Input Tax)</span>
-            <span>•</span>
-            <span className="inline-flex items-center gap-1">🚀 Express Courier / Dunzo Available</span>
-          </div>
+          <p className="text-white/60">
+            Same-Day Dispatch &amp; Express Counter Pickup in Bengaluru
+          </p>
         </div>
       </div>
     </footer>

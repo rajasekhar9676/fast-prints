@@ -163,12 +163,25 @@ export default async function ProductDetailPage({
                   </li>
                 )}
 
+                {/* Corner Styles for Visiting Cards */}
+                {product.slug === "visiting-cards" && (
+                  <li className="flex items-start gap-2">
+                    <span className="text-brand-600 font-bold">•</span>
+                    <span>
+                      <strong>Corner Types:</strong> Standard (Square Corners) &amp; Rounded Corners (Smooth Die-Cut)
+                    </span>
+                  </li>
+                )}
+
                 {/* Stock & Material Finishes */}
                 {product.options.finishes?.length > 0 && (
                   <li className="flex items-start gap-2">
                     <span className="text-brand-600 font-bold">•</span>
                     <span>
-                      <strong>Stock &amp; Finish:</strong> {product.options.finishes.join(", ")}
+                      <strong>Stock &amp; Finish:</strong>{" "}
+                      {product.slug === "visiting-cards"
+                        ? "Under 500 cards: Plain (Non-Laminated) · 500+ cards: Glossy, Matt, or Velvet Touch Lamination Included"
+                        : product.options.finishes.join(", ")}
                     </span>
                   </li>
                 )}
